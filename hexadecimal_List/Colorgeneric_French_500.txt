@@ -1,0 +1,147 @@
+[Aigue-Marine]{#7FFFD4}
+[Ancien Lin]{#FDF5E6}
+[Argent Pur]{#C0C0C0}
+[Argent]{#C0C0C0}
+[Azur]{#F0FFFF}
+[Beige]{#F5F5DC}
+[Bisque]{#FFE4C4}
+[Blanc Antique]{#FAEBD7}
+[Blanc Fantôme]{#F8F8FF}
+[Blanc Neige]{#FFFAFA}
+[Blanc]{#FFFFFF}
+[Bleu Acier Clair]{#B0C4DE}
+[Bleu Acier]{#4682B4}
+[Bleu Ardoise Foncé]{#483D8B}
+[Bleu Ardoise Moyen]{#7B68EE}
+[Bleu Ardoise]{#6A5ACD}
+[Bleu Ciel Clair]{#87CEFA}
+[Bleu Ciel Profond]{#00BFFF}
+[Bleu Ciel]{#87CEEB}
+[Bleu Clair]{#ADD8E6}
+[Bleu Dodger]{#1E90FF}
+[Bleu Foncé]{#00008B}
+[Bleu Marine]{#000080}
+[Bleu Maïs]{#6495ED}
+[Bleu Moyen Saturé]{#0000CD}
+[Bleu Moyen]{#0000CD}
+[Bleu Nuit]{#191970}
+[Bleu Poudre]{#B0E0E6}
+[Bleu Royal]{#4169E1}
+[Bleu Rébecca]{#663399}
+[Bleu Sarcelle]{#5F9EA0}
+[Bleu Violet]{#8A2BE2}
+[Bleu]{#0000FF}
+[Blé]{#F5DEB3}
+[Bois Brun]{#DEB887}
+[Bordeaux]{#800000}
+[Brun Clair]{#D2B48C}
+[Brun Navajo]{#FFDEAD}
+[Brun Péruvien]{#CD853F}
+[Brun Selle]{#8B4513}
+[Brun]{#A52A2A}
+[Chardon]{#D8BFD8}
+[Chartreuse]{#7FFF00}
+[Chocolat]{#D2691E}
+[Citron Pâle]{#FFFACD}
+[Coquillage]{#FFF5EE}
+[Corail Clair]{#F08080}
+[Corail Moderne]{#FF6F61}
+[Corail]{#FF7F50}
+[Cramoisi]{#DC143C}
+[Cyan Clair]{#E0FFFF}
+[Cyan Foncé]{#008B8B}
+[Cyan Pur]{#00FFFF}
+[Cyan]{#00FFFF}
+[Fleur Blanche]{#FFFAF0}
+[Fuchsia]{#FF00FF}
+[Gainsboro]{#DCDCDC}
+[Gris Ardoise Clair]{#778899}
+[Gris Ardoise Foncé]{#2F4F4F}
+[Gris Ardoise]{#708090}
+[Gris Clair]{#D3D3D3}
+[Gris Foncé]{#A9A9A9}
+[Gris Standard]{#808080}
+[Gris Ténèbres]{#696969}
+[Gris]{#808080}
+[Indigo Foncé]{#9400D3}
+[Indigo]{#4B0082}
+[Ivoire]{#FFFFF0}
+[Jaune Clair]{#FFFFE0}
+[Jaune]{#FFFF00}
+[Jaune]{#FFFF00}
+[Kaki Foncé]{#BDB76B}
+[Kaki]{#F0E68C}
+[Lavande Rosée]{#FFF0F5}
+[Lavande]{#E6E6FA}
+[Lin]{#FAF0E6}
+[Magenta Foncé]{#8B008B}
+[Magenta]{#FF00FF}
+[Marine]{#000080}
+[Marron]{#800000}
+[Menthe Blanche]{#F5FFFA}
+[Miel]{#F0FFF0}
+[Mocassin]{#FFE4B5}
+[Noir]{#000000}
+[Olive Standard]{#808000}
+[Olive]{#808000}
+[Or Clair]{#FAFAD2}
+[Or Foncé]{#B8860B}
+[Or Pâle]{#EEE8AA}
+[Or Vieilli]{#DAA520}
+[Or]{#FFD700}
+[Orange Rouge]{#FF4500}
+[Orange]{#FFA500}
+[Orchidée Moyenne]{#BA55D3}
+[Orchidée]{#DA70D6}
+[Papaye]{#FFEFD5}
+[Pourpre]{#800080}
+[Prune]{#DDA0DD}
+[Pêche]{#FFDAB9}
+[Rose Brume]{#FFE4E1}
+[Rose Clair]{#FFB6C1}
+[Rose Profond]{#FF1493}
+[Rose Vif]{#FF69B4}
+[Rose Violet Moyen]{#C71585}
+[Rose]{#FFC0CB}
+[Rosy Brown]{#BC8F8F}
+[Rouge Brique]{#B22222}
+[Rouge Foncé]{#8B0000}
+[Rouge Indien]{#CD5C5C}
+[Rouge Pur]{#FF0000}
+[Rouge]{#FF0000}
+[Sable]{#F4A460}
+[Sarcel]{#008080}
+[Saumon Clair]{#FFA07A}
+[Saumon Foncé]{#E9967A}
+[Saumon]{#FA8072}
+[Sienne]{#A0522D}
+[Teal]{#008080}
+[Tomate]{#FF6347}
+[Turquoise Foncé]{#00CED1}
+[Turquoise Moyen]{#48D1CC}
+[Turquoise Pâle]{#AFEEEE}
+[Turquoise]{#40E0D0}
+[Vert Aigue-Marine Moyen]{#66CDAA}
+[Vert Clair]{#90EE90}
+[Vert Foncé Profond]{#006400}
+[Vert Foncé]{#008000}
+[Vert Forêt]{#228B22}
+[Vert Gazon]{#7CFC00}
+[Vert Jaune Foncé]{#9ACD32}
+[Vert Jaune]{#ADFF2F}
+[Vert Lime]{#32CD32}
+[Vert Mer Clair]{#20B2AA}
+[Vert Mer Foncé]{#8FBC8F}
+[Vert Mer Moyen]{#3CB371}
+[Vert Mer]{#2E8B57}
+[Vert Olive Foncé]{#556B2F}
+[Vert Olive]{#6B8E23}
+[Vert Printemps Moyen]{#00FA9A}
+[Vert Printemps]{#00FF7F}
+[Vert Pâle]{#98FB98}
+[Vert]{#00FF00}
+[Violet Foncé]{#9932CC}
+[Violet Moyen]{#9370DB}
+[Violet Pâle]{#DB7093}
+[Violet]{#800080}
+[Violet]{#EE82EE}

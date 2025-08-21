@@ -1,0 +1,907 @@
+[Abricot clair - PANTONE 149C] {254, 198, 136}
+[Abricot clair - PANTONE 156C] {239, 193, 138}
+[Abricot - PANTONE 148C] {251, 208, 157}
+[Abricot - PANTONE 1495C] {255, 150, 59}
+[Abricot - PANTONE 1575C] {255, 134, 66}
+[Abricot - PANTONE 712C] {250, 205, 174}
+[Abricot - PANTONE 715C] {249, 150, 74}
+[Acacia - PANTONE 380C] {211, 225, 60}
+[Acacia - PANTONE 390C] {178, 188, 0}
+[Acacia - PANTONE 583C] {171, 180, 0}
+[Acier rose - PANTONE 2385C] {215, 51, 180}
+[Aigue-marine moyen - PANTONE 353C] {106, 220, 162}
+[Amarante - PANTONE 202C] {137, 32, 52}
+[Amarante rose - PANTONE 1905C] {245, 155, 189}
+[Amarante rose - PANTONE 197C] {235, 155, 178}
+[Amarante rose - PANTONE 700C] {236, 169, 185}
+[Ambre - PANTONE 1235C] {255, 179, 0}
+[Ambre - PANTONE 721C] {229, 174, 134}
+[Ambre - PANTONE 729C] {195, 142, 99}
+[Ambre rouge - PANTONE 1675C] {168, 60, 15}
+[Améthyste - PANTONE 2587C] {131, 72, 181}
+[Améthyste - PANTONE 258C] {146, 73, 158}
+[Aquilain - PANTONE 160C] {162, 78, 18}
+[Aquilain - PANTONE 471C] {183, 83, 18}
+[Argent - PANTONE 5655C] {189, 197, 191}
+[Artichaut - PANTONE 5773C] {147, 152, 113}
+[Ash gris - PANTONE 5645C] {177, 188, 181}
+[Auburn - PANTONE 1605C] {162, 74, 19}
+[Auburn - PANTONE 174C] {154, 52, 22}
+[Aurore - PANTONE 135C] {254, 200, 90}
+[Aurore - PANTONE 1365C] {255, 183, 84}
+[Avocat - PANTONE 370C] {79, 138, 16}
+[Avocat - PANTONE 377C] {103, 144, 0}
+[Azur - PANTONE 293C] {0, 71, 182}
+[Azur - PANTONE 2945C] {0, 83, 165}
+[Azur - PANTONE 301C] {0, 82, 155}
+[Azur - PANTONE 660C] {41, 109, 193}
+[Bambou - PANTONE 4665C] {209, 174, 151}
+[Barbie rose - PANTONE 219C] {224, 33, 138}
+[Baton de réglisse - PANTONE 408C] {165, 153, 151}
+[Bauxite - PANTONE 4675C] {221, 194, 176}
+[Bauxite - PANTONE 4745C] {212, 190, 182}
+[Bauxite - PANTONE 5025C] {219, 188, 193}
+[Bébé bleu - PANTONE 2905C] {146, 201, 235}
+[Beigeasse - PANTONE 4515C] {181, 165, 112}
+[Beigeasse - PANTONE 5777C] {167, 171, 116}
+[Beigeasse - PANTONE 5845C] {173, 168, 107}
+[Beige kyanite - PANTONE 578C] {189, 208, 160}
+[Beige nacré - PANTONE 405C] {100, 90, 80}
+[Beige orangé - PANTONE 120C] {249, 223, 121}
+[Beige peul - PANTONE 451C] {159, 155, 116}
+[Beige shari - PANTONE 155C] {236, 214, 175}
+[Beige shari - PANTONE 475C] {240, 208, 187}
+[Beige shari - PANTONE 615C] {221, 219, 177}
+[Beige shari - PANTONE 719C] {239, 207, 184}
+[Beige soyeux - PANTONE 4755C] {221, 205, 199}
+[Beurre - PANTONE 386C] {229, 233, 110}
+[Bis - PANTONE 410C] {123, 110, 106}
+[Bistre - PANTONE 4985C] {133, 74, 80}
+[Bistre - PANTONE 499C] {118, 57, 49}
+[Bitume - PANTONE 448C] {71, 62, 38}
+[Bitume - PANTONE 449C] {77, 67, 37}
+[Bitume - PANTONE 450C] {81, 72, 38}
+[Blanc néerlandais - PANTONE 461C] {231, 227, 181}
+[Blanc perlé - PANTONE 607C] {235, 233, 195}
+[Blé - PANTONE 387C] {222, 230, 58}
+[Bleu acier clair - PANTONE 537C] {189, 198, 218}
+[Bleu acier clair - PANTONE 658C] {161, 187, 228}
+[Bleu ardoise - PANTONE 2665C] {122, 82, 199}
+[Bleu ardoise - PANTONE 266C] {103, 50, 186}
+[Bleu ardoise - PANTONE 2725C] {94, 83, 199}
+[Bleu ardoise - PANTONE 814C] {126, 96, 206}
+[Bleu ardoise - PANTONE 814C] {126, 96, 206}[Kaki - PANTONE 100C] {243, 237, 134}
+[Bleu azur clair - PANTONE 3105C] {111, 210, 228}
+[Bleu azur - PANTONE 3025C] {0, 73, 110}
+[Bleu azur - PANTONE 323C] {0, 96, 104}
+[Bleu brillant - PANTONE 5405C] {62, 100, 126}
+[Bleu capri - PANTONE 647C] {17, 86, 140}
+[Bleu céruléen - PANTONE 2925C] {0, 146, 221}
+[Bleu céruléen - PANTONE 2995C] {0, 162, 225}
+[Bleu céruléen - PANTONE 299C] {0, 160, 226}
+[Bleu céruléen - PANTONE 638C] {0, 178, 222}
+[Bleu céruléen - PANTONE 801C] {0, 167, 216}
+[Bleu charette - PANTONE 535C] {149, 161, 195}
+[Bleu ciel - PANTONE 283C] {147, 191, 235}
+[Bleu ciel - PANTONE 318C] {142, 219, 229}
+[Bleu ciel - PANTONE 636C] {141, 212, 233}
+[Bleu ciel profond - PANTONE 306C] {0, 181, 230}
+[Bleu clair - PANTONE 291C] {164, 206, 236}
+[Bleu clair - PANTONE 2975C] {165, 217, 236}
+[Bleu clair - PANTONE 304C] {162, 219, 235}
+[Bleu clair - PANTONE 629C] {170, 218, 229}
+[Bleu cobalt - PANTONE 5255C] {42, 37, 75}
+[Bleu cupcake - PANTONE 442C] {179, 188, 192}
+[Bleu cupcake - PANTONE 5435C] {165, 184, 201}
+[Bleu cupcake - PANTONE 5503C] {161, 195, 201}
+[Bleu cupcake - PANTONE 558C] {172, 199, 189}
+[Bleu de France - PANTONE 279C] {65, 137, 221}
+[Bleu Delft - PANTONE 533C] {37, 51, 85}
+[Bleu de minuit - PANTONE 295C] {0, 45, 98}
+[Bleu de minuit - PANTONE 540C] {0, 47, 93}
+[Bleu de minuit - PANTONE 648C] {0, 43, 95}
+[Bleu de minuit - PANTONE 654C] {0, 48, 102}
+[Bleu denim - PANTONE 2935C] {0, 91, 195}
+[Bleu égyptien - PANTONE 2736C] {30, 34, 174}
+[Bleu espagnol - PANTONE 285C] {0, 119, 212}
+[Bleu espagnol - PANTONE 3005C] {0, 118, 204}
+[Bleu espagnol - PANTONE 300C] {0, 103, 198}
+[Bleu espagnol - PANTONE 641C] {0, 112, 178}
+[Bleu fumée - PANTONE 2707C] {186, 208, 238}
+[Bleu fumée - PANTONE 5445C] {188, 202, 214}
+[Bleu fumée - PANTONE 545C] {191, 211, 230}
+[Bleu fumée - PANTONE 5513C] {190, 213, 217}
+[Bleu fumée - PANTONE 552C] {185, 208, 220}
+[Bleu fumée - PANTONE 565C] {185, 220, 218}
+[Bleu fumée - PANTONE 643C] {197, 210, 227}
+[Bleu fumée - PANTONE 650C] {194, 205, 224}
+[Bleu fumée - PANTONE 657C] {191, 208, 234}
+[Bleu gentiane - PANTONE 2767C] {11, 35, 69}
+[Bleu gentiane - PANTONE 303C] {0, 52, 77}
+[Bleu givré - PANTONE 3248C] {123, 210, 200}
+[Bleu-gris - PANTONE 645C] {116, 152, 192}
+[Bleu-gris - PANTONE 659C] {110, 150, 213}
+[Bleu guède - PANTONE 5415C] {88, 121, 147}
+[Bleu horizon - PANTONE 5425C] {124, 152, 174}
+[Bleu indigo - PANTONE 534C] {41, 63, 111}
+[Bleu lagon - PANTONE 542C] {89, 152, 201}
+[Bleu lavande - PANTONE 2708C] {177, 197, 234}
+[Bleu lavande - PANTONE 2717C] {161, 189, 234}
+[Bleu lavande - PANTONE 277C] {169, 199, 236}
+[Bleu lavande - PANTONE 544C] {177, 203, 229}
+[Bleu marine - PANTONE 2768C] {3, 30, 81}
+[Bleu marine - PANTONE 282C] {0, 32, 78}
+[Bleu marine - PANTONE 289C] {0, 35, 76}
+[Bleu marine - PANTONE 2965C] {0, 49, 81}
+[Bleu marine - PANTONE 296C] {0, 39, 64}
+[Bleu marine - PANTONE 539C] {0, 42, 70}
+[Bleu marine - PANTONE 655C] {0, 34, 82}
+[Bleu néon - PANTONE 563C] {114, 184, 180}
+[Bleu néon - PANTONE 570C] {118, 193, 190}
+[Bleu niolon - PANTONE 566C] {205, 227, 226}
+[Bleu niolon - PANTONE 649C] {212, 220, 232}
+[Bleu niolon - PANTONE 656C] {212, 221, 237}
+[Bleu nuit - PANTONE 274C] {33, 18, 101}
+[Bleu nuit - PANTONE 2755C] {27, 0, 105}
+[Bleu nuit - PANTONE 2756C] {21, 29, 113}
+[Bleu océan - PANTONE 3015C] {0, 96, 161}
+[Bleu océan - PANTONE 634C] {0, 98, 140}
+[Bleu opaline - PANTONE 549C] {91, 151, 177}
+[Bleu opal nacré - PANTONE 5395C] {2, 37, 58}
+[Bleu opal nacré - PANTONE 5463C] {0, 40, 48}
+[Bleu opal nacré - PANTONE 546C] {0, 52, 64}
+[Bleu outremer - PANTONE 2735C] {40, 0, 146}
+[Bleu outremer - PANTONE 275C] {29, 17, 87}
+[Bleu outremer - PANTONE 2765C] {27, 12, 85}
+[Bleu outremer - PANTONE 2766C] {21, 28, 85}
+[Bleu outremer - PANTONE 276C] {36, 26, 68}
+[Bleu outremer - PANTONE 653C] {42, 86, 143}
+[Bleu - PANTONE 2738C] {0, 18, 157}
+[Bleu - PANTONE 320C] {0, 151, 172}
+[Bleu - PANTONE 640C] {0, 133, 194}
+[Bleu pastel - PANTONE 290C] {190, 217, 237}
+[Bleu pastel - PANTONE 317C] {191, 229, 234}
+[Bleu pastel - PANTONE 573C] {193, 226, 222}
+[Bleu pastel - PANTONE 628C] {200, 226, 232}
+[Bleu persan - PANTONE 5483C] {79, 141, 151}
+[Bleu pétrole - PANTONE 308C] {0, 88, 131}
+[Bleu pétrole - PANTONE 3155C] {0, 102, 124}
+[Bleu pétrole - PANTONE 315C] {0, 102, 133}
+[Bleu pétrole - PANTONE 5473C] {0, 98, 110}
+[Bleu polaire - PANTONE 551C] {159, 193, 211}
+[Bleu poudre - PANTONE 331C] {178, 231, 223}
+[Bleu poudre - PANTONE 332C] {159, 228, 219}
+[Bleu poudre - PANTONE 572C] {180, 222, 219}
+[Bleu poudre - PANTONE 635C] {173, 221, 235}
+[Bleu roi - PANTONE 2757C] {0, 32, 101}
+[Bleu roi - PANTONE 2758C] {0, 29, 104}
+[Bleu roi - PANTONE 281C] {0, 37, 105}
+[Bleu royal - PANTONE 2727C] {56, 120, 219}
+[Bleu sarcelle - PANTONE 327C] {0, 133, 121}
+[Bleu sarcelle - PANTONE 3282C] {0, 132, 128}
+[Bleu sarcelle - PANTONE 569C] {0, 132, 120}
+[Bleu signalisation - PANTONE 294C] {0, 53, 128}
+[Bleu signalisation - PANTONE 2955C] {0, 59, 111}
+[Bleu signalisation - PANTONE 302C] {0, 67, 110}
+[Bleu signalisation - PANTONE 541C] {0, 60, 121}
+[Bleu smalt - PANTONE 287C] {0, 53, 152}
+[Bleu smalt - PANTONE 661C] {0, 53, 150}
+[Bleu tiffany - PANTONE 3242C] {117, 217, 216}
+[Bleu tiffany - PANTONE 3245C] {123, 221, 216}
+[Bleu tiffany - PANTONE 3262C] {0, 186, 185}
+[Bleu tiffany - PANTONE 326C] {0, 175, 173}
+[Bleu tiffany - PANTONE 3375C] {129, 224, 199}
+[Bleu vert - PANTONE 3125C] {0, 174, 206}
+[Bleu vert - PANTONE 312C] {0, 167, 212}
+[Bleu vert - PANTONE 3135C] {0, 146, 189}
+[Bleu vert - PANTONE 313C] {0, 146, 199}
+[Bleu vert - PANTONE 632C] {0, 158, 192}
+[Bleu vert - PANTONE 639C] {0, 154, 207}
+[Bleu-violet - PANTONE 2607C] {79, 2, 124}
+[Bleu-violet - PANTONE 2617C] {75, 11, 113}
+[Bleu-violet - PANTONE 2685C] {59, 0, 132}
+[Bleu violet - PANTONE 2726C] {69, 85, 199}
+[Bois brun - PANTONE 465C] {185, 156, 107}
+[Bord rose - PANTONE 1777C] {251, 101, 129}
+[Bord rose - PANTONE 184C] {248, 93, 129}
+[Bord rose - PANTONE 709C] {239, 103, 130}
+[Bouton d'or - PANTONE 116C] {255, 206, 0}
+[Brique - PANTONE 1685C] {134, 53, 20}
+[Brique - PANTONE 170C] {255, 137, 123}
+[Brique - PANTONE 188C] {124, 34, 48}
+[Brique - PANTONE 491C] {119, 43, 47}
+[Bronze kaki - PANTONE 385C] {110, 106, 18}
+[Bronze kaki - PANTONE 3995C] {106, 91, 7}
+[Bronze - PANTONE 455C] {101, 84, 21}
+[Bronze - PANTONE 5747C] {64, 70, 22}
+[Bronze - PANTONE 5815C] {75, 69, 22}
+[Bronze - PANTONE 581C] {96, 90, 18}
+[Brume magenta - PANTONE 682C] {156, 72, 120}
+[Brun acajou - PANTONE 476C] {81, 49, 39}
+[Brun acajou - PANTONE 497C] {78, 42, 40}
+[Brun Bismarck - PANTONE 1545C] {81, 38, 11}
+[Brun cuir - PANTONE 1615C] {133, 60, 16}
+[Brun fauve - PANTONE 469C] {97, 52, 24}
+[Brun gris - PANTONE 518C] {75, 42, 70}
+[Brun normand - PANTONE 439C] {68, 53, 53}
+[Brun olive - PANTONE 147C] {113, 88, 33}
+[Brun - PANTONE 161C] {97, 53, 23}
+[Brun - PANTONE 466C] {202, 179, 136}
+[Brun - PANTONE 480C] {200, 169, 154}
+[Brun - PANTONE 728C] {213, 170, 136}
+[Brun rosé - PANTONE 5005C] {183, 132, 140}
+[Brun rouge - PANTONE 1807C] {161, 40, 48}
+[Brun rouge - PANTONE 704C] {162, 38, 48}
+[Brun vert - PANTONE 4495C] {131, 110, 44}
+[Brun vert - PANTONE 5825C] {125, 118, 47}
+[Bulle - PANTONE 1345C] {251, 207, 141}
+[Byzance - PANTONE 249C] {123, 34, 102}
+[Byzance - PANTONE 255C] {112, 38, 108}
+[Byzance - PANTONE 259C] {108, 27, 114}
+[Byzance - PANTONE 512C] {126, 34, 113}
+[Byzantin - PANTONE 253C] {169, 27, 176}
+[Cacao - PANTONE 4625C] {78, 38, 20}
+[Cæruléum - PANTONE 2985C] {64, 189, 232}
+[Cæruléum - PANTONE 298C] {66, 180, 230}
+[Cæruléum - PANTONE 314C] {0, 127, 172}
+[Cæruléum - PANTONE 633C] {0, 124, 164}
+[Café au lait - PANTONE 4645C] {177, 127, 92}
+[Café au lait - PANTONE 464C] {133, 87, 35}
+[Café au lait - PANTONE 488C] {236, 187, 175}
+[Café au lait - PANTONE 720C] {236, 195, 165}
+[Café au lait - PANTONE 727C] {225, 190, 164}
+[Camée rose - PANTONE 203C] {235, 173, 205}
+[Camée rose - PANTONE 495C] {237, 184, 197}
+[Camée rose - PANTONE 509C] {231, 185, 202}
+[Canard bleu - PANTONE 3145C] {0, 122, 151}
+[Canard bleu - PANTONE 321C] {0, 129, 147}
+[Canelle - PANTONE 403C] {152, 143, 134}
+[Canelle - PANTONE 409C] {148, 134, 131}
+[Canelle - PANTONE 725C] {132, 59, 0}
+[Cannelle - PANTONE 713C] {251, 195, 153}
+[Caraïbes - PANTONE 322C] {0, 111, 122}
+[Caraïbes - PANTONE 328C] {0, 113, 104}
+[Carotte - PANTONE 811C] {255, 119, 80}
+[Castleton vert - PANTONE 3302C] {0, 66, 60}
+[Castleton vert - PANTONE 3305C] {0, 74, 65}
+[Castleton vert - PANTONE 343C] {0, 83, 62}
+[Castleton vert - PANTONE 349C] {0, 98, 51}
+[Cerise griotte - PANTONE 194C] {156, 30, 61}
+[Cerise - PANTONE 204C] {232, 123, 172}
+[Cerise - PANTONE 215C] {170, 16, 84}
+[Cerise - PANTONE 673C] {218, 137, 190}
+[Cerise - PANTONE 676C] {163, 0, 89}
+[Cerise rose - PANTONE 1915C] {242, 85, 138}
+[Chair - PANTONE 1555C] {255, 191, 160}
+[Chair - PANTONE 162C] {253, 195, 170}
+[Chamois - PANTONE 617C] {201, 195, 127}
+[Charrette - PANTONE 550C] {133, 176, 198}
+[Châtaigne - PANTONE 483C] {106, 46, 34}
+[Chaudron - PANTONE 133C] {133, 89, 19}
+[Chaudron - PANTONE 140C] {122, 86, 15}
+[Chocolat - PANTONE 181C] {121, 39, 32}
+[Chocolat - PANTONE 462C] {86, 63, 35}
+[Cobalt - PANTONE 2716C] {148, 161, 226}
+[Cobalt - PANTONE 2718C] {84, 126, 217}
+[Cobalt - PANTONE 284C] {108, 171, 231}
+[Colorado claro - PANTONE 463C] {109, 73, 33}
+[Conte de fée - PANTONE 1895C] {243, 188, 212}
+[Conte de fée - PANTONE 217C] {236, 187, 221}
+[Conte de fée - PANTONE 496C] {239, 196, 206}
+[Conte de fée - PANTONE 699C] {240, 194, 205}
+[Conte de fée - PANTONE 706C] {245, 199, 212}
+[Cool gris - PANTONE 271C] {148, 144, 210}
+[Coquelicot - PANTONE 485C] {220, 36, 31}
+[Corail clair - PANTONE 177C] {255, 129, 140}
+[Corail - PANTONE 164C] {255, 126, 67}
+[Corail - PANTONE 1665C] {229, 72, 0}
+[Corail - PANTONE 484C] {159, 45, 32}
+[Coulis de framboise - PANTONE 689C] {149, 64, 111}
+[Cramoisi - PANTONE 186C] {210, 16, 52}
+[Cramoisi - PANTONE 199C] {219, 12, 65}
+[Cuivre nacré - PANTONE 478C] {114, 54, 41}
+[Cuivre - PANTONE 139C] {182, 113, 0}
+[Cuivre - PANTONE 153C] {192, 102, 0}
+[Cyan foncé - PANTONE 3285C] {0, 147, 132}
+[Cyber jaune - PANTONE 109C] {255, 209, 0}
+[Ébène - PANTONE 418C] {90, 91, 81}
+[Élysée - PANTONE 424C] {118, 122, 125}
+[Émeraude - PANTONE 340C] {0, 148, 96}
+[Éminence - PANTONE 2612C] {106, 26, 122}
+[Éminence - PANTONE 520C] {104, 47, 115}
+[Éminence - PANTONE 526C] {97, 32, 127}
+[Épluchure d'orange - PANTONE 137C] {255, 159, 0}
+[Étain oxydé - PANTONE 421C] {186, 187, 188}
+[Feuille morte - PANTONE 4635C] {144, 90, 51}
+[Flave - PANTONE 587C] {226, 229, 157}
+[Flave - PANTONE 609C] {231, 226, 154}
+[Fleur de violette - PANTONE 5155C] {192, 166, 189}
+[Fleur de violette - PANTONE 5225C] {198, 176, 190}
+[Fraise brune - PANTONE 180C] {192, 54, 44}
+[Framboise - PANTONE 1775C] {255, 133, 154}
+[Framboise - PANTONE 489C] {235, 205, 195}
+[Framboise - PANTONE 507C] {211, 141, 166}
+[Framboise - PANTONE 708C] {245, 144, 166}
+[Fuchsia - PANTONE 238C] {230, 83, 188}
+[Fuchsia - PANTONE 245C] {223, 129, 214}
+[Fuchsia - PANTONE 514C] {211, 133, 200}
+[Fushia - PANTONE 1925C] {228, 0, 80}
+[Fushia - PANTONE 192C] {233, 6, 73}
+[Fushia - PANTONE 812C] {255, 52, 133}
+[Glauque - PANTONE 556C] {116, 161, 142}
+[Glauque - PANTONE 646C] {87, 129, 174}
+[Glauque - PANTONE 652C] {111, 141, 185}
+[Glycine - PANTONE 2563C] {199, 157, 216}
+[Glycine - PANTONE 2567C] {187, 153, 218}
+[Glycine - PANTONE 257C] {203, 164, 212}
+[Glycine - PANTONE 2635C] {191, 175, 228}
+[Glycine - PANTONE 264C] {188, 168, 230}
+[Glycine - PANTONE 529C] {198, 164, 225}
+[Gomme-gutte - PANTONE 1375C] {255, 154, 0}
+[Gris agate - PANTONE 5305C] {193, 190, 209}
+[Gris anthracite - PANTONE 532C] {38, 42, 57}
+[Gris ardoise - PANTONE 432C] {65, 75, 86}
+[Gris basalte - PANTONE 445C] {79, 85, 89}
+[Gris bitume - PANTONE 425C] {86, 89, 92}
+[Gris ciment - PANTONE 5295C] {170, 167, 193}
+[Gris clair nacré - PANTONE 415C] {157, 157, 150}
+[Gris clair - PANTONE 427C] {210, 214, 217}
+[Gris clair - PANTONE 5315C] {212, 212, 224}
+[Gris clair - PANTONE 5455C] {204, 214, 224}
+[Gris clair - PANTONE 5595C] {211, 222, 219}
+[Gris clair - PANTONE 664C] {215, 208, 224}
+[Gris cuirassé - PANTONE 416C] {135, 136, 127}
+[Gris de lin - PANTONE 263C] {216, 203, 235}
+[Gris de lin - PANTONE 2706C] {196, 203, 234}
+[Gris de lin - PANTONE 531C] {215, 196, 231}
+[Gris de lin - PANTONE 538C] {210, 215, 228}
+[Gris de lin - PANTONE 642C] {206, 217, 231}
+[Gris de Payne - PANTONE 431C] {97, 106, 116}
+[Gris de sécurité - PANTONE 423C] {147, 148, 149}
+[Gris étain - PANTONE 5175C] {225, 213, 222}
+[Gris étain - PANTONE 5245C] {223, 212, 219}
+[Gris étain - PANTONE 5523C] {207, 222, 225}
+[Gris étain - PANTONE 621C] {210, 223, 220}
+[Gris étain - PANTONE 663C] {222, 216, 230}
+[Gris fenêtre - PANTONE 443C] {153, 163, 166}
+[Gris foncé - PANTONE 422C] {169, 170, 171}
+[Gris gravier - PANTONE 5527C] {204, 212, 212}
+[Gris gravier - PANTONE 5665C] {205, 211, 205}
+[Gris Ile de France - PANTONE 429C] {168, 173, 180}
+[Gris Ile de France - PANTONE 557C] {152, 186, 172}
+[Gris Ile de France - PANTONE 623C] {158, 188, 179}
+[Gris kaki - PANTONE 5757C] {111, 115, 45}
+[Gris minéral - PANTONE 5487C] {98, 125, 124}
+[Gris noir - PANTONE 433C] {33, 41, 48}
+[Gris perle - PANTONE 428C] {195, 200, 205}
+[Gris perle - PANTONE 5517C] {191, 203, 204}
+[Gris perle - PANTONE 5585C] {192, 207, 203}
+[Gris perle - PANTONE 559C] {192, 212, 205}
+[Gris perle - PANTONE 622C] {189, 210, 204}
+[Gris petit - PANTONE 444C] {123, 133, 138}
+[Gris petit - PANTONE 5555C] {110, 141, 130}
+[Gris platine - PANTONE 437C] {132, 110, 116}
+[Gris quartz - PANTONE 417C] {110, 111, 100}
+[Gris Rabat - PANTONE 404C] {124, 115, 105}
+[Gris sable - PANTONE 454C] {213, 211, 191}
+[Gris sable - PANTONE 468C] {224, 212, 187}
+[Gris sable - PANTONE 482C] {221, 206, 196}
+[Gris sable - PANTONE 5875C] {217, 215, 185}
+[Gris silex - PANTONE 577C] {178, 200, 145}
+[Gris silex - PANTONE 5787C] {193, 196, 154}
+[Gris sirius - PANTONE 414C] {181, 182, 176}
+[Gris sirius - PANTONE 5507C] {170, 184, 185}
+[Gris soie - PANTONE 453C] {200, 197, 172}
+[Gris soie - PANTONE 481C] {213, 189, 176}
+[Gris soie - PANTONE 579C] {197, 213, 169}
+[Gris télescope - PANTONE 441C] {203, 209, 212}
+[Gris tendre - PANTONE 413C] {200, 201, 195}
+[Gris terre d'ombre - PANTONE 440C] {57, 46, 44}
+[Gris tourterelle - PANTONE 436C] {183, 166, 173}
+[Gris urbain - PANTONE 402C] {173, 165, 157}
+[Gris velours - PANTONE 406C] {202, 196, 194}
+[Gris vert - PANTONE 5615C] {90, 112, 96}
+[Gris violet - PANTONE 5285C] {133, 129, 164}
+[Gris zinc - PANTONE 430C] {134, 143, 152}
+[Indigo foncé - PANTONE 2623C] {88, 25, 99}
+[Indigo foncé - PANTONE 2627C] {67, 18, 95}
+[Indigo foncé - PANTONE 2695C] {59, 29, 89}
+[Indigo foncé - PANTONE 269C] {69, 38, 99}
+[Indigo - PANTONE 2745C] {34, 0, 122}
+[Ivoire clair - PANTONE 460C] {229, 219, 151}
+[Ivoire clair - PANTONE 586C] {221, 225, 138}
+[Ivoire - PANTONE 611C] {216, 204, 70}
+[Jaune auréolin - PANTONE 1225C] {253, 199, 69}
+[Jaune auréolin - PANTONE 129C] {241, 205, 68}
+[Jaune banane - PANTONE 606C] {216, 189, 0}
+[Jaune canari - PANTONE 803C] {225, 232, 5}
+[Jaune canari - PANTONE 809C] {225, 228, 0}
+[Jaune curry - PANTONE 399C] {153, 141, 0}
+[Jaune de sécurité - PANTONE 605C] {224, 202, 0}
+[Jaune doré clair - PANTONE 127C] {239, 223, 133}
+[Jaune doré pâle - PANTONE 600C] {238, 235, 182}
+[Jaune doré pâle - PANTONE 601C] {238, 234, 165}
+[Jaune doré pâle - PANTONE 608C] {223, 230, 180}
+[Jaune d'or - PANTONE 3945C] {239, 230, 0}
+[Jaune d'or - PANTONE 3955C] {236, 225, 0}
+[Jaune d'or - PANTONE 395C] {228, 228, 0}
+[Jaune d'or - PANTONE 3965C] {233, 220, 0}
+[Jaune d'or - PANTONE 396C] {221, 223, 0}
+[Jaune genêt - PANTONE 103C] {202, 173, 0}
+[Jaune genêt - PANTONE 110C] {219, 174, 0}
+[Jaune impérial - PANTONE 107C] {250, 226, 47}
+[Jaune indien - PANTONE 157C] {237, 155, 79}
+[Jaune kaki - PANTONE 111C] {175, 143, 0}
+[Jaune kaki - PANTONE 118C] {179, 138, 0}
+[Jaune kaki - PANTONE 125C] {187, 137, 0}
+[Jaune kaki - PANTONE 457C] {178, 146, 0}
+[Jaune melon - PANTONE 124C] {235, 171, 0}
+[Jaune melon - PANTONE 130C] {241, 171, 0}
+[Jaune miel - PANTONE 1255C] {170, 128, 14}
+[Jaune mimosa - PANTONE 141C] {239, 200, 104}
+[Jaune mimosa - PANTONE 458C] {219, 202, 103}
+[Jaune moelleux - PANTONE 134C] {248, 213, 131}
+[Jaune moutarde - PANTONE 382C] {182, 211, 0}
+[Jaune narcisse - PANTONE 117C] {206, 157, 0}
+[Jaune narcisse - PANTONE 131C] {212, 145, 0}
+[Jaune ocre - PANTONE 618C] {180, 168, 81}
+[Jaune olive - PANTONE 5767C] {141, 145, 80}
+[Jaune olive - PANTONE 582C] {136, 134, 0}
+[Jaune olive - PANTONE 5835C] {157, 151, 84}
+[Jaune paille - PANTONE 115C] {251, 222, 74}
+[Jaune - PANTONE 102C] {250, 230, 0}
+[Jaune poussin - PANTONE 101C] {245, 236, 98}
+[Jaune poussin - PANTONE 106C] {246, 231, 97}
+[Jaune poussin - PANTONE 113C] {250, 225, 90}
+[Jaune poussin - PANTONE 603C] {237, 226, 94}
+[Jaune primevère - PANTONE 379C] {221, 229, 108}
+[Jaune primevère - PANTONE 459C] {223, 210, 124}
+[Jaune primevère - PANTONE 585C] {216, 219, 111}
+[Jaune primevère - PANTONE 610C] {226, 217, 115}
+[Jaune sable - PANTONE 128C] {242, 214, 94}
+[Jaune sinding - PANTONE 1215C] {245, 221, 146}
+[Jaune soleil - PANTONE 143C] {239, 170, 35}
+[Jaune zinc - PANTONE 394C] {233, 231, 63}
+[Jet - PANTONE 447C] {50, 53, 50}
+[Kaki clair - PANTONE 104C] {172, 150, 0}
+[Kaki clair - PANTONE 398C] {171, 162, 0}
+[Kaki clair - PANTONE 613C] {179, 157, 0}
+[Kaki marron - PANTONE 126C] {161, 124, 0}
+[Kaki marron - PANTONE 132C] {166, 122, 0}
+[Kaki - PANTONE 100C] {243, 237, 134}
+[Kaki - PANTONE 105C] {129, 114, 20}
+[Kaki - PANTONE 119C] {138, 118, 26}
+[Kaki - PANTONE 1265C] {131, 101, 20}
+[Kaki - PANTONE 393C] {237, 235, 143}
+[Kaki - PANTONE 456C] {151, 127, 9}
+[Kaki - PANTONE 602C] {238, 232, 141}
+[Kaki - PANTONE 619C] {156, 142, 42}
+[Kaki - PANTONE 620C] {136, 120, 17}
+[Kaki violet - PANTONE 112C] {153, 128, 0}
+[Kaolin - PANTONE 401C] {189, 184, 177}
+[Klein - PANTONE 273C] {37, 23, 122}
+[Klein - PANTONE 2746C] {26, 28, 150}
+[KSU pourpre - PANTONE 267C] {79, 31, 145}
+[Lavande - PANTONE 2572C] {192, 132, 220}
+[Lavande - PANTONE 2645C] {170, 148, 222}
+[Lavande rose - PANTONE 523C] {203, 178, 213}
+[Lavande rose - PANTONE 672C] {225, 167, 207}
+[Lilas bleu - PANTONE 668C] {98, 74, 126}
+[Lilas français - PANTONE 667C] {124, 100, 149}
+[Lilas - PANTONE 244C] {230, 162, 224}
+[Lilas - PANTONE 522C] {189, 158, 202}
+[Lilas - PANTONE 528C] {167, 116, 205}
+[Lilas rouge - PANTONE 205C] {227, 69, 133}
+[Lin bistre - PANTONE 4655C] {192, 148, 119}
+[Maduro - PANTONE 412C] {55, 43, 39}
+[Magenta foncé - PANTONE 2602C] {125, 9, 150}
+[Magenta fushia - PANTONE 214C] {208, 0, 99}
+[Magenta fushia - PANTONE 220C] {174, 0, 85}
+[Magenta fushia - PANTONE 226C] {214, 0, 119}
+[Magenta fushia - PANTONE 227C] {174, 0, 95}
+[Magenta fushia - PANTONE 234C] {166, 0, 107}
+[Magenta - PANTONE 212C] {243, 78, 154}
+[Magenta vif - PANTONE 213C] {230, 21, 119}
+[Magenta vif - PANTONE 225C] {229, 35, 157}
+[Magenta vif - PANTONE 239C] {224, 50, 175}
+[Magenta vif - PANTONE 813C] {234, 18, 175}
+[Maïs - PANTONE 121C] {251, 219, 110}
+[Mandarine - PANTONE 138C] {228, 127, 0}
+[Mandarine - PANTONE 144C] {237, 128, 0}
+[Mandarine - PANTONE 150C] {255, 169, 79}
+[Mandarine - PANTONE 1595C] {218, 92, 5}
+[Mandarine - PANTONE 198C] {228, 77, 11}
+[Mandarine - PANTONE 804C] {255, 162, 67}
+[Marron - PANTONE 1405C] {108, 71, 19}
+[Marron - PANTONE 1535C] {147, 63, 0}
+[Marron - PANTONE 154C] {153, 84, 9}
+[Marron - PANTONE 724C] {154, 75, 0}
+[Marron puce - PANTONE 438C] {81, 62, 62}
+[Marron puce - PANTONE 5115C] {75, 37, 62}
+[Marron puce - PANTONE 5185C] {69, 41, 59}
+[Mastic - PANTONE 452C] {181, 178, 146}
+[Mastic - PANTONE 5783C] {173, 178, 145}
+[Matin bleu - PANTONE 5497C] {141, 160, 159}
+[Matin bleu - PANTONE 5565C] {143, 168, 160}
+[Mauve d'antan - PANTONE 400C] {205, 201, 196}
+[Mauve d'antan - PANTONE 434C] {211, 201, 206}
+[Mauve - PANTONE 218C] {232, 111, 184}
+[Mauve - PANTONE 224C] {239, 106, 191}
+[Mauve - PANTONE 252C] {202, 101, 209}
+[Mauve - PANTONE 2705C] {162, 159, 224}
+[Mauve - PANTONE 270C] {173, 172, 220}
+[Mauve - PANTONE 272C] {121, 115, 194}
+[Mauve - PANTONE 435C] {200, 186, 192}
+[Mauve - PANTONE 536C] {164, 177, 205}
+[Mauve - PANTONE 644C] {151, 177, 208}
+[Mauve - PANTONE 651C] {153, 174, 206}
+[Mauve - PANTONE 665C] {197, 187, 211}
+[Mauve - PANTONE 702C] {213, 100, 124}
+[Melon - PANTONE 169C] {255, 182, 177}
+[Menthe foncé - PANTONE 3395C] {0, 197, 144}
+[Menthe foncé - PANTONE 339C] {0, 176, 139}
+[Menthe - PANTONE 346C] {94, 201, 152}
+[Moka - PANTONE 477C] {94, 47, 36}
+[Moka - PANTONE 498C] {104, 50, 46}
+[Moutarde - PANTONE 114C] {250, 224, 81}
+[Moutarde - PANTONE 122C] {253, 212, 79}
+[Nacarat - PANTONE 178C] {255, 91, 96}
+[Nacarat - PANTONE 805C] {255, 88, 94}
+[Nickel - PANTONE 5625C] {108, 128, 114}
+[Noir signalisation - PANTONE 419C] {31, 33, 28}
+[Noisette - PANTONE 732C] {100, 48, 10}
+[Ocre Guadeloupe - PANTONE 1485C] {255, 181, 123}
+[Ocre - PANTONE 1245C] {198, 146, 0}
+[Ocre rouge - PANTONE 472C] {228, 153, 105}
+[Oeillet rose - PANTONE 210C] {250, 159, 204}
+[Olive - PANTONE 392C] {127, 120, 0}
+[Ombre brûlée - PANTONE 4705C] {127, 76, 62}
+[Ombre naturelle 10% - PANTONE 4685C] {228, 210, 197}
+[Ombre naturelle 10% - PANTONE 726C] {232, 206, 187}
+[Ombre naturelle claire - PANTONE 4525C] {197, 186, 142}
+[Ombre naturelle claire - PANTONE 5855C] {199, 195, 151}
+[Orange brûlée - PANTONE 1525C] {202, 78, 0}
+[Orange brûlée - PANTONE 159C] {205, 88, 6}
+[Orange brûlée - PANTONE 167C] {194, 81, 15}
+[Orange brûlée - PANTONE 718C] {207, 82, 0}
+[Orangé de sécurité - PANTONE 173C] {216, 69, 25}
+[Orange espagnol - PANTONE 152C] {231, 111, 0}
+[Orange espagnol - PANTONE 717C] {222, 97, 0}
+[Orangé jaune - PANTONE 136C] {255, 188, 58}
+[Orangé jaune - PANTONE 142C] {241, 187, 70}
+[Orange marron - PANTONE 1385C] {214, 117, 0}
+[Orange marron - PANTONE 145C] {207, 118, 0}
+[Orange - PANTONE 1505C] {255, 114, 0}
+[Orange - PANTONE 151C] {255, 115, 0}
+[Orange - PANTONE 1645C] {255, 108, 59}
+[Orange - PANTONE 1655C] {255, 82, 0}
+[Orange - PANTONE 716C] {241, 124, 14}
+[Orange persane - PANTONE 722C] {213, 143, 89}
+[Orangé saumon - PANTONE 158C] {233, 107, 16}
+[Orchidée claire - PANTONE 237C] {238, 134, 211}
+[Orchidée - PANTONE 2375C] {226, 112, 205}
+[Orchidée rose - PANTONE 182C] {248, 184, 203}
+[Or - PANTONE 108C] {254, 219, 0}
+[Orpiment - PANTONE 123C] {255, 199, 38}
+[Palatinat - PANTONE 260C] {95, 29, 95}
+[Paradis rose - PANTONE 710C] {229, 70, 97}
+[Parme - PANTONE 2395C] {196, 0, 152}
+[Parme - PANTONE 2562C] {207, 165, 228}
+[Parme - PANTONE 530C] {207, 177, 227}
+[Pêche clair - PANTONE 1355C] {253, 200, 125}
+[Pensée pourpre - PANTONE 216C] {122, 29, 66}
+[Pensée pourpre - PANTONE 683C] {124, 34, 80}
+[Permanent mauve - PANTONE 669C] {67, 44, 95}
+[Persimmon - PANTONE 166C] {229, 83, 0}
+[Pervenche - PANTONE 278C] {140, 180, 232}
+[Pervenche - PANTONE 2915C] {98, 180, 232}
+[Pervenche - PANTONE 292C] {106, 178, 231}
+[Pervenche - PANTONE 297C] {120, 199, 235}
+[Pervenche - PANTONE 305C] {83, 202, 235}
+[Pervenche - PANTONE 310C] {102, 207, 230}
+[Pervenche - PANTONE 543C] {147, 185, 220}
+[Pervenche - PANTONE 630C] {130, 203, 221}
+[Pervenche - PANTONE 637C] {91, 200, 231}
+[Phtalo vert - PANTONE 5605C] {25, 48, 37}
+[Pinchard - PANTONE 420C] {204, 204, 204}
+[Platane tabac - PANTONE 4695C] {83, 40, 33}
+[Poil de chameau - PANTONE 723C] {192, 114, 47}
+[Poivre de Sichuan - PANTONE 4735C] {197, 170, 160}
+[Pourpre moyen - PANTONE 2577C] {162, 118, 204}
+[Pourpre moyen - PANTONE 2655C] {145, 115, 211}
+[Pourpre moyen - PANTONE 265C] {141, 101, 210}
+[Pourpre moyen - PANTONE 2715C] {133, 128, 216}
+[Pourpre - PANTONE 1945C] {170, 17, 63}
+[Pourpre - PANTONE 1955C] {147, 23, 59}
+[Pourpre - PANTONE 201C] {158, 27, 52}
+[Pourpre - PANTONE 221C] {150, 0, 75}
+[Pourpre signalisation - PANTONE 675C] {182, 42, 121}
+[Prairie - PANTONE 347C] {0, 149, 67}
+[Prairie - PANTONE 354C] {0, 171, 57}
+[Prune - PANTONE 228C] {138, 7, 83}
+[Prune - PANTONE 235C] {137, 8, 87}
+[Prune - PANTONE 2425C] {130, 0, 99}
+[Prune - PANTONE 242C] {122, 26, 87}
+[Puce - PANTONE 500C] {200, 134, 145}
+[Puce - PANTONE 5275C] {87, 82, 126}
+[Puce - PANTONE 687C] {198, 134, 169}
+[Puce - PANTONE 694C] {202, 144, 156}
+[Purpura - PANTONE 2582C] {162, 76, 200}
+[Purpura - PANTONE 2583C] {153, 80, 178}
+[Quartz rose - PANTONE 5215C] {177, 149, 166}
+[Quartz rose - PANTONE 666C] {163, 146, 183}
+[Quinacridone magenta - PANTONE 696C] {148, 69, 84}
+[Raisin noir - PANTONE 426C] {33, 36, 36}
+[Reine rose - PANTONE 196C] {235, 198, 211}
+[Reine rose - PANTONE 503C] {233, 204, 210}
+[Reine rose - PANTONE 671C] {230, 193, 219}
+[Reine rose - PANTONE 678C] {226, 201, 218}
+[Reine rose - PANTONE 684C] {229, 202, 217}
+[Reine rose - PANTONE 691C] {231, 205, 210}
+[Reine rose - PANTONE 698C] {237, 207, 215}
+[Résolution bleue - PANTONE 2747C] {0, 35, 126}
+[Résolution bleue - PANTONE 2748C] {0, 26, 123}
+[Résolution bleue - PANTONE 280C] {0, 38, 127}
+[Résolution bleue - PANTONE 288C] {0, 48, 130}
+[Résolution bleue - PANTONE 662C] {0, 34, 128}
+[Rose bonbon - PANTONE 232C] {239, 64, 176}
+[Rose camélia - PANTONE 5015C] {209, 169, 176}
+[Rose camélia - PANTONE 680C] {203, 151, 183}
+[Rose cerise - PANTONE 191C] {242, 63, 114}
+[Rose charme - PANTONE 701C] {229, 141, 162}
+[Rose clair - PANTONE 1767C] {250, 175, 194}
+[Rose clair - PANTONE 176C] {255, 172, 185}
+[Rose clair - PANTONE 236C] {242, 176, 223}
+[Rose clair - PANTONE 707C] {245, 176, 193}
+[Rose dauphin - PANTONE 502C] {229, 191, 199}
+[Rose dauphin - PANTONE 5035C] {227, 203, 208}
+[Rose dauphin - PANTONE 510C] {233, 194, 209}
+[Rose dauphin - PANTONE 685C] {225, 188, 208}
+[Rose dauphin - PANTONE 692C] {226, 193, 200}
+[Rose dragée - PANTONE 494C] {231, 167, 182}
+[Rose dragée - PANTONE 501C] {222, 172, 183}
+[Rose dragée - PANTONE 508C] {226, 171, 191}
+[Rose dragée - PANTONE 686C] {219, 174, 198}
+[Rose dragée - PANTONE 693C] {217, 167, 177}
+[Rose gris - PANTONE 189C] {248, 161, 190}
+[Rose gris - PANTONE 223C] {242, 147, 209}
+[Rose gris - PANTONE 230C] {247, 167, 219}
+[Rose layette - PANTONE 705C] {242, 214, 222}
+[Rose lilas - PANTONE 5235C] {212, 196, 206}
+[Rose macaron - PANTONE 2365C] {239, 195, 228}
+[Rose macaron - PANTONE 250C] {227, 192, 230}
+[Rose macaron - PANTONE 517C] {235, 202, 227}
+[Rose macaron - PANTONE 524C] {218, 204, 225}
+[Rose macaron - PANTONE 670C] {234, 212, 228}
+[Rose macaron - PANTONE 677C] {229, 209, 223}
+[Rose - PANTONE 1765C] {254, 157, 176}
+[Rosé - PANTONE 1785C] {249, 69, 91}
+[Rosé - PANTONE 1787C] {249, 66, 95}
+[Rose persan - PANTONE 211C] {249, 125, 184}
+[Rose persan - PANTONE 231C] {245, 117, 201}
+[Rose Persan vif - PANTONE 806C] {255, 28, 172}
+[Rose Pompadour - PANTONE 190C] {248, 119, 158}
+[Rose Saint Paulia - PANTONE 4995C] {161, 105, 113}
+[Rose Saint Paulia - PANTONE 695C] {176, 104, 118}
+[Rose uni - PANTONE 506C] {126, 43, 66}
+[Rose uni - PANTONE 697C] {129, 51, 61}
+[Rouge basque - PANTONE 175C] {112, 50, 34}
+[Rouge brun - PANTONE 1815C] {124, 33, 30}
+[Rouge Chili - PANTONE 179C] {226, 56, 40}
+[Rouge feu - PANTONE 172C] {253, 71, 3}
+[Rouge fraise - PANTONE 711C] {211, 41, 57}
+[Rouge fushia - PANTONE 207C] {177, 0, 66}
+[Rouge impérial - PANTONE 1788C] {240, 34, 51}
+[Rouge noir - PANTONE 4975C] {68, 30, 31}
+[Rouge oriental - PANTONE 1805C] {176, 35, 42}
+[Rouge oriental - PANTONE 187C] {179, 27, 52}
+[Rouge - PANTONE 185C] {234, 4, 55}
+[Rouge - PANTONE 193C] {195, 12, 62}
+[Rouge - PANTONE 200C] {193, 4, 53}
+[Rouge - PANTONE 206C] {215, 0, 77}
+[Rouge pompier - PANTONE 1795C] {216, 31, 42}
+[Rouge pompier - PANTONE 1797C] {208, 36, 51}
+[Rouge prune - PANTONE 251C] {217, 156, 225}
+[Rouge prune - PANTONE 515C] {223, 165, 214}
+[Rouge vin - PANTONE 1817C] {94, 39, 40}
+[Rouge vin - PANTONE 490C] {90, 39, 42}
+[Rouge violet - PANTONE 240C] {196, 30, 153}
+[Rubis - PANTONE 1935C] {203, 4, 71}
+[Sable - PANTONE 4535C] {212, 204, 170}
+[Sable - PANTONE 467C] {213, 196, 161}
+[Sables du désert - PANTONE 474C] {238, 197, 169}
+[Safran - PANTONE 604C] {234, 219, 27}
+[Safre - PANTONE 2728C] {0, 71, 190}
+[Safre - PANTONE 286C] {0, 53, 173}
+[Sapin - PANTONE 3415C] {0, 119, 75}
+[Sapin - PANTONE 341C] {0, 120, 86}
+[Saumon clair - PANTONE 1565C] {255, 169, 125}
+[Saumon clair - PANTONE 1625C] {255, 162, 139}
+[Saumon clair - PANTONE 163C] {255, 156, 113}
+[Saumon clair - PANTONE 714C] {253, 177, 121}
+[Saumon foncé - PANTONE 486C] {236, 147, 132}
+[Saumon - PANTONE 1635C] {255, 142, 112}
+[Saumon - PANTONE 473C] {237, 185, 150}
+[Saumon - PANTONE 487C] {236, 171, 157}
+[Sécurité jaune - PANTONE 810C] {225, 206, 9}
+[Sépia - PANTONE 168C] {111, 48, 20}
+[Sépia - PANTONE 4725C] {178, 141, 127}
+[Sépia - PANTONE 479C] {173, 128, 108}
+[Sorbet framboise - PANTONE 703C] {186, 57, 78}
+[Super rose - PANTONE 674C] {206, 98, 164}
+[Tabac - PANTONE 4505C] {155, 137, 72}
+[Tabac - PANTONE 470C] {155, 77, 27}
+[Tangelo - PANTONE 1585C] {255, 105, 0}
+[Tangelo - PANTONE 165C] {255, 95, 0}
+[Tanné - PANTONE 1395C] {158, 96, 9}
+[Tanné - PANTONE 146C] {159, 96, 0}
+[Terre de sienne brûlée - PANTONE 4715C] {155, 110, 95}
+[Terre d'ombre - PANTONE 411C] {98, 82, 72}
+[Terre d'ombre - PANTONE 4485C] {93, 71, 24}
+[Terre d'ombre - PANTONE 731C] {121, 63, 13}
+[Tickle moi rose - PANTONE 183C] {252, 141, 169}
+[Tomate - PANTONE 171C] {255, 97, 65}
+[Ton bois - PANTONE 730C] {172, 112, 61}
+[Topaze - PANTONE 3935C] {240, 235, 122}
+[Tourdille - PANTONE 5793C] {189, 194, 169}
+[Transit vert - PANTONE 3405C] {0, 174, 104}
+[Turquoise foncé - PANTONE 3115C] {0, 196, 220}
+[Turquoise foncé - PANTONE 311C] {0, 194, 227}
+[Turquoise foncé - PANTONE 3385C] {59, 214, 178}
+[Turquoise menthe - PANTONE 625C] {81, 130, 116}
+[Turquoise moyen - PANTONE 319C] {54, 204, 218}
+[Turquoise moyen - PANTONE 3252C] {65, 210, 210}
+[Turquoise moyen - PANTONE 325C] {71, 199, 199}
+[Turquoise moyen - PANTONE 333C] {67, 217, 199}
+[Turquoise moyen - PANTONE 631C] {72, 184, 210}
+[Turquoise - PANTONE 3255C] {50, 212, 203}
+[Turquoise pastel - PANTONE 5493C] {129, 173, 181}
+[Vanille - PANTONE 1205C] {243, 226, 167}
+[Vanille - PANTONE 616C] {215, 210, 157}
+[Verdigris - PANTONE 3258C] {67, 196, 183}
+[Vert absinthe - PANTONE 4545C] {222, 217, 194}
+[Vert absinthe - PANTONE 5807C] {217, 220, 197}
+[Vert absinthe - PANTONE 614C] {227, 225, 193}
+[Vert armée - PANTONE 378C] {77, 90, 18}
+[Vert armée - PANTONE 574C] {64, 79, 36}
+[Vert banane - PANTONE 3975C] {187, 168, 0}
+[Vert banane - PANTONE 397C] {190, 184, 0}
+[Vert banane - PANTONE 612C] {196, 179, 0}
+[Vert bouteille - PANTONE 3298C] {0, 103, 82}
+[Vert bouteille - PANTONE 336C] {0, 102, 81}
+[Vert bouteille - PANTONE 3425C] {0, 102, 68}
+[Vert bouteille - PANTONE 342C] {0, 106, 78}
+[Vert bouteille - PANTONE 555C] {19, 105, 78}
+[Vert brillant - PANTONE 361C] {18, 173, 43}
+[Vert Brunswick - PANTONE 560C] {34, 72, 63}
+[Vert Brunswick - PANTONE 567C] {24, 69, 59}
+[Vert Cal Poly Pomona - PANTONE 350C] {24, 71, 44}
+[Vert Cal Poly Pomona - PANTONE 553C] {33, 66, 50}
+[Vert céladon - PANTONE 624C] {120, 160, 149}
+[Vert clair - PANTONE 338C] {118, 209, 189}
+[Vert clair - PANTONE 345C] {137, 213, 175}
+[Vert clair - PANTONE 358C] {165, 219, 146}
+[Vert clair - PANTONE 359C] {159, 217, 139}
+[Vert curry - PANTONE 383C] {159, 170, 0}
+[Vert curry - PANTONE 384C] {139, 144, 0}
+[Vert curry - PANTONE 391C] {149, 146, 0}
+[Vert d'eau - PANTONE 5575C] {169, 189, 182}
+[Vert de gris - PANTONE 5635C] {151, 166, 155}
+[Vert de Hooker - PANTONE 5545C] {74, 109, 98}
+[Vert empire - PANTONE 5477C] {60, 91, 89}
+[Vert essia - PANTONE 365C] {204, 229, 162}
+[Vert essia - PANTONE 366C] {188, 225, 141}
+[Vert essia - PANTONE 372C] {215, 233, 161}
+[Vert foncé - PANTONE 627C] {3, 45, 35}
+[Vert forêt - PANTONE 362C] {40, 151, 40}
+[Vert gazon - PANTONE 363C] {47, 137, 39}
+[Vert herbe - PANTONE 364C] {49, 112, 35}
+[Vert impérial - PANTONE 356C] {0, 114, 41}
+[Vert jade - PANTONE 3265C] {0, 194, 182}
+[Vert jonc - PANTONE 5763C] {110, 118, 73}
+[Vert kaki - PANTONE 576C] {102, 142, 60}
+[Vert laurier - PANTONE 5797C] {206, 209, 179}
+[Vert laurier - PANTONE 5803C] {206, 210, 191}
+[Vert laurier - PANTONE 580C] {207, 221, 187}
+[Vert laurier - PANTONE 5865C] {211, 207, 172}
+[Vert militaire - PANTONE 5753C] {94, 102, 57}
+[Vert minuit - PANTONE 3035C] {0, 58, 79}
+[Vert minuit - PANTONE 309C] {0, 57, 71}
+[Vert minuit - PANTONE 3165C] {0, 79, 93}
+[Vert minuit - PANTONE 316C] {0, 70, 80}
+[Vert minuit - PANTONE 330C] {0, 82, 77}
+[Vert minuit - PANTONE 547C] {0, 62, 81}
+[Vert minuit - PANTONE 548C] {0, 65, 89}
+[Vert mousse foncé - PANTONE 371C] {74, 96, 28}
+[Vert moutarde - PANTONE 381C] {200, 219, 0}
+[Vert moutarde - PANTONE 388C] {215, 227, 0}
+[Vert moutarde - PANTONE 389C] {198, 219, 0}
+[Vert moyen - PANTONE 375C] {135, 211, 0}
+[Vert moyen - PANTONE 376C] {118, 185, 0}
+[Vert noir - PANTONE 446C] {61, 66, 66}
+[Vert olive - PANTONE 5743C] {62, 71, 35}
+[Vert opale - PANTONE 3292C] {0, 90, 83}
+[Vert opale - PANTONE 329C] {0, 98, 90}
+[Vert opale - PANTONE 561C] {15, 98, 89}
+[Vert opaline - PANTONE 324C] {152, 217, 219}
+[Vert opaline - PANTONE 337C] {148, 216, 200}
+[Vert opaline - PANTONE 344C] {166, 222, 193}
+[Vert opaline - PANTONE 351C] {167, 230, 196}
+[Vert opaline - PANTONE 352C] {135, 224, 176}
+[Vert opaline - PANTONE 564C] {152, 204, 201}
+[Vert opaline - PANTONE 571C] {157, 214, 207}
+[Vert opal nacré - PANTONE 5467C] {24, 53, 51}
+[Vert opal nacré - PANTONE 5535C] {27, 57, 48}
+[Vert - PANTONE 3278C] {0, 153, 122}
+[Vert - PANTONE 334C] {0, 152, 120}
+[Vert persan - PANTONE 3268C] {0, 169, 148}
+[Vert persan - PANTONE 3272C] {0, 161, 156}
+[Vert persan - PANTONE 3275C] {0, 176, 157}
+[Vert persan - PANTONE 808C] {0, 174, 151}
+[Vert pin - PANTONE 3288C] {0, 126, 100}
+[Vert pin - PANTONE 3295C] {0, 124, 111}
+[Vert pin - PANTONE 335C] {0, 123, 99}
+[Vert pin - PANTONE 562C] {0, 119, 112}
+[Vert pistache - PANTONE 373C] {205, 233, 133}
+[Vert pistache - PANTONE 374C] {186, 229, 95}
+[Vert plexi - PANTONE 584C] {203, 211, 76}
+[Vert prairie - PANTONE 360C] {85, 190, 71}
+[Vert prairie - PANTONE 802C] {91, 221, 69}
+[Vert pur - PANTONE 348C] {0, 126, 58}
+[Vert pur - PANTONE 355C] {0, 149, 48}
+[Vert Sacramento Etat - PANTONE 3308C] {0, 66, 54}
+[Vert sapin - PANTONE 3435C] {0, 71, 49}
+[Vert sapin - PANTONE 357C] {15, 77, 42}
+[Vert tilleul - PANTONE 367C] {164, 216, 103}
+[Vert tilleul - PANTONE 368C] {98, 189, 25}
+[Vert tilleul - PANTONE 369C] {79, 166, 0}
+[Vert turquoise - PANTONE 554C] {36, 96, 74}
+[Vert turquoise - PANTONE 626C] {31, 86, 71}
+[Vert véronèse - PANTONE 575C] {86, 115, 46}
+[Violet bordeaux - PANTONE 222C] {108, 25, 63}
+[Violet bordeaux - PANTONE 505C] {110, 38, 57}
+[Violet brulé - PANTONE 5265C] {67, 59, 103}
+[Violet chardon - PANTONE 243C] {232, 183, 229}
+[Violet chardon - PANTONE 256C] {217, 191, 224}
+[Violet chardon - PANTONE 5165C] {214, 197, 211}
+[Violet chardon - PANTONE 516C] {231, 186, 223}
+[Violet chardon - PANTONE 679C] {222, 189, 212}
+[Violet chinois - PANTONE 5135C] {136, 94, 128}
+[Violet chinois - PANTONE 5205C] {139, 104, 125}
+[Violet de Bayeux - PANTONE 209C] {117, 38, 65}
+[Violet de Bayeux - PANTONE 229C] {106, 29, 68}
+[Violet de Bayeux - PANTONE 511C] {96, 36, 78}
+[Violet de Bayeux - PANTONE 690C] {109, 35, 72}
+[Violet d'évêque - PANTONE 5125C] {112, 65, 101}
+[Violet moyen - PANTONE 233C] {201, 0, 129}
+[Violet nacré - PANTONE 681C] {184, 116, 158}
+[Violet nacré - PANTONE 688C] {180, 107, 147}
+[Violet - PANTONE 2592C] {144, 22, 178}
+[Violet - PANTONE 513C] {149, 40, 143}
+[Violet - PANTONE 527C] {110, 32, 160}
+[Violet pastel - PANTONE 5145C] {161, 126, 154}
+[Violet pourpre - PANTONE 504C] {78, 32, 41}
+[Violet rouge - PANTONE 208C] {144, 33, 71}
+[Violet rouge - PANTONE 492C] {145, 53, 59}
+[Violette africaine - PANTONE 2573C] {178, 121, 200}
+[Violette africaine - PANTONE 521C] {173, 133, 186}
+[Violette espagnole - PANTONE 268C] {74, 33, 126}
+[Violette japonaise - PANTONE 261C] {89, 30, 85}
+[Violette japonaise - PANTONE 2622C] {87, 36, 88}
+[Violette japonaise - PANTONE 262C] {79, 34, 72}
+[Violette japonaise - PANTONE 5195C] {94, 58, 81}
+[Violette japonaise - PANTONE 519C] {90, 45, 95}
+[Violette japonaise - PANTONE 525C] {81, 38, 90}
+[Violine - PANTONE 2405C] {167, 0, 132}
+[Violine - PANTONE 2415C] {151, 0, 118}
+[Violine - PANTONE 241C] {172, 4, 129}
+[Violine - PANTONE 246C] {199, 11, 172}
+[Violine - PANTONE 247C] {183, 0, 157}
+[Violine - PANTONE 248C] {158, 3, 137}
+[Violine - PANTONE 2597C] {89, 5, 141}
+[Violine - PANTONE 3985C] {155, 137, 0}
+[Violine - PANTONE 807C] {215, 8, 178}
+[Zinzolin - PANTONE 254C] {150, 35, 153}
+[Zinzolin - PANTONE 2593C] {126, 43, 151}
+[Zinzolin - PANTONE 2603C] {104, 23, 127}
+[Zinzolin - PANTONE 2613C] {97, 23, 116}
