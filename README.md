@@ -11,4 +11,4 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/ton-compte/ComfyUI_DAO_master.git
+git clone https://github.com/orion4d/ComfyUI_DAO_master.git
