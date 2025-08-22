@@ -1,657 +1,299 @@
-# ComfyUI_DAO_master
+# 🎨 ComfyUI_DAO_master
 
-**ComfyUI_DAO_master** est une collection de **custom nodes** pour [ComfyUI](https://github.com/comfyanonymous/ComfyUI).  
-Ces nodes apportent des outils supplémentaires pour la création, la manipulation d’image et l’expérimentation visuelle avec un focus pour le vectoriel
-
----
-
-## 🚀 Installation
-
-1. Télécharger ou cloner ce dépôt dans le dossier `custom_nodes` de votre installation **ComfyUI** :
-
-```bash
-cd ComfyUI/custom_nodes
-git clone https://github.com/orion4d/ComfyUI_DAO_master.git
-```
-
-# Documentation
-
-##  primitives DXF
-
-Cette catégorie regroupe les nodes fondamentaux pour la création de formes géométriques simples. Ils constituent la base de tout dessin vectoriel.
-
-**Principe de fonctionnement commun :**
-Chaque node de cette catégorie fonctionne de manière non-destructive. Il prend un objet `DXF` en entrée, crée une copie de son contenu, y ajoute la nouvelle forme, et retourne un nouvel objet `DXF` en sortie. Le document d'origine n'est jamais modifié.
+**ComfyUI_DAO_master** est une collection de custom nodes pour **ComfyUI**.
+Ces nodes apportent des outils supplémentaires pour la création, la manipulation d’image et l’expérimentation visuelle, avec un focus sur les **workflows vectoriels** (DXF & SVG) et les utilitaires de production.
 
 ---
 
-### DXF Add Circle
-Ce node ajoute un cercle à un document DXF.
+### ✨ Aperçu des fonctionnalités
 
-*   **Description :** Crée un cercle défini par un point central et un rayon.
+*   **Création Vectorielle DXF :** Générez des formes primitives (cercles, rectangles, polygones...) et assemblez-les.
+*   **Manipulation SVG :** Effectuez des opérations booléennes (union, différence...), stylisez vos SVG et convertissez-les.
+*   **Conversion Robuste :** Passez facilement d'une image à un SVG (vectorisation) et d'un SVG à une image (rastérisation).
+*   **Utilitaires Puissants :** Un sélecteur de fichiers avancé, des sélecteurs de couleurs dynamiques, un générateur de texte complet et des filtres d'image pratiques.
+*   **Interface Améliorée :** De nombreux nodes disposent d'une interface utilisateur interactive avec des menus déroulants dynamiques pour une utilisation plus intuitive.
+
+---
+
+### 🚀 Installation
+
+1.  Naviguez vers le dossier `custom_nodes` de votre installation ComfyUI.
+2.  Clonez ce dépôt :
+    ```sh
+    cd ComfyUI/custom_nodes
+    git clone https://github.com/orion4d/ComfyUI_DAO_master.git
+    ```
+3.  **Installez les dépendances :** Certains nodes nécessitent des bibliothèques supplémentaires. Installez-les via pip :
+    ```sh
+    pip install cairosvg potrace ezdxf svgpathtools lxml pyclipper shapely
+    ```
+    *   **Note :** Le node `Convert IMG to SVG` fonctionne mieux si l'exécutable `potrace` est installé et accessible dans le PATH de votre système.
+
+---
+
+### 📚 Documentation des Nodes
+
+<details>
+<summary><strong>📐 DXF : Primitives</strong></summary>
+
+> Cette catégorie regroupe les nodes fondamentaux pour la création de formes géométriques simples. Ils constituent la base de tout dessin vectoriel.
+> **Principe de fonctionnement commun :** Chaque node de cette catégorie fonctionne de manière non-destructive. Il prend un objet `DXF` en entrée, crée une copie de son contenu, y ajoute la nouvelle forme, et retourne un nouvel objet `DXF` en sortie.
+
+<details>
+<summary><code>DXF Add Circle</code></summary>
+
+> Ajoute un cercle à un document DXF.
+
 *   **Catégorie :** `DAO_master/DXF/Primitives`
+*   **Entrées :**
+    *   `dxf` (`DXF`): Le document de base.
+    *   `cx`, `cy` (`FLOAT`): Coordonnées du centre.
+    *   `radius` (`FLOAT`): Rayon du cercle.
+*   **Sorties :**
+    *   `dxf` (`DXF`): Le nouveau document DXF avec le cercle.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base auquel ajouter la forme.
-*   `cx` (`FLOAT`, défaut: `0.0`): La coordonnée X du centre du cercle.
-*   `cy` (`FLOAT`, défaut: `0.0`): La coordonnée Y du centre du cercle.
-*   `radius` (`FLOAT`, défaut: `10.0`): Le rayon du cercle. Doit être une valeur positive.
+</details>
 
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant le cercle ajouté.
+<details>
+<summary><code>DXF Add Rectangle</code> / <code>DXF Add Rounded Rectangle</code></summary>
 
----
+> Ajoute un rectangle (standard ou aux coins arrondis) à un document DXF.
 
-### DXF Add Rectangle
-Ce node ajoute un rectangle à un document DXF.
-
-*   **Description :** Crée un rectangle défini par un point d'ancrage, une largeur et une hauteur.
 *   **Catégorie :** `DAO_master/DXF/Primitives`
+*   **Entrées :**
+    *   `dxf` (`DXF`): Le document de base.
+    *   `x`, `y` (`FLOAT`): Point d'ancrage.
+    *   `width`, `height` (`FLOAT`): Dimensions.
+    *   `radius` (`FLOAT`): Rayon des coins (pour la version arrondie).
+    *   `centered` (`BOOLEAN`): Si `True`, `(x, y)` est le centre ; sinon, c'est le coin inférieur gauche.
+*   **Sorties :**
+    *   `dxf` (`DXF`): Le nouveau document DXF avec le rectangle.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `x` (`FLOAT`, défaut: `0.0`): La coordonnée X du point d'ancrage.
-*   `y` (`FLOAT`, défaut: `0.0`): La coordonnée Y du point d'ancrage.
-*   `width` (`FLOAT`, défaut: `20.0`): La largeur du rectangle.
-*   `height` (`FLOAT`, défaut: `10.0`): La hauteur du rectangle.
-*   `centered` (`BOOLEAN`, défaut: `False`): Si `True`, le point `(x, y)` est le centre du rectangle. Si `False`, c'est le coin inférieur gauche.
+</details>
 
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant le rectangle ajouté.
+<details>
+<summary><code>DXF Add Polygon</code> / <code>DXF Add Star</code> / <code>DXF Add Triangle</code></summary>
 
----
+> Ajoute une forme polygonale (polygone régulier, étoile ou triangle) à un document DXF.
 
-### DXF Add Rounded Rectangle
-Ce node ajoute un rectangle avec des coins arrondis.
-
-*   **Description :** Similaire au rectangle standard, mais permet de spécifier un rayon pour adoucir les angles.
 *   **Catégorie :** `DAO_master/DXF/Primitives`
+*   **Entrées (Polygone/Étoile) :**
+    *   `dxf` (`DXF`): Le document de base.
+    *   `cx`, `cy` (`FLOAT`): Centre de la forme.
+    *   `outer_radius`, `inner_radius` (`FLOAT`): Rayons pour définir les sommets.
+    *   `num_sides` / `num_points` (`INT`): Nombre de côtés ou de pointes.
+*   **Entrées (Triangle) :**
+    *   `x1, y1, x2, y2, x3, y3` (`FLOAT`): Coordonnées des trois sommets.
+*   **Sorties :**
+    *   `dxf` (`DXF`): Le nouveau document DXF avec la forme.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `x` (`FLOAT`, défaut: `0.0`): La coordonnée X du point d'ancrage.
-*   `y` (`FLOAT`, défaut: `0.0`): La coordonnée Y du point d'ancrage.
-*   `width` (`FLOAT`, défaut: `20.0`): La largeur totale du rectangle.
-*   `height` (`FLOAT`, défaut: `10.0`): La hauteur totale du rectangle.
-*   `radius` (`FLOAT`, défaut: `2.0`): Le rayon des quatre coins arrondis. Si le rayon est `0`, un rectangle standard est dessiné.
-*   `centered` (`BOOLEAN`, défaut: `False`): Si `True`, le point `(x, y)` est le centre. Si `False`, c'est le coin inférieur gauche.
+</details>
 
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant le rectangle arrondi.
+<details>
+<summary><code>DXF Add Line</code> / <code>DXF Add Ellipse</code></summary>
 
----
+> Ajoute une ligne ou une ellipse à un document DXF.
 
-### DXF Add Line
-Ce node ajoute un segment de ligne simple.
-
-*   **Description :** Dessine une ligne droite entre deux points définis par leurs coordonnées.
 *   **Catégorie :** `DAO_master/DXF/Primitives`
+*   **Entrées (Ligne) :**
+    *   `x1, y1, x2, y2` (`FLOAT`): Coordonnées des points de départ et d'arrivée.
+*   **Entrées (Ellipse) :**
+    *   `cx, cy` (`FLOAT`): Centre de l'ellipse.
+    *   `major_axis_x, major_axis_y` (`FLOAT`): Vecteur de l'axe principal (définit la longueur et l'orientation).
+    *   `ratio` (`FLOAT`): Rapport entre l'axe mineur et l'axe majeur.
+*   **Sorties :**
+    *   `dxf` (`DXF`): Le nouveau document DXF avec la forme.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `x1` (`FLOAT`, défaut: `0.0`): Coordonnée X du point de départ.
-*   `y1` (`FLOAT`, défaut: `0.0`): Coordonnée Y du point de départ.
-*   `x2` (`FLOAT`, défaut: `20.0`): Coordonnée X du point d'arrivée.
-*   `y2` (`FLOAT`, défaut: `0.0`): Coordonnée Y du point d'arrivée.
+</details>
 
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant la ligne ajoutée.
+</details>
 
----
+<details>
+<summary><strong>📂 DXF : I/O, Modification et Utilitaires</strong></summary>
 
-### DXF Add Polygon
-Ce node ajoute un polygone régulier.
+<details>
+<summary><code>DXF New</code> / <code>DXF Import</code> / <code>DXF Save</code></summary>
 
-*   **Description :** Crée un polygone régulier (tous les côtés et angles sont égaux) inscrit dans un cercle.
-*   **Catégorie :** `DAO_master/DXF/Primitives`
+> Crée, charge ou sauvegarde des documents DXF.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `cx` (`FLOAT`, défaut: `0.0`): La coordonnée X du centre du polygone.
-*   `cy` (`FLOAT`, défaut: `0.0`): La coordonnée Y du centre du polygone.
-*   `radius` (`FLOAT`, défaut: `10.0`): Le rayon du cercle circonscrit au polygone (la distance du centre à chaque sommet).
-*   `num_sides` (`INT`, défaut: `6`): Le nombre de côtés du polygone (ex: 3 pour un triangle, 5 pour un pentagone, 6 pour un hexagone).
+*   **Catégorie :** `DAO_master/DXF`, `DAO_master/DXF/IO`
+*   **Fonctionnalités :**
+    *   **New :** Crée un document DXF vierge en spécifiant les unités.
+    *   **Import :** Charge un fichier `.dxf` depuis le disque.
+    *   **Save :** Sauvegarde un objet DXF en fichier `.dxf`, avec des options d'horodatage.
 
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant le polygone ajouté.
+</details>
 
----
+<details>
+<summary><code>DXF Transform</code></summary>
 
-### DXF Add Ellipse
-Ce node ajoute une ellipse.
+> Applique des transformations géométriques (translation, rotation, échelle) à l'ensemble du dessin.
 
-*   **Description :** Crée une ellipse définie par son centre, son axe majeur et le ratio de son axe mineur.
-*   **Catégorie :** `DAO_master/DXF/Primitives`
-
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `cx` (`FLOAT`, défaut: `0.0`): La coordonnée X du centre de l'ellipse.
-*   `cy` (`FLOAT`, défaut: `0.0`): La coordonnée Y du centre de l'ellipse.
-*   `major_axis_x` (`FLOAT`, défaut: `20.0`): Composante X du vecteur de l'axe majeur. Ce vecteur définit la longueur et l'orientation de l'ellipse.
-*   `major_axis_y` (`FLOAT`, défaut: `0.0`): Composante Y du vecteur de l'axe majeur.
-*   `ratio` (`FLOAT`, défaut: `0.5`): Le rapport entre la longueur de l'axe mineur et celle de l'axe majeur (valeur entre 0 et 1).
-
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant l'ellipse ajoutée.
-
-*   ### DXF Add Star
-Ce node ajoute une étoile à un document DXF.
-
-*   **Description :** Crée une étoile définie par un centre, deux rayons (externe et interne) et un nombre de pointes.
-*   **Catégorie :** `DAO_master/DXF/Primitives`
-
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `cx` (`FLOAT`, défaut: `0.0`): La coordonnée X du centre de l'étoile.
-*   `cy` (`FLOAT`, défaut: `0.0`): La coordonnée Y du centre de l'étoile.
-*   `outer_radius` (`FLOAT`, défaut: `20.0`): Le rayon externe (distance du centre aux pointes de l'étoile).
-*   `inner_radius` (`FLOAT`, défaut: `10.0`): Le rayon interne (distance du centre aux creux de l'étoile).
-*   `num_points` (`INT`, défaut: `5`): Le nombre de branches/pointes que possède l'étoile.
-
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant l'étoile ajoutée.
-
----
-
-### DXF Add Triangle
-Ce node ajoute un triangle.
-
-*   **Description :** Crée un triangle en reliant trois points spécifiés par leurs coordonnées.
-*   **Catégorie :** `DAO_master/DXF/Primitives`
-
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF de base.
-*   `x1` (`FLOAT`, défaut: `0.0`): Coordonnée X du premier sommet du triangle.
-*   `y1` (`FLOAT`, défaut: `0.0`): Coordonnée Y du premier sommet du triangle.
-*   `x2` (`FLOAT`, défaut: `20.0`): Coordonnée X du deuxième sommet du triangle.
-*   `y2` (`FLOAT`, défaut: `0.0`): Coordonnée Y du deuxième sommet du triangle.
-*   `x3` (`FLOAT`, défaut: `10.0`): Coordonnée X du troisième sommet du triangle.
-*   `y3` (`FLOAT`, défaut: `15.0`): Coordonnée Y du troisième sommet du triangle.
-
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le nouveau document DXF contenant le triangle ajouté.
-
-## Création et I/O (Input/Output)
-
-Ces nodes permettent de créer de nouveaux documents DXF, de les charger depuis un fichier ou de les sauvegarder sur le disque.
-
----
-
-### DXF New
-Ce node est le point de départ pour la plupart des workflows. Il crée un document DXF vierge.
-
-*   **Description :** Initialise un nouvel environnement de dessin vectoriel.
-*   **Catégorie :** `DAO_master/DXF`
-
-**Entrées (Inputs)**
-*   `units` (`LISTE`, défaut: `mm`): Définit l'unité de mesure principale pour le document (millimètres, centimètres, pouces, etc.). Cette information est stockée dans l'en-tête du fichier DXF.
-
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Un nouvel objet DXF vide, prêt à recevoir des formes.
-
----
-
-### DXF Import
-Ce node permet de charger un fichier DXF existant depuis votre ordinateur.
-
-*   **Description :** Lit un fichier `.dxf` et le convertit en un objet `DXF` utilisable dans ComfyUI.
-*   **Catégorie :** `DAO_master/DXF/IO`
-
-**Entrées (Inputs)**
-*   `file_path` (`STRING`): Le chemin d'accès complet vers le fichier DXF à importer.
-
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): L'objet DXF contenant la géométrie du fichier chargé.
-
----
-
-### DXF Save
-Ce node sauvegarde l'objet DXF en cours dans un fichier `.dxf`.
-
-*   **Description :** Écrit le contenu de l'objet DXF sur le disque.
-*   **Catégorie :** `DAO_master/DXF/Utils`
-
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF à sauvegarder.
-*   `directory` (`STRING`, défaut: `output/dxf`): Le dossier de destination pour le fichier.
-*   `filename` (`STRING`, défaut: `shape.dxf`): Le nom du fichier de sortie.
-*   `timestamp_suffix` (`BOOLEAN`, défaut: `True`): Si `True`, ajoute un horodatage (date et heure) au nom du fichier pour éviter d'écraser les versions précédentes.
-*   `save_file` (`BOOLEAN`, défaut: `True`): Un interrupteur pour activer ou désactiver la sauvegarde. Utile pour contrôler l'exécution dans des workflows complexes.
-
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Le même objet DXF passé en entrée (pass-through).
-*   `path` (`STRING`): Le chemin d'accès complet du fichier qui a été sauvegardé.
-
----
-
-## Modification
-
-Cette catégorie contient les nodes qui altèrent la géométrie existante.
-
----
-
-### DXF Transform
-Ce node applique des transformations géométriques (translation, rotation, échelle) à l'ensemble du dessin.
-
-*   **Description :** Modifie la position, la taille et l'orientation de toutes les entités d'un document DXF.
 *   **Catégorie :** `DAO_master/DXF/Modify`
+*   **Entrées :**
+    *   `translate_x`, `translate_y` (`FLOAT`): Déplacement.
+    *   `scale` (`FLOAT`): Facteur d'échelle.
+    *   `rotation_degrees` (`FLOAT`): Angle de rotation.
+    *   `rotation_center` (`LISTE`): Point pivot (`object_center` ou `origin`).
+*   **Sorties :**
+    *   `dxf` (`DXF`): Un nouveau document avec la géométrie transformée.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF à transformer.
-*   `translate_x` (`FLOAT`, défaut: `0.0`): Déplacement horizontal (gauche/droite).
-*   `translate_y` (`FLOAT`, défaut: `0.0`): Déplacement vertical (haut/bas).
-*   `scale` (`FLOAT`, défaut: `1.0`): Facteur d'échelle. `1.0` = taille originale, `<1.0` = réduction, `>1.0` = agrandissement.
-*   `rotation_degrees` (`FLOAT`, défaut: `0.0`): Angle de rotation en degrés.
-*   `rotation_center` (`LISTE`, défaut: `object_center`): Le point pivot pour la rotation.
-    *   `object_center`: Le centre géométrique de l'ensemble des formes.
-    *   `origin`: Le point d'origine du document (0,0).
+</details>
 
-**Sorties (Outputs)**
-*   `dxf` (`DXF`): Un nouveau document DXF contenant la géométrie transformée.
+<details>
+<summary><code>DXF Preview</code></summary>
 
----
+> Génère un aperçu visuel (une image) du contenu d'un objet DXF.
 
-## Utilitaires (Utils)
-
-Ces nodes fournissent des outils pour visualiser ou analyser les données DXF.
-
----
-
-### DXF Preview
-Ce node génère un aperçu visuel (une image) du contenu d'un objet DXF.
-
-*   **Description :** Effectue un rendu rastérisé du dessin vectoriel pour l'afficher dans ComfyUI.
 *   **Catégorie :** `DAO_master/DXF/Utils`
+*   **Fonctionnalités :** Contrôle total sur la taille, l'épaisseur des traits, les couleurs de remplissage/contour, le fond et la grille. Peut également générer un masque.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document à prévisualiser.
-*   `size` (`INT`, défaut: `512`): La résolution de l'image de sortie (en pixels, `size` x `size`).
-*   `line_width` (`INT`, défaut: `3`): L'épaisseur des traits en pixels.
-*   `stroke_hex` (`STRING`, défaut: `#000000`): La couleur des traits (format hexadécimal).
-*   `fill_enabled` (`BOOLEAN`, défaut: `False`): Active ou désactive le remplissage des formes fermées.
-*   `fill_hex` (`STRING`, défaut: `#00A2FF`): La couleur de remplissage.
-*   `bg_enabled` (`BOOLEAN`, défaut: `True`): Active ou désactive le fond de l'image.
-*   `bg_hex` (`STRING`, défaut: `#F5F5F5`): La couleur du fond.
-*   `show_grid` (`BOOLEAN`, défaut: `True`): Affiche une grille en arrière-plan.
-*   `transparent_bg` (`BOOLEAN`, défaut: `False`): Si `True`, le fond est transparent (l'image de sortie aura un canal alpha).
-*   `emit_mask` (`BOOLEAN`, défaut: `False`): Si `True`, génère un masque en niveaux de gris où les formes sont blanches et le fond noir.
+</details>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): L'image de l'aperçu.
-*   `mask` (`MASK`): Le masque de la géométrie.
+<details>
+<summary><code>DXF Stats</code></summary>
 
----
+> Analyse un document DXF et en extrait des statistiques.
 
-### DXF Stats
-Ce node analyse un document DXF et en extrait des statistiques simples.
-
-*   **Description :** Fournit des informations sur les dimensions et le contenu du dessin.
 *   **Catégorie :** `DAO_master/DXF/Utils`
+*   **Sorties :**
+    *   `bbox` (`STRING`): La boîte englobante du dessin `(min_x, min_y, max_x, max_y)`.
+    *   `count` (`INT`): Le nombre total d'entités dans le document.
 
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document à analyser.
+</details>
 
-**Sorties (Outputs)**
-*   `bbox` (`STRING`): La "bounding box" (boîte englobante), qui représente le plus petit rectangle contenant toutes les formes. Format: `(min_x, min_y, max_x, max_y)`.
-*   `count` (`INT`): Le nombre total d'entités (lignes, cercles, etc.) dans le document.
+</details>
 
----
+<details>
+<summary><strong>🎨 SVG : Manipulation et Conversion</strong></summary>
 
-## Conversion
+<details>
+<summary><code>SVG Boolean</code></summary>
 
-Ces nodes permettent de passer d'un format de données à un autre.
+> Effectue des opérations booléennes (Pathfinder) entre deux formes SVG.
 
----
-
-### DXF to SVG
-Ce node convertit un document DXF en code SVG (Scalable Vector Graphics).
-
-*   **Description :** Transforme la géométrie DXF en un format SVG textuel, en tentant d'assembler les segments de lignes pour créer des chemins propres.
-*   **Catégorie :** `DAO_master/SVG/Convert`
-
-**Entrées (Inputs)**
-*   `dxf` (`DXF`): Le document DXF à convertir.
-*   `curve_quality` (`INT`, défaut: `50`): Précision de la conversion des courbes en segments de ligne (plus la valeur est haute, plus c'est précis).
-*   `scale` (`FLOAT`, défaut: `1.0`): Facteur de zoom appliqué à la `viewBox` du SVG.
-*   `padding_percent` (`FLOAT`, défaut: `5.0`): Marge ajoutée autour du dessin (en pourcentage de sa taille).
-*   `close_tolerance_percent` (`FLOAT`, défaut: `0.0`): Tolérance pour joindre des segments de lignes proches et former des polygones fermés. `0.0` pour une détection automatique.
-*   `fill_rule` (`LISTE`, défaut: `evenodd`): Règle de remplissage SVG. `evenodd` permet de gérer correctement les "trous" dans les formes.
-*   ... (paramètres de sauvegarde de fichier identiques à `DXF Save`)
-
-**Sorties (Outputs)**
-*   `svg_text` (`SVG_TEXT`): Le contenu complet du fichier SVG sous forme de chaîne de caractères.
-*   `path` (`STRING`): Le chemin d'accès complet du fichier `.svg` sauvegardé (si l'option est activée).
-
-*   ## Manipulation SVG
-
-Ces nodes permettent de modifier, combiner et prévisualiser des données au format SVG.
-
----
-
-### SVG Boolean
-Ce node effectue des opérations booléennes (union, différence, etc.) entre deux formes SVG.
-
-*   **Description :** Combine deux géométries SVG pour en créer une nouvelle. C'est l'équivalent des fonctions "Pathfinder" dans les logiciels de dessin vectoriel.
 *   **Catégorie :** `DAO_master/SVG`
-
-**Entrées (Inputs)**
-*   `svg_a` (`SVG_TEXT`): Le premier SVG (sujet).
-*   `svg_b` (`SVG_TEXT`): Le deuxième SVG (opérateur).
-*   `operation` (`LISTE`): L'opération à effectuer :
+*   **Entrées :** `svg_a`, `svg_b`
+*   **Opérations :**
     *   `union`: Fusionne les deux formes.
     *   `difference`: Soustrait la forme B de la forme A.
-    *   `intersection`: Ne conserve que la zone où les deux formes se superposent.
-    *   `xor`: Ne conserve que les zones où les formes ne se superposent pas.
-*   `curve_quality` (`INT`, défaut: `60`): Précision utilisée pour convertir les courbes en segments de lignes avant l'opération. Une valeur plus élevée donne un résultat plus précis mais peut être plus lente.
+    *   `intersection`: Ne conserve que la zone commune.
+    *   `xor`: Ne conserve que les zones non communes.
 
-**Sorties (Outputs)**
-*   `svg_text` (`SVG_TEXT`): Le SVG résultant de l'opération booléenne.
+</details>
 
----
+<details>
+<summary><code>SVG Style</code> / <code>SVG Preview</code></summary>
 
-### SVG Style
-Ce node applique des styles de remplissage et de contour à un SVG.
+> Applique des styles ou génère un aperçu d'un SVG.
 
-*   **Description :** Permet de définir ou de remplacer les attributs de style (`fill`, `stroke`, `stroke-width`) de tous les chemins (`<path>`) à l'intérieur d'un SVG.
 *   **Catégorie :** `DAO_master/SVG`
+*   **Fonctionnalités :**
+    *   **Style :** Permet de définir la couleur de remplissage, la couleur et l'épaisseur du contour.
+    *   **Preview :** Utilise `CairoSVG` pour un rendu de haute qualité avec gestion du ratio d'aspect.
 
-**Entrées (Inputs)**
-*   `svg_text` (`SVG_TEXT`): Le SVG à styliser.
-*   `fill_enabled` (`BOOLEAN`, défaut: `True`): Active ou désactive le remplissage.
-*   `fill_color` (`STRING`, défaut: `#00A2FF`): La couleur de remplissage (format hexadécimal).
-*   `stroke_color` (`STRING`, défaut: `#000000`): La couleur du contour.
-*   `stroke_width` (`FLOAT`, défaut: `1.0`): L'épaisseur du contour. Une valeur de `0` désactive le contour.
+</details>
 
-**Sorties (Outputs)**
-*   `svg_text` (`SVG_TEXT`): Le SVG avec les nouveaux styles appliqués.
+<details>
+<summary><code>SVG Load</code> / <code>SVG Save</code> / <code>SVG Passthrough</code></summary>
 
----
+> Charge, sauvegarde ou convertit le type de données SVG.
 
-### SVG Preview
-Génère une prévisualisation d'un SVG sous forme d'image. Nécessite l'installation de `cairosvg`.
+*   **Catégorie :** `DAO_master/SVG/IO`, `DAO_master/SVG/Utils`
+*   **Fonctionnalités :**
+    *   **Load :** Charge un `.svg` et permet de le redimensionner à la volée.
+    *   **Save :** Sauvegarde du texte SVG dans un fichier `.svg`.
+    *   **Passthrough :** Convertit le type `SVG_TEXT` en `STRING` pour la compatibilité.
 
-*   **Description :** Utilise la bibliothèque CairoSVG pour effectuer un rendu de haute qualité d'un SVG.
-*   **Catégorie :** `DAO_master/SVG`
+</details>
 
-**Entrées (Inputs)**
-*   `svg_text` (`SVG_TEXT`): Le SVG à prévisualiser.
-*   `width` (`INT`, défaut: `512`): Largeur de l'image de sortie.
-*   `height` (`INT`, défaut: `512`): Hauteur de l'image de sortie.
-*   `fit_mode` (`LISTE`): Gère le redimensionnement du SVG pour l'adapter à la sortie :
-    *   `stretch`: Étire le SVG pour remplir les dimensions `width` x `height`.
-    *   `fit_width`: Ajuste la hauteur pour conserver le ratio d'aspect en fonction de la largeur.
-    *   `fit_height`: Ajuste la largeur pour conserver le ratio d'aspect en fonction de la hauteur.
-    *   `contain`: Redimensionne pour que le SVG soit entièrement visible sans déformation, centré dans la zone.
-*   `bg_enabled` (`BOOLEAN`, défaut: `False`): Active un fond de couleur unie.
-*   `bg_color_hex` (`STRING`, défaut: `#FFFFFF`): Couleur du fond. Si désactivé, le fond est transparent.
+<details>
+<summary><code>DXF to SVG</code></summary>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): L'image de l'aperçu.
+> Convertit un document DXF en code SVG.
 
----
-
-## I/O SVG (Input/Output)
-
----
-
-### SVG Load
-Charge un fichier SVG depuis le disque et permet de le redimensionner.
-
-*   **Description :** Lit un fichier `.svg`, le parse et permet d'appliquer une transformation d'échelle à son contenu ou à sa zone de dessin (`canvas`).
-*   **Catégorie :** `DAO_master/SVG/IO`
-
-**Entrées (Inputs)**
-*   `file_path` (`STRING`): Chemin d'accès au fichier SVG.
-*   `scale` (`FLOAT`, défaut: `1.0`): Facteur d'échelle appliqué au contenu du SVG.
-*   `center_on_viewbox` (`BOOLEAN`, défaut: `True`): Si `True`, la mise à l'échelle se fait par rapport au centre de la `viewBox` du SVG.
-*   `scale_canvas` (`BOOLEAN`, défaut: `False`): Si `True`, met également à l'échelle les attributs `width` et `height` de la balise `<svg>`.
-*   `ensure_viewbox` (`BOOLEAN`, défaut: `True`): Si le SVG n'a pas de `viewBox` mais a `width` et `height`, en crée une automatiquement.
-
-**Sorties (Outputs)**
-*   `svg_text` (`SVG_TEXT`): Le contenu du fichier SVG (potentiellement modifié).
-*   `path` (`STRING`): Le chemin absolu du fichier chargé.
-
----
-
-### SVG Save
-Sauvegarde une chaîne de texte SVG dans un fichier `.svg`.
-
-*   **Description :** Écrit le contenu `SVG_TEXT` sur le disque.
-*   **Catégorie :** `DAO_master/SVG/IO`
-
-**Entrées (Inputs)**
-*   `svg_text` (`SVG_TEXT`): Le contenu SVG à sauvegarder.
-*   ... (paramètres `directory`, `filename`, `timestamp_suffix` identiques à `DXF Save`)
-
-**Sorties (Outputs)**
-*   `path` (`STRING`): Le chemin absolu du fichier sauvegardé.
-
----
-
-### SVG Passthrough
-Convertit un type `SVG_TEXT` en `STRING` standard.
-
-*   **Description :** Node utilitaire simple servant de convertisseur de type pour connecter une sortie `SVG_TEXT` à une entrée qui attend une `STRING` générique.
-*   **Catégorie :** `DAO_master/SVG/Utils`
-
-**Entrées (Inputs)**
-*   `svg_text` (`SVG_TEXT`): Le SVG en entrée.
-
-**Sorties (Outputs)**
-*   `string` (`STRING`): Le même contenu, mais de type `STRING`.
-
----
-
-## Conversion SVG ↔ Image
-
----
-
-### Convert SVG → IMG (+colors)
-Convertit un SVG en une image rastérisée et extrait les couleurs utilisées.
-
-*   **Description :** Un node de conversion avancé qui parse la structure d'un SVG, identifie les formes et leurs couleurs, puis les rend sous forme d'image. Il propose deux moteurs de rendu : un "natif" basé sur PIL et un basé sur "CairoSVG" pour une meilleure compatibilité.
 *   **Catégorie :** `DAO_master/SVG/Convert`
+*   **Description :** Transforme la géométrie DXF en un format SVG textuel, en tentant d'assembler intelligemment les segments pour créer des chemins propres. Offre des contrôles sur la qualité des courbes et la mise en page.
 
-**Entrées (Inputs)**
-*   `svg_text` (`SVG_TEXT`): Le contenu SVG à convertir.
-*   `svg_path` (`STRING`, optionnel): Chemin vers un fichier SVG, utilisé si `svg_text` est vide.
-*   `width` (`INT`, défaut: `512`): Largeur de l'image de sortie (la hauteur est calculée pour garder le ratio).
-*   `scale_in_canvas` (`FLOAT`, défaut: `1.0`): Applique un zoom "dans" le SVG en modifiant sa `viewBox` avant le rendu.
-*   `transparent_bg` (`BOOLEAN`, défaut: `False`): Rend l'image avec un fond transparent.
-*   `background_hex` (`STRING`, défaut: `#000000`): Couleur de fond si la transparence est désactivée.
-*   `pad_px` (`INT`, défaut: `0`): Ajoute une marge (padding) en pixels autour de l'image.
-*   `keep_alpha_as_mask` (`BOOLEAN`, défaut: `True`): Si `True`, génère un masque basé sur les zones non transparentes de l'image.
-*   `stroke_only` (`BOOLEAN`, défaut: `False`): Ne rend que les contours (`stroke`), ignore les remplissages (`fill`).
-*   `open_subpaths_px` (`INT`, défaut: `0`): Si supérieur à 0, les chemins ouverts (non fermés) seront rendus avec cette épaisseur.
-*   `renderer` (`LISTE`, défaut: `auto`): Choix du moteur de rendu. `auto` essaie le `native` d'abord, et si le résultat semble vide, bascule sur `cairosvg`.
+</details>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): L'image rastérisée du SVG.
-*   `mask` (`MASK`): Le masque de l'image.
-*   `colors_json` (`STRING`): Une chaîne JSON listant toutes les formes détectées avec leur type (`fill`/`stroke`) et leur couleur.
+<details>
+<summary><code>Convert SVG → IMG (+colors)</code></summary>
 
----
+> Convertit un SVG en une image rastérisée et extrait les couleurs utilisées.
 
-### Convert IMG → SVG (1-bit)
-Convertit une image en un SVG monochrome en utilisant Potrace.
-
-*   **Description :** Ce node binarise une image (la transforme en noir et blanc pur) puis utilise l'algorithme de Potrace pour tracer les contours des formes, générant ainsi un SVG.
 *   **Catégorie :** `DAO_master/SVG/Convert`
+*   **Description :** Un node de conversion avancé avec deux moteurs de rendu (`natif` ou `cairosvg`) pour une compatibilité maximale.
+*   **Sorties :** `image`, `mask`, et `colors_json` (un rapport détaillé des couleurs et formes détectées).
 
-**Entrées (Inputs)**
-*   `image` (`IMAGE`): L'image source.
-*   `threshold` (`INT`, défaut: `128`): Seuil de luminosité (0-255) pour la binarisation.
-*   `auto_otsu` (`BOOLEAN`, défaut: `True`): Si `True`, calcule automatiquement le meilleur seuil (méthode d'Otsu) et ignore la valeur `threshold`.
-*   `invert` (`BOOLEAN`, défaut: `False`): Inverse le noir et le blanc avant le traçage.
-*   ... (paramètres `turdsize`, `alphamax`, etc.) : Paramètres avancés de l'algorithme Potrace pour contrôler la finesse et la simplification du tracé.
-*   `fill_rule` (`LISTE`, défaut: `nonzero`): Règle de remplissage pour le SVG généré.
-*   `backend` (`LISTE`, défaut: `auto`): Permet de choisir entre l'exécutable `potrace` (si installé) ou la bibliothèque Python.
-*   ... (paramètres de sauvegarde `save_svg`, `out_dir`, etc.)
+</details>
 
-**Sorties (Outputs)**
-*   `svg_path` (`STRING`): Le chemin du fichier `.svg` sauvegardé (si l'option est activée).
-*   `svg_text` (`SVG_TEXT`): Le contenu du SVG généré sous forme de texte.
-*   `preview` (`IMAGE`): Un aperçu de l'image binarisée qui a été utilisée pour le traçage.
+<details>
+<summary><code>Convert IMG → SVG (1-bit)</code></summary>
 
-*   ## Utilitaires, Filtres et Générateurs
+> Vectorise une image en un SVG monochrome en utilisant Potrace.
 
-Cette section regroupe un ensemble de nodes polyvalents pour la manipulation de couleurs, la création de texte, l'application de filtres sur les images et la sélection de fichiers.
+*   **Catégorie :** `DAO_master/SVG/Convert`
+*   **Description :** Binarise une image (la transforme en noir et blanc pur) puis utilise l'algorithme de Potrace pour tracer les contours des formes, générant ainsi un SVG.
 
----
+</details>
 
-### Utilitaires de Sélection
+</details>
 
-#### DAO Hex Color Picker
-Permet de sélectionner une couleur et de la sortir sous forme d'image et de code hexadécimal.
+<details>
+<summary><strong>🛠️ Utilitaires, Filtres et Générateurs</strong></summary>
 
-*   **Description :** Ce node offre une interface conviviale pour choisir une couleur, soit manuellement, soit à partir de listes prédéfinies.
+<details>
+<summary><code>DAO Hex/RVB Color Picker</code></summary>
+
+> Des sélecteurs de couleurs interactifs pour choisir des couleurs à partir de listes personnalisables.
+
 *   **Catégorie :** `DAO_master/Color`
-*   **Fonctionnement UI :** Le node transforme les champs `list_file` et `color` en menus déroulants dynamiques. Vous pouvez créer vos propres listes de couleurs en ajoutant des fichiers `.txt` dans le dossier `ComfyUI/custom_nodes/ComfyUI_DAO_master/hexadecimal_List/`. Le format d'une ligne est `[Nom de la couleur]{#RRGGBB}`. Un bouton `↻` permet de rafraîchir les listes.
+*   **💡 Fonctionnement UI :** Créez vos propres listes de couleurs dans les dossiers `hexadecimal_List/` ou `RGB_List/`. Le node affichera des menus déroulants pour choisir le fichier et la couleur. Un bouton `↻` permet de rafraîchir les listes.
+*   **Modes :** `Manual`, `Random`, `Increment`, `Decrement`.
 
-**Entrées (Inputs)**
-*   `list_file` (`LISTE`): Le fichier `.txt` à utiliser comme source de couleurs.
-*   `color` (`LISTE`): La couleur à sélectionner dans la liste. En mode `Manual`, vous pouvez entrer directement un code hexadécimal.
-*   `mode` (`LISTE`): Le mode de sélection de la couleur.
-    *   `Manual`: Utilise la valeur du champ `color`.
-    *   `Random`: Sélectionne une couleur au hasard dans la liste en se basant sur la `seed`.
-    *   `Increment` / `Decrement`: Parcourt la liste de manière séquentielle en fonction de la `seed`.
-*   `seed` (`INT`): Graine utilisée pour les modes non-manuels.
-*   `width`/`height` (`INT`): Dimensions de l'image de couleur unie en sortie.
+</details>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): Une image de couleur unie.
-*   `hex` (`STRING`): La couleur sélectionnée au format hexadécimal (ex: `#FFFFFF`).
+<details>
+<summary><code>Folder File Picker</code></summary>
 
----
+> Un explorateur de fichiers avancé pour sélectionner dynamiquement un fichier dans un dossier.
 
-#### DAO RVB Color Picker
-Similaire au Hex Color Picker, mais travaille avec des valeurs RVB (Rouge, Vert, Bleu).
-
-*   **Description :** Fournit une sélection de couleur et la décompose en ses composantes RVB.
-*   **Catégorie :** `DAO_master/Color`
-*   **Fonctionnement UI :** Identique au Hex Picker, mais les listes de couleurs se trouvent dans `ComfyUI/custom_nodes/ComfyUI_DAO_master/RGB_List/`. Le format est `[Nom de la couleur]{R, G, B}`.
-
-**Entrées (Inputs)**
-*   ... (identiques au Hex Color Picker)
-*   `mask` (`MASK`, optionnel): Un masque qui sera transmis en sortie.
-
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): Une image de couleur unie.
-*   `hex` (`STRING`): La couleur au format hexadécimal.
-*   `R` / `V` / `B` (`STRING`): Les composantes Rouge, Vert et Bleu (0-255) sous forme de chaînes de caractères.
-*   `RVB` (`STRING`): Les trois composantes combinées (ex: `255, 255, 255`).
-*   `mask` (`MASK`): Le masque d'entrée, ou un masque blanc uni si non fourni.
-
----
-
-#### Folder File Picker
-Un explorateur de fichiers avancé pour sélectionner un fichier dans un dossier.
-
-*   **Description :** Ce node permet de parcourir un répertoire, de filtrer les fichiers par extension ou expression régulière (RegEx), de les trier, et de sélectionner un fichier spécifique soit manuellement, soit de manière procédurale via une `seed`.
 *   **Catégorie :** `DAO_master/IO`
-*   **Fonctionnement UI :** Le node possède une interface très interactive. Le champ `index` est remplacé par un menu déroulant listant les fichiers trouvés. Tous les champs de filtrage et de tri, ainsi qu'un bouton `↻`, mettent à jour cette liste en temps réel.
+*   **💡 Fonctionnement UI :** Une interface très réactive où tous les paramètres de filtrage (extensions, RegEx) et de tri mettent à jour un menu déroulant listant les fichiers trouvés en temps réel.
+*   **Modes de sélection :** `manual` (via l'UI), `fixed`, `increment`, `decrement`, `randomize` (piloté par la `seed`).
 
-**Entrées (Inputs)**
-*   **Filtrage et Tri :**
-    *   `directory` (`STRING`): Le dossier à explorer.
-    *   `extensions` (`STRING`): Liste des extensions à inclure, séparées par des virgules (ex: `.png, .jpg`).
-    *   `name_regex` (`STRING`): Une expression régulière pour filtrer les noms de fichiers.
-    *   `regex_mode` (`LISTE`): `include` (ne garde que les fichiers correspondants) ou `exclude` (retire les fichiers correspondants).
-    *   `recursive` (`BOOLEAN`): Si `True`, explore également les sous-dossiers.
-    *   `sort_by` (`LISTE`): Critère de tri (`name`, `mtime` pour date de modification, `size`).
-    *   `descending` (`BOOLEAN`): Inverse l'ordre de tri.
-*   **Sélection :**
-    *   `index` (`INT`): L'index du fichier à sélectionner (contrôlé par le menu déroulant de l'interface).
-    *   `seed_mode` (`LISTE`): Méthode de sélection automatique.
-        *   `manual`: Utilise l'index du menu déroulant.
-        *   `fixed`: Sélectionne le fichier à l'index `seed % nombre_de_fichiers`.
-        *   `increment` / `decrement`: Parcourt les fichiers à chaque exécution.
-        *   `randomize`: Sélectionne un fichier au hasard basé sur la `seed`.
-    *   `seed` (`INT`): Graine pour les modes automatiques.
+</details>
 
-**Sorties (Outputs)**
-*   `file_path` (`STRING`): Le chemin complet du fichier sélectionné.
-*   `filename` (`STRING`): Le nom du fichier seul.
-*   `dir_used` (`STRING`): Le chemin absolu du dossier exploré.
-*   `files_json` (`STRING`): Une liste de tous les fichiers trouvés, au format JSON.
+<details>
+<summary><code>DAO Text Maker</code></summary>
 
----
+> Crée une image, un SVG et un masque à partir d'un texte.
 
-### Générateurs
-
-#### DAO Text Maker
-Crée une image, un SVG et un masque à partir d'un texte.
-
-*   **Description :** Un outil de génération de texte complet qui offre un contrôle précis sur la police, les couleurs, le contour, le fond et le format de sortie.
 *   **Catégorie :** `DAO_master/Text`
-*   **Fonctionnement UI :** Le champ `font_file` est un menu déroulant qui liste les polices disponibles dans le dossier `ComfyUI/custom_nodes/ComfyUI_DAO_master/Fonts/`.
+*   **💡 Fonctionnement UI :** Le champ `font_file` devient un menu déroulant listant les polices `.ttf`/`.otf` que vous placez dans le dossier `Fonts/`.
+*   **Fonctionnalités :** Contrôle total sur la police, la taille, l'alignement, les couleurs de remplissage/contour, le fond, et la sortie (SVG textuel ou vectorisé).
 
-**Entrées (Inputs)**
-*   **Texte et Police :**
-    *   `text` (`STRING`): Le texte à afficher (supporte les sauts de ligne).
-    *   `font_file` (`LISTE`): La police de caractères à utiliser.
-    *   `font_size` (`INT`): La taille de la police.
-*   **Canevas et Alignement :**
-    *   `canvas_width`/`canvas_height` (`INT`): Dimensions de l'image/SVG de sortie.
-    *   `align` (`LISTE`): Alignement horizontal du texte (`center`, `left`, `right`).
-*   **Couleurs et Style :**
-    *   `fill_hex`/`fill_alpha`: Couleur et opacité du remplissage du texte.
-    *   `stroke_width`/`stroke_hex`/`stroke_alpha`: Épaisseur, couleur et opacité du contour.
-    *   `bg_transparent`/`bg_hex`: Permet de définir un fond transparent ou de couleur unie.
-*   **Options de Sortie :**
-    *   `svg_vectorize` (`BOOLEAN`): Si `True`, génère un SVG avec des chemins vectoriels (`<path>`), ce qui est idéal pour les logiciels de dessin. Si `False`, génère un SVG avec une balise `<text>`.
-    *   `image_rgba` (`BOOLEAN`): Si `True` et que le fond est transparent, l'image de sortie aura un canal alpha.
-    *   `stroke_width_alpha` (`INT`): Ajoute une épaisseur supplémentaire au `masque` de sortie uniquement, sans affecter l'image visible. Utile pour "grossir" le masque pour des opérations ultérieures.
+</details>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): L'image rastérisée du texte.
-*   `svg` (`SVG_TEXT`): Le texte au format SVG.
-*   `mask` (`MASK`): Le masque de la forme du texte.
+<details>
+<summary><code>DAO Move</code></summary>
 
----
+> Applique des transformations (déplacement, échelle, rotation) et des symétries à une image.
 
-### Filtres d'Image
-
-#### DAO Move
-Applique des transformations (déplacement, échelle, rotation) et des symétries à une image.
-
-*   **Description :** Permet de manipuler la position, la taille et l'orientation d'une image et de son masque associé.
 *   **Catégorie :** `DAO_master/Utils`
+*   **Description :** Permet de manipuler la position, la taille et l'orientation d'une image et de son masque associé, avec un contrôle précis sur le point de pivot.
 
-**Entrées (Inputs)**
-*   `image` (`IMAGE`): L'image à transformer.
-*   `mask` (`MASK`, optionnel): Un masque à transformer de la même manière. Si non fourni, l'alpha de l'image d'entrée est utilisé.
-*   `angle_deg` / `scale` / `dx` / `dy`: Paramètres pour la rotation, l'échelle et la translation.
-*   `pivot_mode` (`LISTE`): Point de pivot pour la rotation et l'échelle (`center`, `top_left`, `custom`).
-*   `pivot_x`/`pivot_y`: Coordonnées du pivot en mode `custom`.
-*   `flip_h`/`flip_v`: Applique une symétrie horizontale ou verticale.
-*   `apply_mask_to_alpha`: Si `True`, le masque transformé est appliqué au canal alpha de l'image de sortie.
-*   `invert_mask`: Inverse le masque d'entrée avant de l'utiliser.
+</details>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): L'image transformée.
-*   `mask` (`MASK`): Le masque transformé.
+<details>
+<summary><code>DAO Blur</code></summary>
 
----
+> Applique un flou gaussien et peut générer une ombre portée.
 
-#### DAO Blur
-Applique un flou gaussien et peut générer une ombre portée.
-
-*   **Description :** Ce node permet non seulement de flouter une image et/ou un masque, mais aussi de créer un effet d'ombre portée personnalisable.
 *   **Catégorie :** `DAO_master/Filter`
+*   **Description :** Floute une image et/ou un masque, et peut générer une image séparée contenant une ombre portée personnalisable (couleur, opacité, décalage).
 
-**Entrées (Inputs)**
-*   `image` / `mask` (`IMAGE`/`MASK`, optionnels): Les entrées à flouter.
-*   `radius` (`FLOAT`): L'intensité (rayon) du flou gaussien.
-*   `mask_form` (`MASK`, optionnel): Un masque supplémentaire qui agit comme un "emporte-pièce" pour découper le résultat final.
-*   **Paramètres de l'Ombre Portée :**
-    *   `shadow_opacity`: Opacité de l'ombre (en %).
-    *   `shadow_color`: Couleur de l'ombre au format hexadécimal.
-    *   `move_x`/`move_y`: Décalage de l'ombre par rapport à la forme originale.
-    *   `invert_drop_shadow`: Si `True`, l'ombre est générée à partir du masque inversé.
+</details>
 
-**Sorties (Outputs)**
-*   `image` (`IMAGE`): L'image floutée.
-*   `mask` (`MASK`): Le masque flouté.
-*   `drop_shadow` (`IMAGE`): Une image contenant uniquement l'ombre portée.
-
+</details>
