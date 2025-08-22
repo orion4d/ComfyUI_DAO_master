@@ -297,3 +297,86 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 </details>
 
 </details>
+
+# 🚀 Guide d'Installation : Potrace sur Windows
+
+Pour utiliser le node `Convert IMG to SVG` de la manière la plus performante, il est fortement recommandé d'installer l'utilitaire **Potrace** et de l'ajouter au **PATH** de votre système.
+
+Ce guide vous montrera comment faire, étape par étape.
+
+### Étape 1 : Télécharger Potrace
+
+1.  Rendez-vous sur la page officielle de Potrace : [http://potrace.sourceforge.net/#downloading](http://potrace.sourceforge.net/#downloading)
+2.  Cherchez la section "Windows" et téléchargez la dernière version 64-bit. Le fichier sera une archive `.zip`, par exemple `potrace-1.16.win64-x64.zip`.
+
+    > **Note :** Prenez bien la version 64-bit (win64) si votre système Windows est 64-bit, ce qui est le cas pour la grande majorité des ordinateurs modernes.
+
+### Étape 2 : Créer un Dossier et Extraire les Fichiers
+
+Pour garder les choses simples et propres, nous allons créer un dossier permanent pour Potrace.
+
+1.  Ouvrez l'Explorateur de Fichiers.
+2.  Allez à la racine de votre disque principal, généralement `C:`.
+3.  Créez un nouveau dossier et nommez-le `Potrace`. Le chemin sera donc `C:\Potrace`.
+4.  Ouvrez le fichier `.zip` que vous avez téléchargé et extrayez **tous les fichiers** qu'il contient directement dans le dossier `C:\Potrace`.
+
+    📁 Votre dossier `C:\Potrace` devrait maintenant contenir des fichiers comme `potrace.exe`, `mkbitmap.exe` et plusieurs fichiers `.dll`.
+
+### Étape 3 : Ajouter Potrace au PATH Système
+
+C'est l'étape la plus importante. Elle permet à Windows (et donc à ComfyUI) de trouver `potrace.exe` depuis n'importe quel emplacement.
+
+1.  Cliquez sur le bouton **Démarrer** de Windows et tapez `variables d'environnement`.
+2.  Cliquez sur **"Modifier les variables d'environnement système"**.
+
+    
+
+3.  Dans la fenêtre "Propriétés système" qui s'ouvre, cliquez sur le bouton **"Variables d'environnement..."**.
+
+    
+
+4.  Une nouvelle fenêtre s'ouvre avec deux sections. Nous allons modifier les variables de votre utilisateur (plus sûr et ne nécessite pas de droits administrateur).
+    Dans la section du haut ("Variables utilisateur pour [votre_nom]"), trouvez et sélectionnez la variable `Path`, puis cliquez sur **"Modifier..."**.
+
+    
+
+5.  Dans la fenêtre "Modifier la variable d'environnement", cliquez sur **"Nouveau"**.
+6.  Un nouveau champ vide apparaît. Tapez ou collez-y le chemin exact du dossier que vous avez créé à l'étape 2 :
+
+    ```
+    C:\Potrace
+    ```
+
+    
+
+7.  Cliquez sur **OK** pour fermer chaque fenêtre que vous avez ouverte. C'est essentiel pour sauvegarder les changements.
+
+### Étape 4 : Vérifier l'Installation
+
+Pour vous assurer que tout fonctionne correctement :
+
+1.  **Ouvrez un NOUVEAU terminal.** (Important : les terminaux déjà ouverts ne connaîtront pas le nouveau PATH).
+    *   Appuyez sur `Win + R`, tapez `cmd` et appuyez sur Entrée.
+
+2.  Dans la fenêtre de commande, tapez la commande suivante et appuyez sur Entrée :
+
+    ```sh
+    potrace --version
+    ```
+
+3.  Si l'installation a réussi, vous devriez voir s'afficher la version de Potrace, comme ceci :
+    ```
+    potrace 1.16 (C) 2001-2019 Peter Selinger
+    ```
+
+✅ **Félicitations !** Potrace est maintenant correctement installé et configuré sur votre système.
+
+### Dépannage
+
+*   **La commande `potrace` n'est pas reconnue...**
+    *   Assurez-vous d'avoir ouvert un **nouveau** terminal après avoir modifié le PATH.
+    *   Vérifiez que le chemin `C:\Potrace` dans vos variables d'environnement est correct et ne contient pas de fautes de frappe.
+    *   Vérifiez que le fichier `potrace.exe` se trouve bien directement dans `C:\Potrace` (et non dans un sous-dossier).
+
+*   **ComfyUI ne trouve toujours pas Potrace...**
+    *   Redémarrez complètement ComfyUI (fermez la console et relancez `run_nvidia_gpu.bat` ou équivalent). Dans certains cas, un redémarrage complet de l'ordinateur peut être nécessaire pour que tous les programmes prennent en compte le nouveau PATH.
