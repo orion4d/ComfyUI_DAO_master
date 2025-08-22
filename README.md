@@ -382,3 +382,56 @@ Pour vous assurer que tout fonctionne correctement :
 
 *   **ComfyUI ne trouve toujours pas Potrace...**
     *   Redémarrez complètement ComfyUI (fermez la console et relancez `run_nvidia_gpu.bat` ou équivalent). Dans certains cas, un redémarrage complet de l'ordinateur peut être nécessaire pour que tous les programmes prennent en compte le nouveau PATH.
+ 
+    *   # ✍️ Comment Installer des Polices Personnalisées pour DAO Text Maker
+
+Le node `DAO Text Maker` vous permet d'utiliser n'importe quelle police de caractères au format TrueType (`.ttf`) ou OpenType (`.otf`). L'installation est très simple et ne prend qu'une minute.
+
+### 📜 Guide d'Installation Rapide
+
+Suivez ces quatre étapes simples pour ajouter une nouvelle police :
+
+#### Étape 1 : Trouver et Télécharger une Police
+
+Choisissez une police sur l'un des sites recommandés ci-dessous (ou toute autre source de votre choix). Cherchez le bouton "Download" ou "Télécharger" pour obtenir un fichier, généralement une archive `.zip`.
+
+*   [**Google Fonts**](https://fonts.google.com/) : Le choix le plus sûr et le plus simple. Toutes les polices sont open-source et de haute qualité.
+*   [**Fontshare**](https://www.fontshare.com/) : Une excellente collection de polices professionnelles, gratuites pour un usage personnel et commercial.
+*   [**Velvetyne**](https://velvetyne.fr/) : Une fonderie typographique open-source proposant des polices originales et de grande qualité.
+*   [**DaFont**](https://www.dafont.com/fr/) : Une immense archive de polices. **Attention : vérifiez attentivement la licence de chaque police avant de l'utiliser !** (Plus d'infos ci-dessous).
+
+#### Étape 2 : Localiser le Dossier `Fonts`
+
+Naviguez jusqu'au dossier d'installation de votre node `ComfyUI_DAO_master`. Le chemin exact est : ComfyUI/custom_nodes/ComfyUI_DAO_master/Fonts/
+> **Astuce :** Si le dossier `Fonts` n'existe pas à l'intérieur de `ComfyUI_DAO_master`, vous pouvez le créer vous-même.
+
+#### Étape 3 : Copier le Fichier de Police
+
+1.  Ouvrez le fichier `.zip` que vous avez téléchargé.
+2.  À l'intérieur, trouvez le ou les fichiers de police qui se terminent par **`.ttf`** ou **`.otf`**.
+3.  Copiez ce ou ces fichiers (et uniquement ces fichiers) dans le dossier `Fonts` que vous avez localisé à l'étape 2.
+
+
+
+#### Étape 4 : Rafraîchir dans ComfyUI
+
+Retournez dans votre interface ComfyUI.
+
+1.  Trouvez votre node `DAO Text Maker`.
+2.  Cliquez sur le bouton de rafraîchissement **`↻`** situé à droite du menu déroulant `font_file`.
+3.  Votre nouvelle police devrait maintenant apparaître dans la liste !
+
+---
+
+### ⚠️ Une Note Importante sur les Licences de Polices
+
+Il est crucial de respecter le travail des créateurs de polices. Avant d'utiliser une police, surtout pour un projet public ou commercial, vérifiez toujours sa licence.
+
+*   **"Gratuit pour un usage personnel" (Free for Personal Use) :** Vous ne pouvez l'utiliser que pour des projets privés qui ne génèrent aucun revenu.
+*   **"100% Gratuit" / "Domaine Public" / "Open Source" :** Généralement sûr pour tout type d'usage, y compris commercial.
+
+**Recommandations par site :**
+*   ✅ **Google Fonts / Fontshare / Velvetyne :** Ces sites sont les plus sûrs. Leurs polices sont distribuées sous des licences open-source (comme la SIL OFL) qui vous autorisent à les utiliser pour presque tout, y compris les projets commerciaux.
+*   ⚠️ **DaFont :** Ce site est une archive. Chaque police a sa propre licence, qui est indiquée au-dessus du bouton de téléchargement. **Lisez-la attentivement.** Beaucoup de polices y sont "gratuites pour un usage personnel" uniquement.
+
+En cas de doute, privilégiez toujours les polices provenant de Google Fonts pour une tranquillité d'esprit totale.
