@@ -3,7 +3,9 @@
 **ComfyUI_DAO_master** est une collection de custom nodes pour **ComfyUI**.
 Ces nodes apportent des outils supplémentaires pour la création, la manipulation d’image et l’expérimentation visuelle, avec un focus sur les **workflows vectoriels** (DXF & SVG) et les utilitaires de production.
 
----
+<p align="center">
+<img width="1242" height="635" alt="image" src="https://github.com/user-attachments/assets/b2097f01-370e-4dd0-b3d8-0dbacbe8bc24" />
+</p>
 
 ### ✨ Aperçu des fonctionnalités
 
@@ -298,85 +300,69 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 
 </details>
 
-# 🚀 Guide d'Installation : Potrace sur Windows
+<details>
+<summary><strong>💡 Guides d'Installation (Potrace & Polices)</strong></summary>
 
-Pour utiliser le node `Convert IMG to SVG` de la manière la plus performante, il est fortement recommandé d'installer l'utilitaire **Potrace** et de l'ajouter au **PATH** de votre système.
+<br>
 
-Ce guide vous montrera comment faire, étape par étape.
+<details>
+<summary><strong>🚀 Installer Potrace sur Windows (pour la vectorisation d'images)</strong></summary>
 
-### Étape 1 : Télécharger Potrace
+> Pour utiliser le node `Convert IMG to SVG` de la manière la plus performante, il est fortement recommandé d'installer l'utilitaire **Potrace** et de l'ajouter au **PATH** de votre système. Ce guide vous montrera comment faire, étape par étape.
 
-1.  Rendez-vous sur la page officielle de Potrace : [http://potrace.sourceforge.net/#downloading](http://potrace.sourceforge.net/#downloading)
-2.  Cherchez la section "Windows" et téléchargez la dernière version 64-bit. Le fichier sera une archive `.zip`, par exemple `potrace-1.16.win64-x64.zip`.
+#### Étape 1 : Télécharger Potrace
+1.  Rendez-vous sur la page officielle : [http://potrace.sourceforge.net/#downloading](http://potrace.sourceforge.net/#downloading)
+2.  Cherchez la section "Windows" et téléchargez la dernière version 64-bit (ex: `potrace-1.16.win64-x64.zip`).
+    > **Note :** Prenez bien la version 64-bit (win64), adaptée à la majorité des ordinateurs modernes.
 
-    > **Note :** Prenez bien la version 64-bit (win64) si votre système Windows est 64-bit, ce qui est le cas pour la grande majorité des ordinateurs modernes.
+#### Étape 2 : Créer un Dossier et Extraire les Fichiers
+1.  Dans l'Explorateur de Fichiers, allez à la racine de votre disque `C:`.
+2.  Créez un nouveau dossier nommé `Potrace`.
+3.  Extrayez **tous les fichiers** de l'archive `.zip` téléchargée directement dans ce dossier `C:\Potrace`.
+    > 📁 Votre dossier `C:\Potrace` doit maintenant contenir `potrace.exe` et d'autres fichiers.
 
-### Étape 2 : Créer un Dossier et Extraire les Fichiers
+#### Étape 3 : Ajouter Potrace au PATH Système
+> C'est l'étape la plus importante. Elle permet à Windows de trouver `potrace.exe` depuis n'importe où.
 
-Pour garder les choses simples et propres, nous allons créer un dossier permanent pour Potrace.
+1.  Dans le menu Démarrer, cherchez et ouvrez **"Modifier les variables d'environnement système"**.
+2.  Cliquez sur le bouton **"Variables d'environnement..."**.
+3.  Dans la section du haut ("Variables utilisateur"), sélectionnez la ligne `Path` et cliquez sur **"Modifier..."**.
+4.  Cliquez sur **"Nouveau"** et collez le chemin de votre dossier : `C:\Potrace`.
+5.  Cliquez sur **OK** sur toutes les fenêtres pour sauvegarder.
 
-1.  Ouvrez l'Explorateur de Fichiers.
-2.  Allez à la racine de votre disque principal, généralement `C:`.
-3.  Créez un nouveau dossier et nommez-le `Potrace`. Le chemin sera donc `C:\Potrace`.
-4.  Ouvrez le fichier `.zip` que vous avez téléchargé et extrayez **tous les fichiers** qu'il contient directement dans le dossier `C:\Potrace`.
+#### Étape 4 : Vérifier l'Installation
+1.  **Ouvrez un NOUVEAU terminal** (via `cmd` dans le menu Démarrer).
+2.  Tapez `potrace --version` et appuyez sur Entrée.
+3.  Si tout est correct, la version de Potrace s'affichera.
+    > ✅ **Félicitations !** Potrace est prêt. Si ComfyUI ne le trouve pas, redémarrez-le.
 
-    📁 Votre dossier `C:\Potrace` devrait maintenant contenir des fichiers comme `potrace.exe`, `mkbitmap.exe` et plusieurs fichiers `.dll`.
+</details>
 
-### Étape 3 : Ajouter Potrace au PATH Système
+<details>
+<summary><strong>✍️ Installer des Polices Personnalisées (pour DAO Text Maker)</strong></summary>
 
-C'est l'étape la plus importante. Elle permet à Windows (et donc à ComfyUI) de trouver `potrace.exe` depuis n'importe quel emplacement.
+> Le node `DAO Text Maker` vous permet d'utiliser n'importe quelle police au format `.ttf` ou `.otf`. L'installation est très simple.
 
-1.  Cliquez sur le bouton **Démarrer** de Windows et tapez `variables d'environnement`.
-2.  Cliquez sur **"Modifier les variables d'environnement système"**.
+#### Étape 1 : Trouver et Télécharger une Police
+> Choisissez une police sur un des sites recommandés. Cherchez le bouton "Download" pour obtenir un fichier `.zip`.
+> *   [**Google Fonts**](https://fonts.google.com/) (le plus sûr)
+> *   [**Fontshare**](https://www.fontshare.com/)
+> *   [**Velvetyne**](https://velvetyne.fr/)
+> *   [**DaFont**](https://www.dafont.com/fr/) (**Attention : vérifiez la licence de chaque police !**)
 
-    
+#### Étape 2 : Localiser et Copier la Police
+1.  Naviguez jusqu'au dossier : `ComfyUI/custom_nodes/ComfyUI_DAO_master/Fonts/`.
+2.  Ouvrez le `.zip` que vous avez téléchargé.
+3.  Copiez le ou les fichiers **`.ttf`** ou **`.otf`** directement dans ce dossier `Fonts`.
 
-3.  Dans la fenêtre "Propriétés système" qui s'ouvre, cliquez sur le bouton **"Variables d'environnement..."**.
+#### Étape 3 : Rafraîchir dans ComfyUI
+1.  Retournez dans ComfyUI.
+2.  Sur votre node `DAO Text Maker`, cliquez sur le bouton de rafraîchissement **`↻`**.
+3.  Votre nouvelle police apparaîtra dans le menu déroulant `font_file`.
 
-    
+#### ⚠️ Note sur les Licences
+> Respectez le travail des créateurs. Les polices de **Google Fonts, Fontshare et Velvetyne** sont généralement open-source et sûres pour tout usage. Sur **DaFont**, beaucoup de polices sont "gratuites pour un usage personnel" uniquement. Vérifiez toujours la licence avant utilisation.
 
-4.  Une nouvelle fenêtre s'ouvre avec deux sections. Nous allons modifier les variables de votre utilisateur (plus sûr et ne nécessite pas de droits administrateur).
-    Dans la section du haut ("Variables utilisateur pour [votre_nom]"), trouvez et sélectionnez la variable `Path`, puis cliquez sur **"Modifier..."**.
+</details>
 
-    
-
-5.  Dans la fenêtre "Modifier la variable d'environnement", cliquez sur **"Nouveau"**.
-6.  Un nouveau champ vide apparaît. Tapez ou collez-y le chemin exact du dossier que vous avez créé à l'étape 2 :
-
-    ```
-    C:\Potrace
-    ```
-
-    
-
-7.  Cliquez sur **OK** pour fermer chaque fenêtre que vous avez ouverte. C'est essentiel pour sauvegarder les changements.
-
-### Étape 4 : Vérifier l'Installation
-
-Pour vous assurer que tout fonctionne correctement :
-
-1.  **Ouvrez un NOUVEAU terminal.** (Important : les terminaux déjà ouverts ne connaîtront pas le nouveau PATH).
-    *   Appuyez sur `Win + R`, tapez `cmd` et appuyez sur Entrée.
-
-2.  Dans la fenêtre de commande, tapez la commande suivante et appuyez sur Entrée :
-
-    ```sh
-    potrace --version
-    ```
-
-3.  Si l'installation a réussi, vous devriez voir s'afficher la version de Potrace, comme ceci :
-    ```
-    potrace 1.16 (C) 2001-2019 Peter Selinger
-    ```
-
-✅ **Félicitations !** Potrace est maintenant correctement installé et configuré sur votre système.
-
-### Dépannage
-
-*   **La commande `potrace` n'est pas reconnue...**
-    *   Assurez-vous d'avoir ouvert un **nouveau** terminal après avoir modifié le PATH.
-    *   Vérifiez que le chemin `C:\Potrace` dans vos variables d'environnement est correct et ne contient pas de fautes de frappe.
-    *   Vérifiez que le fichier `potrace.exe` se trouve bien directement dans `C:\Potrace` (et non dans un sous-dossier).
-
-*   **ComfyUI ne trouve toujours pas Potrace...**
-    *   Redémarrez complètement ComfyUI (fermez la console et relancez `run_nvidia_gpu.bat` ou équivalent). Dans certains cas, un redémarrage complet de l'ordinateur peut être nécessaire pour que tous les programmes prennent en compte le nouveau PATH.
+</details>
