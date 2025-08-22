@@ -1,0 +1,26 @@
+# Dépendances Python pour ComfyUI_DAO_master
+#
+# Ces bibliothèques sont nécessaires pour le fonctionnement de certains nodes.
+# Vous pouvez les installer en une seule fois avec la commande :
+# pip install -r requirements.txt
+
+# --- Pour les nodes DXF ---
+ezdxf
+
+# --- Pour les nodes SVG et la conversion ---
+# Manipulation et rendu SVG
+cairosvg
+svgpathtools
+lxml
+
+# Opérations géométriques (booléennes SVG, analyse)
+pyclipper
+shapely
+
+# Vectorisation d'images (utilisé par Convert IMG -> SVG)
+# NOTE : En plus de ce package Python, il est fortement recommandé d'installer
+# l'exécutable "potrace" sur votre système pour de meilleures performances.
+# potrace
+
+# --- Pour le node Text Maker (vectorisation de texte) ---
+matplotlib
