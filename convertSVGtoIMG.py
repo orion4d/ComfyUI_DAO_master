@@ -1,4 +1,4 @@
-# convertSVGtoIMG.py — v12.2 (Détection SVG robuste)
+# convertSVGtoIMG.py — v12.3 (Suppression de l'entrée svg_path pour plus de clarté)
 import os, re, io, json, traceback
 import numpy as np
 from PIL import Image, ImageDraw
@@ -33,13 +33,21 @@ def _strip_css_comments(s): return re.sub(r"/\*.*?\*/","",s,flags=re.S)
 def _parse_css_classes(root):
     css = {}
     for st in root.findall(".//{http://www.w3.org/2000/svg}style"):
-        txt = "".join(st.itertext())
-        if not txt: continue
+        txt = "".join(st.itertext()) or ""
+        if not txt:
+            continue
         txt = _strip_css_comments(txt)
-        for m in re.finditer(r"\.([A-Za-z0-9_-]+)\s*\{([^}]*)\}", txt, flags=re.S):
-            cls, body = m.group(1); decl = _parse_style_inline(body)
-            cur = css.get(cls,{}).copy(); cur.update(decl); css[cls]=cur
+        # .foo{...} et ".foo, .bar { ... }"
+        for m in re.finditer(r"\.([A-Za-z0-9_-]+(?:\s*,\s*\.[A-Za-z0-9_-]+)*)\s*\{([^}]*)\}", txt, flags=re.S):
+            selectors = [s.strip().lstrip(".") for s in m.group(1).split(",")]
+            body = m.group(2)
+            decl = _parse_style_inline(body)
+            for cls in selectors:
+                cur = css.get(cls, {}).copy()
+                cur.update(decl)
+                css[cls] = cur
     return css
+
 def _hex_norm(v):
     if not v: return None
     v = v.strip().lower()
@@ -282,7 +290,7 @@ class ConvertSVGtoIMG:
                 "svg_text": ("SVG_TEXT", {"multiline": True, "default": ""}),
             },
             "optional": {
-                "svg_path": ("STRING", {"default": ""}),
+                # "svg_path": ("STRING", {"default": ""}),  <-- SUPPRIMÉ
                 "width": ("INT", {"default": 512, "min":16, "max":4096}),
                 "scale_in_canvas": ("FLOAT", {"default": 1.0, "min": 0.1, "max": 2.0, "step": 0.01}),
                 "transparent_bg": ("BOOLEAN", {"default": False}),
@@ -300,25 +308,15 @@ class ConvertSVGtoIMG:
     FUNCTION="run"
     CATEGORY = "DAO_master/SVG/Convert"
 
-    def run(self, svg_text, svg_path="", width=512, scale_in_canvas=1.0, transparent_bg=False, 
+    def run(self, svg_text, width=512, scale_in_canvas=1.0, transparent_bg=False, 
             background_hex="#000000", pad_px=0, keep_alpha_as_mask=True, stroke_only=False, 
             open_subpaths_px=0, renderer="auto"):
 
-        input_str = (svg_text or svg_path or "").strip()
-        if not input_str: raise ValueError("Aucune entrée SVG (texte ou chemin) n'a été fournie.")
-            
-        svg_bytes = None
+        # --- LOGIQUE D'ENTRÉE SIMPLIFIÉE ---
+        if not svg_text or not svg_text.strip():
+            raise ValueError("Aucune entrée SVG (svg_text) n'a été fournie.")
         
-        # --- LOGIQUE DE DÉTECTION AMÉLIORÉE ---
-        is_text_svg = re.search(r'<\s*svg', input_str, re.IGNORECASE) is not None
-        
-        if is_text_svg:
-            svg_bytes = input_str.encode('utf-8')
-        elif os.path.isfile(input_str):
-            with open(input_str, "rb") as f:
-                svg_bytes = f.read()
-        else:
-            raise ValueError(f"L'entrée fournie n'est ni un chemin de fichier SVG valide, ni du texte SVG: '{input_str[:100]}...'")
+        svg_bytes = svg_text.strip().encode('utf-8')
         
         try:
             root = ET.fromstring(svg_bytes)
