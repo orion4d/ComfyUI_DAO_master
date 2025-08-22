@@ -248,10 +248,10 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 <details>
 <summary><code>DAO Hex/RVB Color Picker</code></summary>
 
-> Des sélecteurs de couleurs interactifs pour choisir des couleurs à partir de listes personnalisables.
+> Un sélecteurs de couleurs interactifs pour choisir des couleurs à partir de listes personnalisables.
 
 *   **Catégorie :** `DAO_master/Color`
-*   **💡 Fonctionnement UI :** Créez vos propres listes de couleurs dans les dossiers `hexadecimal_List/` ou `RGB_List/`. Le node affichera des menus déroulants pour choisir le fichier et la couleur. Un bouton `↻` permet de rafraîchir les listes.
+*   **💡 Fonctionnement UI :** Créez vos propres listes de couleurs dans le dossier `RGB_List/`. Le node affichera des menus déroulants pour choisir le fichier et la couleur. Un bouton `↻` permet de rafraîchir les listes.
 *   **Modes :** `Manual`, `Random`, `Increment`, `Decrement`.
 
 </details>
