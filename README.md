@@ -494,3 +494,166 @@ Convertit une image en un SVG monochrome en utilisant Potrace.
 *   `svg_path` (`STRING`): Le chemin du fichier `.svg` sauvegardé (si l'option est activée).
 *   `svg_text` (`SVG_TEXT`): Le contenu du SVG généré sous forme de texte.
 *   `preview` (`IMAGE`): Un aperçu de l'image binarisée qui a été utilisée pour le traçage.
+
+*   ## Utilitaires, Filtres et Générateurs
+
+Cette section regroupe un ensemble de nodes polyvalents pour la manipulation de couleurs, la création de texte, l'application de filtres sur les images et la sélection de fichiers.
+
+---
+
+### Utilitaires de Sélection
+
+#### DAO Hex Color Picker
+Permet de sélectionner une couleur et de la sortir sous forme d'image et de code hexadécimal.
+
+*   **Description :** Ce node offre une interface conviviale pour choisir une couleur, soit manuellement, soit à partir de listes prédéfinies.
+*   **Catégorie :** `DAO_master/Color`
+*   **Fonctionnement UI :** Le node transforme les champs `list_file` et `color` en menus déroulants dynamiques. Vous pouvez créer vos propres listes de couleurs en ajoutant des fichiers `.txt` dans le dossier `ComfyUI/custom_nodes/ComfyUI_DAO_master/hexadecimal_List/`. Le format d'une ligne est `[Nom de la couleur]{#RRGGBB}`. Un bouton `↻` permet de rafraîchir les listes.
+
+**Entrées (Inputs)**
+*   `list_file` (`LISTE`): Le fichier `.txt` à utiliser comme source de couleurs.
+*   `color` (`LISTE`): La couleur à sélectionner dans la liste. En mode `Manual`, vous pouvez entrer directement un code hexadécimal.
+*   `mode` (`LISTE`): Le mode de sélection de la couleur.
+    *   `Manual`: Utilise la valeur du champ `color`.
+    *   `Random`: Sélectionne une couleur au hasard dans la liste en se basant sur la `seed`.
+    *   `Increment` / `Decrement`: Parcourt la liste de manière séquentielle en fonction de la `seed`.
+*   `seed` (`INT`): Graine utilisée pour les modes non-manuels.
+*   `width`/`height` (`INT`): Dimensions de l'image de couleur unie en sortie.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): Une image de couleur unie.
+*   `hex` (`STRING`): La couleur sélectionnée au format hexadécimal (ex: `#FFFFFF`).
+
+---
+
+#### DAO RVB Color Picker
+Similaire au Hex Color Picker, mais travaille avec des valeurs RVB (Rouge, Vert, Bleu).
+
+*   **Description :** Fournit une sélection de couleur et la décompose en ses composantes RVB.
+*   **Catégorie :** `DAO_master/Color`
+*   **Fonctionnement UI :** Identique au Hex Picker, mais les listes de couleurs se trouvent dans `ComfyUI/custom_nodes/ComfyUI_DAO_master/RGB_List/`. Le format est `[Nom de la couleur]{R, G, B}`.
+
+**Entrées (Inputs)**
+*   ... (identiques au Hex Color Picker)
+*   `mask` (`MASK`, optionnel): Un masque qui sera transmis en sortie.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): Une image de couleur unie.
+*   `hex` (`STRING`): La couleur au format hexadécimal.
+*   `R` / `V` / `B` (`STRING`): Les composantes Rouge, Vert et Bleu (0-255) sous forme de chaînes de caractères.
+*   `RVB` (`STRING`): Les trois composantes combinées (ex: `255, 255, 255`).
+*   `mask` (`MASK`): Le masque d'entrée, ou un masque blanc uni si non fourni.
+
+---
+
+#### Folder File Picker
+Un explorateur de fichiers avancé pour sélectionner un fichier dans un dossier.
+
+*   **Description :** Ce node permet de parcourir un répertoire, de filtrer les fichiers par extension ou expression régulière (RegEx), de les trier, et de sélectionner un fichier spécifique soit manuellement, soit de manière procédurale via une `seed`.
+*   **Catégorie :** `DAO_master/IO`
+*   **Fonctionnement UI :** Le node possède une interface très interactive. Le champ `index` est remplacé par un menu déroulant listant les fichiers trouvés. Tous les champs de filtrage et de tri, ainsi qu'un bouton `↻`, mettent à jour cette liste en temps réel.
+
+**Entrées (Inputs)**
+*   **Filtrage et Tri :**
+    *   `directory` (`STRING`): Le dossier à explorer.
+    *   `extensions` (`STRING`): Liste des extensions à inclure, séparées par des virgules (ex: `.png, .jpg`).
+    *   `name_regex` (`STRING`): Une expression régulière pour filtrer les noms de fichiers.
+    *   `regex_mode` (`LISTE`): `include` (ne garde que les fichiers correspondants) ou `exclude` (retire les fichiers correspondants).
+    *   `recursive` (`BOOLEAN`): Si `True`, explore également les sous-dossiers.
+    *   `sort_by` (`LISTE`): Critère de tri (`name`, `mtime` pour date de modification, `size`).
+    *   `descending` (`BOOLEAN`): Inverse l'ordre de tri.
+*   **Sélection :**
+    *   `index` (`INT`): L'index du fichier à sélectionner (contrôlé par le menu déroulant de l'interface).
+    *   `seed_mode` (`LISTE`): Méthode de sélection automatique.
+        *   `manual`: Utilise l'index du menu déroulant.
+        *   `fixed`: Sélectionne le fichier à l'index `seed % nombre_de_fichiers`.
+        *   `increment` / `decrement`: Parcourt les fichiers à chaque exécution.
+        *   `randomize`: Sélectionne un fichier au hasard basé sur la `seed`.
+    *   `seed` (`INT`): Graine pour les modes automatiques.
+
+**Sorties (Outputs)**
+*   `file_path` (`STRING`): Le chemin complet du fichier sélectionné.
+*   `filename` (`STRING`): Le nom du fichier seul.
+*   `dir_used` (`STRING`): Le chemin absolu du dossier exploré.
+*   `files_json` (`STRING`): Une liste de tous les fichiers trouvés, au format JSON.
+
+---
+
+### Générateurs
+
+#### DAO Text Maker
+Crée une image, un SVG et un masque à partir d'un texte.
+
+*   **Description :** Un outil de génération de texte complet qui offre un contrôle précis sur la police, les couleurs, le contour, le fond et le format de sortie.
+*   **Catégorie :** `DAO_master/Text`
+*   **Fonctionnement UI :** Le champ `font_file` est un menu déroulant qui liste les polices disponibles dans le dossier `ComfyUI/custom_nodes/ComfyUI_DAO_master/Fonts/`.
+
+**Entrées (Inputs)**
+*   **Texte et Police :**
+    *   `text` (`STRING`): Le texte à afficher (supporte les sauts de ligne).
+    *   `font_file` (`LISTE`): La police de caractères à utiliser.
+    *   `font_size` (`INT`): La taille de la police.
+*   **Canevas et Alignement :**
+    *   `canvas_width`/`canvas_height` (`INT`): Dimensions de l'image/SVG de sortie.
+    *   `align` (`LISTE`): Alignement horizontal du texte (`center`, `left`, `right`).
+*   **Couleurs et Style :**
+    *   `fill_hex`/`fill_alpha`: Couleur et opacité du remplissage du texte.
+    *   `stroke_width`/`stroke_hex`/`stroke_alpha`: Épaisseur, couleur et opacité du contour.
+    *   `bg_transparent`/`bg_hex`: Permet de définir un fond transparent ou de couleur unie.
+*   **Options de Sortie :**
+    *   `svg_vectorize` (`BOOLEAN`): Si `True`, génère un SVG avec des chemins vectoriels (`<path>`), ce qui est idéal pour les logiciels de dessin. Si `False`, génère un SVG avec une balise `<text>`.
+    *   `image_rgba` (`BOOLEAN`): Si `True` et que le fond est transparent, l'image de sortie aura un canal alpha.
+    *   `stroke_width_alpha` (`INT`): Ajoute une épaisseur supplémentaire au `masque` de sortie uniquement, sans affecter l'image visible. Utile pour "grossir" le masque pour des opérations ultérieures.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): L'image rastérisée du texte.
+*   `svg` (`SVG_TEXT`): Le texte au format SVG.
+*   `mask` (`MASK`): Le masque de la forme du texte.
+
+---
+
+### Filtres d'Image
+
+#### DAO Move
+Applique des transformations (déplacement, échelle, rotation) et des symétries à une image.
+
+*   **Description :** Permet de manipuler la position, la taille et l'orientation d'une image et de son masque associé.
+*   **Catégorie :** `DAO_master/Utils`
+
+**Entrées (Inputs)**
+*   `image` (`IMAGE`): L'image à transformer.
+*   `mask` (`MASK`, optionnel): Un masque à transformer de la même manière. Si non fourni, l'alpha de l'image d'entrée est utilisé.
+*   `angle_deg` / `scale` / `dx` / `dy`: Paramètres pour la rotation, l'échelle et la translation.
+*   `pivot_mode` (`LISTE`): Point de pivot pour la rotation et l'échelle (`center`, `top_left`, `custom`).
+*   `pivot_x`/`pivot_y`: Coordonnées du pivot en mode `custom`.
+*   `flip_h`/`flip_v`: Applique une symétrie horizontale ou verticale.
+*   `apply_mask_to_alpha`: Si `True`, le masque transformé est appliqué au canal alpha de l'image de sortie.
+*   `invert_mask`: Inverse le masque d'entrée avant de l'utiliser.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): L'image transformée.
+*   `mask` (`MASK`): Le masque transformé.
+
+---
+
+#### DAO Blur
+Applique un flou gaussien et peut générer une ombre portée.
+
+*   **Description :** Ce node permet non seulement de flouter une image et/ou un masque, mais aussi de créer un effet d'ombre portée personnalisable.
+*   **Catégorie :** `DAO_master/Filter`
+
+**Entrées (Inputs)**
+*   `image` / `mask` (`IMAGE`/`MASK`, optionnels): Les entrées à flouter.
+*   `radius` (`FLOAT`): L'intensité (rayon) du flou gaussien.
+*   `mask_form` (`MASK`, optionnel): Un masque supplémentaire qui agit comme un "emporte-pièce" pour découper le résultat final.
+*   **Paramètres de l'Ombre Portée :**
+    *   `shadow_opacity`: Opacité de l'ombre (en %).
+    *   `shadow_color`: Couleur de l'ombre au format hexadécimal.
+    *   `move_x`/`move_y`: Décalage de l'ombre par rapport à la forme originale.
+    *   `invert_drop_shadow`: Si `True`, l'ombre est générée à partir du masque inversé.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): L'image floutée.
+*   `mask` (`MASK`): Le masque flouté.
+*   `drop_shadow` (`IMAGE`): Une image contenant uniquement l'ombre portée.
+
