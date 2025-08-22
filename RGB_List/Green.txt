@@ -1,0 +1,100 @@
+[Green] {29, 220, 29}
+[Lime] {112, 248, 44}
+[Lime Green] {104, 247, 33}
+[Kelly Green] {35, 224, 35}
+[Forest Green] {19, 119, 19}
+[Dark Green] {18, 127, 18}
+[Hunter Green] {21, 128, 21}
+[Pine Green] {19, 124, 19}
+[Emerald] {42, 225, 42}
+[Jade] {33, 215, 33}
+[Shamrock] {44, 221, 44}
+[Clover] {30, 214, 30}
+[Spring Green] {32, 208, 32}
+[Mint] {193, 227, 202}
+[Mint Green] {196, 229, 204}
+[Seafoam] {43, 214, 86}
+[Seafoam Green] {54, 216, 114}
+[Aquamarine] {36, 202, 164}
+[Turquoise Green] {35, 200, 154}
+[Teal Green] {33, 183, 140}
+[Jungle Green] {28, 197, 28}
+[Laurel Green] {173, 203, 168}
+[Myrtle Green] {58, 154, 118}
+[Sage] {162, 184, 163}
+[Sage Green] {170, 194, 171}
+[Olive] {128, 143, 43}
+[Olive Drab] {109, 128, 33}
+[Army Green] {84, 112, 24}
+[Moss] {121, 148, 69}
+[Moss Green] {113, 150, 67}
+[Willow] {151, 178, 107}
+[Fern] {70, 171, 70}
+[Fern Green] {68, 165, 68}
+[Bamboo Green] {72, 180, 72}
+[Basil] {77, 166, 63}
+[Avocado] {126, 166, 63}
+[Asparagus] {120, 166, 64}
+[Pea Green] {131, 184, 70}
+[Pistachio] {160, 204, 108}
+[Wasabi] {148, 193, 68}
+[Chartreuse] {145, 247, 41}
+[Yellow-Green] {141, 232, 43}
+[Apple Green] {126, 230, 55}
+[Granny Smith] {165, 216, 114}
+[Pear] {168, 221, 95}
+[Lettuce] {154, 214, 96}
+[Lawn Green] {109, 231, 39}
+[Grass Green] {86, 214, 35}
+[Meadow] {129, 205, 128}
+[Meadow Green] {112, 198, 112}
+[Cactus] {92, 160, 110}
+[Sea Green] {41, 170, 138}
+[Medium Sea Green] {61, 190, 155}
+[Light Sea Green] {72, 203, 166}
+[Medium Aquamarine] {64, 186, 154}
+[Malachite] {33, 214, 33}
+[Viridian] {28, 171, 140}
+[Verdigris] {42, 174, 152}
+[Eucalyptus] {96, 187, 146}
+[Rainforest] {23, 128, 23}
+[Bottle Green] {20, 120, 20}
+[British Racing Green] {18, 114, 18}
+[Sacramento Green] {20, 116, 20}
+[Islamic Green] {21, 134, 21}
+[Pakistan Green] {18, 119, 18}
+[India Green] {22, 137, 22}
+[Harlequin] {96, 248, 33}
+[Neon Green] {98, 248, 39}
+[Electric Green] {100, 248, 36}
+[Vivid Green] {54, 237, 35}
+[Brilliant Green] {63, 234, 40}
+[Bright Green] {50, 229, 37}
+[Pastel Green] {183, 224, 183}
+[Pale Green] {197, 233, 197}
+[Tea Green] {195, 226, 197}
+[Celadon] {180, 214, 187}
+[Honeydew] {235, 251, 238}
+[Mint Cream] {234, 249, 241}
+[Opal Green] {177, 214, 186}
+[Seaweed] {69, 159, 114}
+[Palm Green] {21, 122, 21}
+[Juniper] {42, 144, 108}
+[Hemlock] {58, 146, 106}
+[Evergreen] {23, 125, 23}
+[Pine Needle] {22, 122, 22}
+[Bayberry] {92, 149, 66}
+[Artichoke] {126, 156, 105}
+[Reseda Green] {99, 170, 64}
+[Russian Green] {44, 105, 13}
+[Lincoln Green] {44, 104, 14}
+[Phthalo Green] {36, 223, 36}
+[Sap Green] {27, 211, 27}
+[Mantis] {29, 214, 29}
+[Mountain Meadow] {213, 232, 203}
+[Caribbean Green] {32, 198, 156}
+[Sea Turtle] {38, 190, 152}
+[Pickle] {90, 156, 57}
+[Spinach] {102, 176, 64}
+[Coriander] {43, 227, 43}
+[Parsley] {41, 226, 41}

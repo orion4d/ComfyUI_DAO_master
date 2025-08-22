@@ -1,0 +1,100 @@
+[Navy] {0, 0, 128}
+[Midnight Blue] {25, 25, 112}
+[Oxford Blue] {0, 33, 71}
+[Prussian Blue] {0, 49, 83}
+[Yale Blue] {15, 77, 146}
+[Royal Blue] {65, 105, 225}
+[Cobalt Blue] {0, 71, 171}
+[Sapphire] {15, 82, 186}
+[Ultramarine] {18, 10, 143}
+[Indigo Blue] {75, 60, 130}
+[Denim] {36, 107, 206}
+[Lapis Lazuli] {38, 97, 156}
+[Egyptian Blue] {16, 52, 166}
+[Zaffre] {0, 20, 168}
+[Pacific Blue] {28, 128, 196}
+[Deep Sea Blue] {0, 51, 102}
+[Ocean Blue] {0, 119, 190}
+[Marine Blue] {3, 63, 99}
+[Admiral Blue] {0, 48, 100}
+[Air Force Blue] {93, 138, 168}
+[Steel Blue] {70, 130, 180}
+[Blue Gray] {119, 136, 153}
+[Slate Blue] {106, 90, 205}
+[Periwinkle Blue] {177, 195, 255}
+[Cornflower Blue] {100, 149, 237}
+[Dodger Blue] {30, 144, 255}
+[Azure] {0, 127, 255}
+[Capri Blue] {0, 191, 255}
+[Cerulean] {0, 123, 167}
+[Sky Blue] {135, 206, 235}
+[Baby Blue] {137, 207, 240}
+[Powder Blue] {176, 224, 230}
+[Ice Blue] {198, 226, 255}
+[Frost Blue] {182, 209, 234}
+[Glacier Blue] {135, 180, 220}
+[Arctic Blue] {175, 220, 245}
+[Polar Blue] {200, 230, 250}
+[Electric Blue] {125, 249, 255}
+[Vivid Blue] {0, 150, 255}
+[Bright Blue] {0, 102, 255}
+[True Blue] {0, 115, 207}
+[Process Blue] {0, 150, 207}
+[Royal Azure] {0, 56, 168}
+[Azure Mist] {240, 255, 255}
+[Alice Blue] {240, 248, 255}
+[Ghost Blue] {200, 216, 232}
+[Cloud Blue] {204, 232, 255}
+[Morning Blue] {189, 215, 235}
+[Daylight Blue] {173, 216, 245}
+[Pastel Blue] {174, 198, 207}
+[Light Steel Blue] {176, 196, 222}
+[Light Sky Blue] {135, 206, 250}
+[Pale Azure] {170, 210, 230}
+[Pale Cornflower] {171, 205, 239}
+[Maya Blue] {115, 194, 251}
+[Tufts Blue] {62, 142, 222}
+[Carolina Blue] {86, 160, 211}
+[UCLA Blue] {83, 104, 149}
+[Columbia Blue] {155, 221, 255}
+[Bondi Blue] {0, 149, 182}
+[Teal Blue] {54, 117, 136}
+[Deep Teal Blue] {0, 79, 98}
+[Turquoise Blue] {64, 224, 208}
+[Aegean Blue] {0, 126, 167}
+[Baltic Blue] {28, 64, 109}
+[Baltic Navy] {10, 40, 70}
+[Beryl Blue] {135, 196, 204}
+[Bluebird] {1, 148, 255}
+[Bluestone] {71, 92, 112}
+[Blueberry] {53, 91, 153}
+[Bluebell] {162, 162, 208}
+[Blue Ribbon] {0, 102, 204}
+[Blue Lagoon] {0, 155, 190}
+[Blue Moon] {93, 118, 203}
+[Blue Jean] {93, 173, 236}
+[Blue Spruce] {62, 93, 117}
+[Storm Blue] {49, 68, 89}
+[Night Sky Blue] {13, 31, 64}
+[Twilight Blue] {38, 55, 85}
+[Dusk Blue] {72, 88, 123}
+[Dawn Blue] {159, 185, 210}
+[Regal Blue] {1, 63, 106}
+[Empire Blue] {37, 84, 156}
+[Cosmic Blue] {44, 78, 128}
+[Galactic Blue] {30, 48, 91}
+[Starlight Blue] {210, 220, 245}
+[Neon Blue] {0, 180, 255}
+[Hyper Blue] {0, 120, 255}
+[Iris Blue] {90, 79, 207}
+[Sky Captain] {36, 52, 71}
+[Submarine Blue] {46, 86, 104}
+[Seaport Blue] {36, 92, 118}
+[Harbor Blue] {33, 84, 108}
+[Atlantis Blue] {62, 142, 212}
+[Catalina Blue] {6, 42, 120}
+[Peacock Blue] {0, 128, 200}
+[Seasalt Blue] {205, 225, 240}
+[Iceberg Blue] {185, 212, 230}
+[Horizon Blue] {164, 196, 215}
+[Breeze Blue] {210, 230, 245}

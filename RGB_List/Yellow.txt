@@ -1,0 +1,100 @@
+[Yellow] {239, 226, 83}
+[Light Yellow] {232, 229, 137}
+[Lemon Yellow] {235, 229, 68}
+[Canary Yellow] {233, 228, 59}
+[Golden Yellow] {232, 200, 72}
+[Gold] {233, 201, 72}
+[Goldenrod] {230, 196, 61}
+[Saffron] {236, 202, 68}
+[Amber] {236, 204, 79}
+[Honey] {232, 197, 58}
+[Maize] {237, 223, 73}
+[Flax] {236, 223, 74}
+[Daffodil] {237, 231, 64}
+[Butter] {236, 222, 66}
+[Buttermilk] {237, 235, 207}
+[Banana] {232, 218, 59}
+[Tuscan Sun] {233, 213, 89}
+[Mellow Yellow] {236, 226, 135}
+[Jasmine] {238, 229, 86}
+[Citrine] {236, 213, 63}
+[Marigold] {234, 205, 59}
+[Sunflower] {235, 208, 63}
+[Corn] {236, 221, 69}
+[Egg Yolk] {236, 200, 58}
+[Bumblebee] {236, 202, 52}
+[Pineapple] {235, 223, 67}
+[Sunray] {236, 214, 94}
+[Dandelion] {237, 215, 69}
+[Mustard] {230, 191, 57}
+[Dijon Mustard] {226, 181, 54}
+[Curry Yellow] {230, 188, 51}
+[Yellow Ochre] {225, 182, 60}
+[Harvest Gold] {230, 193, 70}
+[Honeycomb] {232, 198, 63}
+[Butterscotch] {233, 197, 79}
+[Cornsilk] {238, 232, 198}
+[Champagne] {238, 230, 189}
+[Pale Gold] {233, 215, 129}
+[Topaz] {231, 197, 80}
+[Buttercup] {235, 209, 62}
+[Sunbeam] {237, 224, 118}
+[Sunglow] {236, 215, 92}
+[Citrus] {236, 225, 77}
+[Lemon Zest] {238, 229, 82}
+[Lemonade] {238, 235, 184}
+[Flaxen] {236, 228, 152}
+[Straw] {236, 219, 133}
+[Blonde] {236, 222, 154}
+[Meringue] {238, 236, 208}
+[Cream] {239, 238, 214}
+[Ivory] {239, 238, 220}
+[Vanilla] {238, 236, 202}
+[Parchment] {238, 234, 197}
+[Candlelight] {236, 222, 110}
+[Gilt] {231, 205, 103}
+[Medallion] {232, 199, 78}
+[Buttercream] {239, 237, 210}
+[Pastel Yellow] {238, 236, 171}
+[Pale Yellow] {238, 236, 184}
+[Light Goldenrod] {238, 222, 122}
+[Light Goldenrod Yellow] {238, 232, 190}
+[Hansa Yellow] {236, 209, 58}
+[Naples Yellow] {236, 213, 118}
+[Indian Yellow] {232, 193, 60}
+[Gamboge] {229, 187, 56}
+[Arylide Yellow] {235, 209, 70}
+[Lemon Chiffon] {239, 237, 199}
+[Flavescent] {238, 230, 170}
+[Xanthic] {237, 214, 88}
+[Xanthous] {233, 205, 83}
+[Aureolin] {236, 208, 67}
+[Barium Yellow] {232, 201, 76}
+[Cadmium Yellow] {234, 204, 52}
+[Chrome Yellow] {233, 199, 40}
+[Safety Yellow] {238, 210, 53}
+[Signal Yellow] {238, 206, 49}
+[Traffic Yellow] {238, 208, 52}
+[School Bus Yellow] {238, 204, 44}
+[Taxi Yellow] {238, 207, 50}
+[Jonquil] {236, 221, 81}
+[Mimosa] {236, 221, 122}
+[Primrose] {238, 229, 145}
+[Butter Yellow] {238, 228, 137}
+[Cyber Yellow] {238, 205, 44}
+[Maximum Yellow] {238, 218, 55}
+[Maximum Yellow Red] {236, 199, 58}
+[Royal Yellow] {238, 206, 76}
+[Imperial Yellow] {237, 219, 26}
+[Harvest Yellow] {239, 195, 18}
+[Morning Sun] {234, 221, 89}
+[Sunshine] {236, 225, 100}
+[Solar Flare] {232, 222, 111}
+[Sun Kissed] {231, 220, 96}
+[Golden Haze] {232, 208, 111}
+[Tuscan Yellow] {232, 221, 108}
+[Cornbread] {233, 218, 59}
+[Macaroni and Cheese] {230, 192, 41}
+[Buttered Popcorn] {236, 200, 55}
+[Lemon Cream] {240, 239, 216}
+[Yellow Brick] {236, 221, 59}

@@ -1,0 +1,100 @@
+[Red] {226, 18, 18}
+[Bright Red] {253, 43, 43}
+[True Red] {236, 25, 25}
+[Deep Red] {135, 18, 18}
+[Dark Red] {150, 20, 20}
+[Light Red] {228, 166, 166}
+[Pastel Red] {221, 146, 146}
+[Soft Red] {226, 161, 161}
+[Vivid Red] {248, 31, 31}
+[Neon Red] {248, 37, 37}
+[Electric Red] {248, 22, 22}
+[Signal Red] {249, 32, 25}
+[Safety Red] {247, 52, 45}
+[Traffic Red] {251, 43, 36}
+[Fire Engine Red] {235, 16, 16}
+[Candy Apple Red] {232, 20, 20}
+[Tomato Red] {233, 61, 26}
+[Poppy Red] {243, 39, 24}
+[Scarlet] {245, 31, 21}
+[Vermilion] {234, 53, 17}
+[Cinnabar] {227, 49, 19}
+[Carmine] {233, 26, 46}
+[Crimson] {221, 20, 59}
+[Alizarin Crimson] {214, 23, 58}
+[Madder Lake] {203, 25, 53}
+[Venetian Red] {191, 39, 32}
+[English Red] {188, 54, 42}
+[Indian Red] {195, 68, 54}
+[Persian Red] {202, 38, 38}
+[Tuscan Red] {176, 44, 44}
+[Pompeian Red] {196, 41, 33}
+[Chinese Red] {232, 38, 30}
+[Rosso Corsa] {238, 26, 24}
+[Racing Red] {241, 28, 26}
+[Imperial Red] {235, 22, 22}
+[Royal Red] {226, 26, 26}
+[Cardinal] {211, 24, 37}
+[Ruby] {214, 20, 45}
+[Garnet] {165, 21, 32}
+[Red Garnet] {173, 20, 34}
+[Cherry] {225, 27, 39}
+[Sour Cherry] {204, 20, 35}
+[Maraschino] {231, 23, 31}
+[Raspberry] {212, 29, 61}
+[Strawberry] {230, 38, 56}
+[Cranberry] {190, 27, 47}
+[Red Currant] {212, 26, 50}
+[Pomegranate] {210, 27, 48}
+[Red Apple] {230, 33, 33}
+[Red Plum] {174, 26, 48}
+[Mulberry Red] {163, 23, 52}
+[Burgundy] {132, 22, 37}
+[Bordeaux] {141, 19, 34}
+[Claret] {148, 22, 38}
+[Merlot] {136, 21, 36}
+[Sangria] {151, 22, 40}
+[Oxblood] {121, 20, 28}
+[Wine Red] {128, 20, 32}
+[Mahogany] {149, 40, 30}
+[Rosewood] {140, 33, 31}
+[Redwood] {160, 49, 38}
+[Cedar Red] {161, 55, 44}
+[Chestnut Red] {153, 53, 44}
+[Copper Red] {202, 69, 40}
+[Rust] {176, 62, 35}
+[Red Ochre] {183, 64, 41}
+[Oxide Red] {167, 58, 39}
+[Brick] {173, 57, 41}
+[Brick Red] {168, 50, 38}
+[Firebrick] {178, 46, 38}
+[Terracotta] {193, 92, 70}
+[Salmon Red] {231, 134, 120}
+[Coral Red] {236, 98, 77}
+[Flame Red] {239, 56, 24}
+[Lava Red] {236, 48, 22}
+[Molten Red] {237, 52, 22}
+[Sunset Red] {235, 78, 60}
+[Sunrise Red] {236, 98, 84}
+[Blush Red] {230, 148, 147}
+[Rose Red] {229, 86, 100}
+[Old Rose] {196, 110, 111}
+[Antique Rose] {200, 120, 121}
+[Dusty Rose] {191, 126, 127}
+[Hibiscus] {222, 77, 98}
+[Camellia Red] {231, 84, 92}
+[Peony Red] {228, 91, 100}
+[Carnation Red] {230, 115, 120}
+[Geranium Red] {235, 31, 31}
+[Paprika] {209, 63, 26}
+[Chili Red] {207, 62, 25}
+[Persimmon Red] {238, 64, 20}
+[Rowan Red] {159, 19, 19}
+[Ember] {220, 18, 18}
+[Burnt Sienna] {219, 65, 27}
+[Safflower Red] {242, 28, 28}
+[Lac Red] {231, 15, 51}
+[Cochineal] {241, 29, 65}
+[Dragon Red] {249, 47, 47}
+[Phoenix Red] {252, 31, 31}
+[Heatwave Red] {249, 18, 18}
