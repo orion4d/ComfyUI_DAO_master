@@ -246,7 +246,7 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 <summary><strong>🛠️ Utilitaires, Filtres et Générateurs</strong></summary>
 
 <details>
-<summary><code>DAO Hex/RVB Color Picker</code></summary>
+<summary><code>DAO RVB Color Picker</code></summary>
 
 > Un sélecteurs de couleurs interactifs pour choisir des couleurs à partir de listes personnalisables.
 
