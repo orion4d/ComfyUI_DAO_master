@@ -323,3 +323,174 @@ Ce node convertit un document DXF en code SVG (Scalable Vector Graphics).
 **Sorties (Outputs)**
 *   `svg_text` (`SVG_TEXT`): Le contenu complet du fichier SVG sous forme de chaîne de caractères.
 *   `path` (`STRING`): Le chemin d'accès complet du fichier `.svg` sauvegardé (si l'option est activée).
+
+*   ## Manipulation SVG
+
+Ces nodes permettent de modifier, combiner et prévisualiser des données au format SVG.
+
+---
+
+### SVG Boolean
+Ce node effectue des opérations booléennes (union, différence, etc.) entre deux formes SVG.
+
+*   **Description :** Combine deux géométries SVG pour en créer une nouvelle. C'est l'équivalent des fonctions "Pathfinder" dans les logiciels de dessin vectoriel.
+*   **Catégorie :** `DAO_master/SVG`
+
+**Entrées (Inputs)**
+*   `svg_a` (`SVG_TEXT`): Le premier SVG (sujet).
+*   `svg_b` (`SVG_TEXT`): Le deuxième SVG (opérateur).
+*   `operation` (`LISTE`): L'opération à effectuer :
+    *   `union`: Fusionne les deux formes.
+    *   `difference`: Soustrait la forme B de la forme A.
+    *   `intersection`: Ne conserve que la zone où les deux formes se superposent.
+    *   `xor`: Ne conserve que les zones où les formes ne se superposent pas.
+*   `curve_quality` (`INT`, défaut: `60`): Précision utilisée pour convertir les courbes en segments de lignes avant l'opération. Une valeur plus élevée donne un résultat plus précis mais peut être plus lente.
+
+**Sorties (Outputs)**
+*   `svg_text` (`SVG_TEXT`): Le SVG résultant de l'opération booléenne.
+
+---
+
+### SVG Style
+Ce node applique des styles de remplissage et de contour à un SVG.
+
+*   **Description :** Permet de définir ou de remplacer les attributs de style (`fill`, `stroke`, `stroke-width`) de tous les chemins (`<path>`) à l'intérieur d'un SVG.
+*   **Catégorie :** `DAO_master/SVG`
+
+**Entrées (Inputs)**
+*   `svg_text` (`SVG_TEXT`): Le SVG à styliser.
+*   `fill_enabled` (`BOOLEAN`, défaut: `True`): Active ou désactive le remplissage.
+*   `fill_color` (`STRING`, défaut: `#00A2FF`): La couleur de remplissage (format hexadécimal).
+*   `stroke_color` (`STRING`, défaut: `#000000`): La couleur du contour.
+*   `stroke_width` (`FLOAT`, défaut: `1.0`): L'épaisseur du contour. Une valeur de `0` désactive le contour.
+
+**Sorties (Outputs)**
+*   `svg_text` (`SVG_TEXT`): Le SVG avec les nouveaux styles appliqués.
+
+---
+
+### SVG Preview
+Génère une prévisualisation d'un SVG sous forme d'image. Nécessite l'installation de `cairosvg`.
+
+*   **Description :** Utilise la bibliothèque CairoSVG pour effectuer un rendu de haute qualité d'un SVG.
+*   **Catégorie :** `DAO_master/SVG`
+
+**Entrées (Inputs)**
+*   `svg_text` (`SVG_TEXT`): Le SVG à prévisualiser.
+*   `width` (`INT`, défaut: `512`): Largeur de l'image de sortie.
+*   `height` (`INT`, défaut: `512`): Hauteur de l'image de sortie.
+*   `fit_mode` (`LISTE`): Gère le redimensionnement du SVG pour l'adapter à la sortie :
+    *   `stretch`: Étire le SVG pour remplir les dimensions `width` x `height`.
+    *   `fit_width`: Ajuste la hauteur pour conserver le ratio d'aspect en fonction de la largeur.
+    *   `fit_height`: Ajuste la largeur pour conserver le ratio d'aspect en fonction de la hauteur.
+    *   `contain`: Redimensionne pour que le SVG soit entièrement visible sans déformation, centré dans la zone.
+*   `bg_enabled` (`BOOLEAN`, défaut: `False`): Active un fond de couleur unie.
+*   `bg_color_hex` (`STRING`, défaut: `#FFFFFF`): Couleur du fond. Si désactivé, le fond est transparent.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): L'image de l'aperçu.
+
+---
+
+## I/O SVG (Input/Output)
+
+---
+
+### SVG Load
+Charge un fichier SVG depuis le disque et permet de le redimensionner.
+
+*   **Description :** Lit un fichier `.svg`, le parse et permet d'appliquer une transformation d'échelle à son contenu ou à sa zone de dessin (`canvas`).
+*   **Catégorie :** `DAO_master/SVG/IO`
+
+**Entrées (Inputs)**
+*   `file_path` (`STRING`): Chemin d'accès au fichier SVG.
+*   `scale` (`FLOAT`, défaut: `1.0`): Facteur d'échelle appliqué au contenu du SVG.
+*   `center_on_viewbox` (`BOOLEAN`, défaut: `True`): Si `True`, la mise à l'échelle se fait par rapport au centre de la `viewBox` du SVG.
+*   `scale_canvas` (`BOOLEAN`, défaut: `False`): Si `True`, met également à l'échelle les attributs `width` et `height` de la balise `<svg>`.
+*   `ensure_viewbox` (`BOOLEAN`, défaut: `True`): Si le SVG n'a pas de `viewBox` mais a `width` et `height`, en crée une automatiquement.
+
+**Sorties (Outputs)**
+*   `svg_text` (`SVG_TEXT`): Le contenu du fichier SVG (potentiellement modifié).
+*   `path` (`STRING`): Le chemin absolu du fichier chargé.
+
+---
+
+### SVG Save
+Sauvegarde une chaîne de texte SVG dans un fichier `.svg`.
+
+*   **Description :** Écrit le contenu `SVG_TEXT` sur le disque.
+*   **Catégorie :** `DAO_master/SVG/IO`
+
+**Entrées (Inputs)**
+*   `svg_text` (`SVG_TEXT`): Le contenu SVG à sauvegarder.
+*   ... (paramètres `directory`, `filename`, `timestamp_suffix` identiques à `DXF Save`)
+
+**Sorties (Outputs)**
+*   `path` (`STRING`): Le chemin absolu du fichier sauvegardé.
+
+---
+
+### SVG Passthrough
+Convertit un type `SVG_TEXT` en `STRING` standard.
+
+*   **Description :** Node utilitaire simple servant de convertisseur de type pour connecter une sortie `SVG_TEXT` à une entrée qui attend une `STRING` générique.
+*   **Catégorie :** `DAO_master/SVG/Utils`
+
+**Entrées (Inputs)**
+*   `svg_text` (`SVG_TEXT`): Le SVG en entrée.
+
+**Sorties (Outputs)**
+*   `string` (`STRING`): Le même contenu, mais de type `STRING`.
+
+---
+
+## Conversion SVG ↔ Image
+
+---
+
+### Convert SVG → IMG (+colors)
+Convertit un SVG en une image rastérisée et extrait les couleurs utilisées.
+
+*   **Description :** Un node de conversion avancé qui parse la structure d'un SVG, identifie les formes et leurs couleurs, puis les rend sous forme d'image. Il propose deux moteurs de rendu : un "natif" basé sur PIL et un basé sur "CairoSVG" pour une meilleure compatibilité.
+*   **Catégorie :** `DAO_master/SVG/Convert`
+
+**Entrées (Inputs)**
+*   `svg_text` (`SVG_TEXT`): Le contenu SVG à convertir.
+*   `svg_path` (`STRING`, optionnel): Chemin vers un fichier SVG, utilisé si `svg_text` est vide.
+*   `width` (`INT`, défaut: `512`): Largeur de l'image de sortie (la hauteur est calculée pour garder le ratio).
+*   `scale_in_canvas` (`FLOAT`, défaut: `1.0`): Applique un zoom "dans" le SVG en modifiant sa `viewBox` avant le rendu.
+*   `transparent_bg` (`BOOLEAN`, défaut: `False`): Rend l'image avec un fond transparent.
+*   `background_hex` (`STRING`, défaut: `#000000`): Couleur de fond si la transparence est désactivée.
+*   `pad_px` (`INT`, défaut: `0`): Ajoute une marge (padding) en pixels autour de l'image.
+*   `keep_alpha_as_mask` (`BOOLEAN`, défaut: `True`): Si `True`, génère un masque basé sur les zones non transparentes de l'image.
+*   `stroke_only` (`BOOLEAN`, défaut: `False`): Ne rend que les contours (`stroke`), ignore les remplissages (`fill`).
+*   `open_subpaths_px` (`INT`, défaut: `0`): Si supérieur à 0, les chemins ouverts (non fermés) seront rendus avec cette épaisseur.
+*   `renderer` (`LISTE`, défaut: `auto`): Choix du moteur de rendu. `auto` essaie le `native` d'abord, et si le résultat semble vide, bascule sur `cairosvg`.
+
+**Sorties (Outputs)**
+*   `image` (`IMAGE`): L'image rastérisée du SVG.
+*   `mask` (`MASK`): Le masque de l'image.
+*   `colors_json` (`STRING`): Une chaîne JSON listant toutes les formes détectées avec leur type (`fill`/`stroke`) et leur couleur.
+
+---
+
+### Convert IMG → SVG (1-bit)
+Convertit une image en un SVG monochrome en utilisant Potrace.
+
+*   **Description :** Ce node binarise une image (la transforme en noir et blanc pur) puis utilise l'algorithme de Potrace pour tracer les contours des formes, générant ainsi un SVG.
+*   **Catégorie :** `DAO_master/SVG/Convert`
+
+**Entrées (Inputs)**
+*   `image` (`IMAGE`): L'image source.
+*   `threshold` (`INT`, défaut: `128`): Seuil de luminosité (0-255) pour la binarisation.
+*   `auto_otsu` (`BOOLEAN`, défaut: `True`): Si `True`, calcule automatiquement le meilleur seuil (méthode d'Otsu) et ignore la valeur `threshold`.
+*   `invert` (`BOOLEAN`, défaut: `False`): Inverse le noir et le blanc avant le traçage.
+*   ... (paramètres `turdsize`, `alphamax`, etc.) : Paramètres avancés de l'algorithme Potrace pour contrôler la finesse et la simplification du tracé.
+*   `fill_rule` (`LISTE`, défaut: `nonzero`): Règle de remplissage pour le SVG généré.
+*   `backend` (`LISTE`, défaut: `auto`): Permet de choisir entre l'exécutable `potrace` (si installé) ou la bibliothèque Python.
+*   ... (paramètres de sauvegarde `save_svg`, `out_dir`, etc.)
+
+**Sorties (Outputs)**
+*   `svg_path` (`STRING`): Le chemin du fichier `.svg` sauvegardé (si l'option est activée).
+*   `svg_text` (`SVG_TEXT`): Le contenu du SVG généré sous forme de texte.
+*   `preview` (`IMAGE`): Un aperçu de l'image binarisée qui a été utilisée pour le traçage.
