@@ -368,7 +368,6 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 </details>
 
 
-
 <div align="center">
 
 <h3>🌟 <strong>Show Your Support</strong></h3>
