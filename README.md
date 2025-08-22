@@ -14,9 +14,7 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/orion4d/ComfyUI_DAO_master.git
 ```
 
-# Documentation Technique
-
-Ce document fournit une description détaillée de chaque custom node inclus dans le pack **ComfyUI_DAO_master**.
+# Documentation
 
 ##  primitives DXF
 
