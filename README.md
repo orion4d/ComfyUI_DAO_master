@@ -3,7 +3,9 @@
 **ComfyUI_DAO_master** est une collection de custom nodes pour **ComfyUI**.
 Ces nodes apportent des outils supplémentaires pour la création, la manipulation d’image et l’expérimentation visuelle, avec un focus sur les **workflows vectoriels** (DXF & SVG) et les utilitaires de production.
 
----
+<p align="center">
+<img width="1242" height="635" alt="image" src="https://github.com/user-attachments/assets/b2097f01-370e-4dd0-b3d8-0dbacbe8bc24" />
+</p>
 
 ### ✨ Aperçu des fonctionnalités
 
