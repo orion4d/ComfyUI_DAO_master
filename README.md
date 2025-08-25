@@ -257,9 +257,9 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 </details>
 
 <details>
-<summary><code>Folder File Picker</code></summary>
+<summary><code>folder_file_pro</code></summary>
 
-> Un explorateur de fichiers avancé pour sélectionner dynamiquement un fichier dans un dossier.
+> Un explorateur de fichiers avancé pour sélectionner dynamiquement un fichier dans un dossier. Affichage par listes ou vignettes (grille).
 
 *   **Catégorie :** `DAO_master/IO`
 *   **💡 Fonctionnement UI :** Une interface très réactive où tous les paramètres de filtrage (extensions, RegEx) et de tri mettent à jour un menu déroulant listant les fichiers trouvés en temps réel.
