@@ -25,13 +25,12 @@ from .dxf_transform import DXFTransform
 from .svg_save import SvgSave
 from .convertSVGtoIMG import ConvertSVGtoIMG
 from .convertIMGtoSVG import ConvertIMGtoSVG
-from .dao_hex_color_picker import DAOHexColorPicker
 from .dao_RVB_color_picker import DAORVBColorPicker
 from .dao_text_maker import DAOTextMaker
 from .dao_move import DAOMove
 from .dao_blur import DAOBlur
 from .svg_load import SVGLoad
-from .folder_file_picker import FolderFilePicker
+from .folder_file_pro import FolderFilePro
 
 # Dictionnaires de mapping
 NODE_CLASS_MAPPINGS = {
@@ -57,13 +56,12 @@ NODE_CLASS_MAPPINGS = {
     "SVG Save": SvgSave,
     "ConvertSVGtoIMG": ConvertSVGtoIMG,
     "ConvertIMGtoSVG": ConvertIMGtoSVG,
-    "DAO Hex Color Picker": DAOHexColorPicker,
     "DAO RVB Color Picker": DAORVBColorPicker,
     "DAO Text Maker": DAOTextMaker,
     "DAO Move": DAOMove,
     "DAO Blur": DAOBlur,
     "SVG Load": SVGLoad,
-    "Folder File Picker": FolderFilePicker,
+    "Folder File Pro": FolderFilePro,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -89,13 +87,12 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "SVG Save": "SVG Save",
     "ConvertSVGtoIMG": "Convert SVG → IMG (+colors)",
     "ConvertIMGtoSVG": "Convert IMG → SVG (1-bit)",
-    "DAO Hex Color Picker": "Hex Color Picker",
     "DAO RVB Color Picker": "RVB Color Picker",
     "DAO Text Maker": "Text Maker",
     "DAO Move": "Move-Scale-Rotate-Sym",
     "DAO Blur": "Blur (Gaussian)",
     "SVG Load": "SVG Load (fichier → SVG_TEXT)",
-    "Folder File Picker": "Folder File Picker (dir → file_path)",
+    "Folder File Pro": "Folder File Pro (dir → file_path)",
 }
 
 WEB_DIRECTORY = "./web"
