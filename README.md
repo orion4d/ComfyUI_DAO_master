@@ -261,13 +261,21 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 <details>
 <summary><code>folder_file_pro</code></summary>
 
-> Un explorateur de fichiers avancé pour sélectionner dynamiquement un fichier dans un dossier. Affichage par listes ou vignettes (grille).
-
-*   **Catégorie :** `DAO_master/IO`
-*   **💡 Fonctionnement UI :** Une interface très réactive où tous les paramètres de filtrage (extensions, RegEx) et de tri mettent à jour un menu déroulant listant les fichiers trouvés en temps réel.
-*   **Modes de sélection :** `manual` (via l'UI), `fixed`, `increment`, `decrement`, `randomize` (piloté par la `seed`).
+- **Catégorie** : `DAO_master/IO`
+- **Vue** : Grille ou Liste, défilement fiable, double-clic pour ouvrir/preview, bouton **Up** & **Explorer**.
+- **Aperçus** : vignettes images, SVG inline ; autres fichiers affichés avec un badge `[File.ext]`. Icône dossier PNG non déformée.
+- **Filtres** : `extensions`, `name_regex` (modes `include` / `exclude`, option *ignore case*).
+- **Tri** : `sort_by = name | mtime | size` + `descending` (asc/desc).
+- **Sélection** :  
+  - **Modes** : `manual` (UI), `fixed`, `increment`, `decrement`, `randomize` (piloté par `seed`).  
+  - **Raccourcis** : *type-to-select* (taper des lettres pour sauter au prochain item).
+- **Sorties** :  
+  - `file_path` (chemin complet), `filename`, `dir_used`, `files_json` (liste des fichiers)  
+  - `file_info` (JSON) : taille octets, dates ISO (création/modif), et si image/vidéo → `width` / `height`.
+- **Compat** : l’icône de dossier est référencée via `new URL("./ico_dossier.png", import.meta.url).href` → fonctionne quel que soit l’emplacement/nom du dossier de l’extension.
 
 </details>
+
 
 <details>
 <summary><code>DAO Text Maker</code></summary>
