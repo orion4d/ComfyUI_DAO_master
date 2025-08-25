@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# DAO_master - Folder File Pro
+# DAO_master - Folder File Pro (v4.1)
 
 import os
 import io
@@ -80,7 +80,7 @@ class FInfo:
     mtime: float
 
 # --------------------------------------------------------------------------------------
-# Helpers (même pipeline que l'UI)
+# Helpers
 
 def _norm_exts(exts: str) -> List[str]:
     if not exts:
@@ -208,7 +208,7 @@ def _open_in_explorer(target: str) -> None:
         subprocess.Popen(["xdg-open", target], close_fds=True)
 
 # --------------------------------------------------------------------------------------
-# HTTP endpoints (si serveur dispo)
+# HTTP endpoints
 if HAVE_SERVER:
 
     @PromptServer.instance.routes.get("/folder_file_pro/list")
@@ -304,7 +304,7 @@ if HAVE_SERVER:
             return web.Response(status=404)
         try:
             img = Image.open(filepath)
-            # Si alpha -> PNG, sinon JPEG
+            # alpha -> PNG, sinon JPEG
             has_alpha = (img.mode == "RGBA") or (img.mode == "P" and "transparency" in img.info)
             img = img.convert("RGBA") if has_alpha else img.convert("RGB")
             img.thumbnail([320, 320], Image.LANCZOS)
@@ -365,8 +365,10 @@ class FolderFilePro:
                 "regex_ignore_case": ("BOOLEAN", {"default": True}),
                 "sort_by": (["name", "mtime", "size"], {"default": "name"}),
                 "descending": ("BOOLEAN", {"default": False}),
+                # Sélection
                 "seed_mode": (["manual", "fixed", "increment", "decrement", "randomize"], {"default": "manual"}),
                 "seed": ("INT", {"default": 0, "min": -2147483648, "max": 2147483647}),
+                "index": ("INT", {"default": 0, "min": 0, "max": 1_000_000_000}),
             }
         }
 
@@ -378,7 +380,7 @@ class FolderFilePro:
     def pick(self, directory: str, extensions: str,
              name_regex: str, regex_mode: str, regex_ignore_case: bool,
              sort_by: str, descending: bool,
-             seed_mode: str, seed: int):
+             seed_mode: str, seed: int, index: int):
 
         exts = _norm_exts(extensions)
         files = _list_files_current_dir(directory, exts)
@@ -392,16 +394,17 @@ class FolderFilePro:
         n = len(files)
 
         sm = (seed_mode or "manual").lower()
-        if sm == "randomize":
-            idx = random.Random(int(seed)).randrange(n)
+        if sm == "manual":
+            sel = max(0, min(int(index), n - 1))
+        elif sm == "randomize":
+            sel = random.Random(int(seed) & 0xFFFFFFFF).randrange(n)
+        elif sm == "decrement":
+            sel = (int(seed) - 1) % n
         else:
-            try:
-                idx = int(seed)
-            except Exception:
-                idx = 0
-            idx %= n
+            # fixed / increment → même base (Comfy ne fournit pas de hook post-run ici)
+            sel = int(seed) % n
 
-        chosen = files[idx]
+        chosen = files[sel]
 
         files_json = json.dumps(
             [{"name": f.name, "path": f.path, "size": f.size, "mtime": f.mtime} for f in files],

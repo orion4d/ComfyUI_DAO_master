@@ -1,7 +1,8 @@
 "use strict";
-// DAO_master — Folder File Pro UI (v4.0)
-// - Folder icon from web/ico_dossier.png (non déformée)
+// DAO_master — Folder File Pro UI (v4.1)
+// - Icône dossier PNG /web/ico_dossier.png non déformée
 // - Grid/List, scroll fiable, double-clic, type-to-select, Explorer
+// - Clic sur un fichier => seed_mode = "manual" + mise à jour de l'index (aligné Python)
 
 import { app } from "/scripts/app.js";
 import { api } from "/scripts/api.js";
@@ -41,10 +42,10 @@ function ensureLightbox() {
   });
 }
 
-/* ---------- Icône dossier PNG depuis /web ---------- */
+/* ---------- Icône dossier ---------- */
 const FFP_FOLDER_URL = new URL("./ico_dossier.png", import.meta.url).href;
 
-/* ---------- Badge d'extension pour non-images ---------- */
+/* ---------- Badge d'extension ---------- */
 function extBadge(ext) {
   if (!ext) ext = ".file";
   if (ext[0] !== ".") ext = "." + ext;
@@ -52,7 +53,7 @@ function extBadge(ext) {
 }
 
 app.registerExtension({
-  name: "DAO_master.FolderFilePro.UI.v4_0",
+  name: "DAO_master.FolderFilePro.UI.v4_1",
   async beforeRegisterNodeDef(nodeType, nodeData) {
     if (!nodeData || nodeData.name !== "Folder File Pro") return;
 
@@ -69,8 +70,10 @@ app.registerExtension({
       const wReIC = this.widgets.find((w) => w.name === "regex_ignore_case");
       const wSort = this.widgets.find((w) => w.name === "sort_by");
       const wDesc = this.widgets.find((w) => w.name === "descending");
-      const wIdx = this.widgets.find((w) => w.name === "index");
-      if (wIdx) wIdx.hidden = true;
+      const wSeedMode = this.widgets.find((w) => w.name === "seed_mode");
+      const wSeed = this.widgets.find((w) => w.name === "seed");
+      const wIndex = this.widgets.find((w) => w.name === "index");
+      if (wIndex) wIndex.hidden = true;
 
       /* --------- UI DOM --------- */
       const root = document.createElement("div");
@@ -81,7 +84,6 @@ app.registerExtension({
   .ffp-input,.ffp-btn,.ffp-select{background:#333;color:#ccc;border:1px solid #555;border-radius:6px;padding:6px 8px;font-size:12px}
   .ffp-input{flex:1 1 auto;min-width:240px}
 
-  /* conteneur résultats → occupe tout l'espace disponible; min-height:0 pour activer le scroll */
   .ffp-grid{flex:1 1 auto;min-height:0;overflow-y:auto;background:#222;border-radius:10px;padding:10px;
            display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
   .ffp-grid.ffp-list{display:block}
@@ -91,14 +93,13 @@ app.registerExtension({
   .ffp-card.selected{border-color:#00ffc9}
 
   .ffp-media{display:flex;align-items:center;justify-content:center;height:150px;border-radius:10px 10px 0 0;background:#1b1b1b;overflow:hidden;color:#bbb;font-size:22px}
-  .ffp-media img{max-width:100%;max-height:100%;object-fit:contain;image-rendering:auto}
+  .ffp-media img{max-width:100%;max-height:100%;object-fit:contain}
 
-  /* taille conforme Local_Image_Gallery (Grid ~72px haut) */
+  /* taille proche de Local_Image_Gallery (≈72px de haut) */
   .ffp-media .ffp-folder-img{max-height:72px;max-width:96px;width:auto;height:auto}
 
   .ffp-info{padding:8px 10px;font-size:12px;word-break:break-all;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
-  /* List mode */
   .ffp-grid.ffp-list .ffp-card{flex-direction:row;align-items:center;padding:6px 8px;margin-bottom:6px}
   .ffp-grid.ffp-list .ffp-media{width:52px;height:52px;border-radius:8px;margin-right:10px}
   .ffp-grid.ffp-list .ffp-media .ffp-folder-img{max-height:40px;max-width:56px}
@@ -157,8 +158,12 @@ app.registerExtension({
         card.classList.add("selected");
         selectedPath = card.dataset.path || null;
         if (scroll) card.scrollIntoView({ block: "nearest" });
-        if (updateIndex && card.dataset.type === "file")
+        if (updateIndex && card.dataset.type === "file") {
+          // IMPORTANT : aligner le moteur Python sur la sélection
+          if (wSeedMode) wSeedMode.value = "manual";
           resolveAndSelect.call(this, selectedPath);
+          this.setDirtyCanvas(true, true);
+        }
       }
       function selectByIndex(idx) {
         const list = cardsArray();
@@ -187,40 +192,21 @@ app.registerExtension({
       }
       function fileHTML(f) {
         if (f.type === "image") {
-          const src =
-            "/folder_file_pro/thumbnail?filepath=" +
-            encodeURIComponent(f.path);
+          const src = "/folder_file_pro/thumbnail?filepath=" + encodeURIComponent(f.path);
           return (
-            '<div class="ffp-media"><img loading="lazy" src="' +
-            src +
-            '" /></div><div class="ffp-info" title="' +
-            f.name +
-            '">' +
-            f.name +
-            "</div>"
+            '<div class="ffp-media"><img loading="lazy" src="' + src +
+            '" /></div><div class="ffp-info" title="' + f.name + '">' + f.name + "</div>"
           );
         } else if (f.type === "svg") {
-          const src =
-            "/folder_file_pro/view?filepath=" +
-            encodeURIComponent(f.path);
+          const src = "/folder_file_pro/view?filepath=" + encodeURIComponent(f.path);
           return (
-            '<div class="ffp-media"><img loading="lazy" src="' +
-            src +
-            '" /></div><div class="ffp-info" title="' +
-            f.name +
-            '">' +
-            f.name +
-            "</div>"
+            '<div class="ffp-media"><img loading="lazy" src="' + src +
+            '" /></div><div class="ffp-info" title="' + f.name + '">' + f.name + "</div>"
           );
         } else {
           return (
-            '<div class="ffp-media">' +
-            extBadge(f.ext || ".file") +
-            '</div><div class="ffp-info" title="' +
-            f.name +
-            '">' +
-            f.name +
-            "</div>"
+            '<div class="ffp-media">' + extBadge(f.ext || ".file") +
+            '</div><div class="ffp-info" title="' + f.name + '">' + f.name + "</div>"
           );
         }
       }
@@ -258,9 +244,7 @@ app.registerExtension({
           pathInput.value = curDir;
           parentDir = data.parent_directory || null;
           upBtn.disabled = !parentDir;
-          countLbl.textContent = data.total_count
-            ? String(data.total_count) + " fichier(s)"
-            : "";
+          countLbl.textContent = data.total_count ? String(data.total_count) + " fichier(s)" : "";
 
           grid.classList.toggle("ffp-list", curView === "list");
 
@@ -286,10 +270,7 @@ app.registerExtension({
             const sameView = curView === prevView;
             if (!sameDir || !sameView || forceResetScroll) grid.scrollTop = 0;
             else {
-              const maxScroll = Math.max(
-                0,
-                grid.scrollHeight - grid.clientHeight
-              );
+              const maxScroll = Math.max(0, grid.scrollHeight - grid.clientHeight);
               grid.scrollTop = Math.min(prevScroll, maxScroll);
             }
             lastDir = curDir;
@@ -298,10 +279,7 @@ app.registerExtension({
             grid.focus();
           });
         } catch (e) {
-          grid.innerHTML =
-            '<p style="color:#ff7777;padding:8px">' +
-            (e.message || String(e)) +
-            "</p>";
+          grid.innerHTML = '<p style="color:#ff7777;padding:8px">' + (e.message || String(e)) + "</p>";
           lastDir = String(wDir ? wDir.value : "");
           lastView = viewSel.value;
           forceResetScroll = false;
@@ -325,13 +303,11 @@ app.registerExtension({
             regex_ic: String(!!(wReIC && wReIC.value)),
             path: String(targetPath),
           }).toString();
-          const res = await api.fetchApi(
-            "/folder_file_pro/resolve_index?" + params
-          );
+          const res = await api.fetchApi("/folder_file_pro/resolve_index?" + params);
           const data = await res.json();
-          const idxW = this.widgets.find((w) => w.name === "index");
-          if (idxW && data.index >= 0) {
-            idxW.value = data.index;
+          if (data && typeof data.index === "number" && data.index >= 0) {
+            const idxW = this.widgets.find((w) => w.name === "index");
+            if (idxW) idxW.value = data.index;
             this.setDirtyCanvas(true, true);
           }
         } catch (e) {
@@ -368,15 +344,11 @@ app.registerExtension({
         v.pause();
         a.pause();
         if (isImg) {
-          i.src =
-            "/folder_file_pro/view?filepath=" + encodeURIComponent(p);
+          i.src = "/folder_file_pro/view?filepath=" + encodeURIComponent(p);
           i.style.display = "block";
           lb.style.display = "flex";
         } else {
-          window.open(
-            "/folder_file_pro/view?filepath=" + encodeURIComponent(p),
-            "_blank"
-          );
+          window.open("/folder_file_pro/view?filepath=" + encodeURIComponent(p), "_blank");
         }
       });
 
@@ -401,8 +373,7 @@ app.registerExtension({
         }
       }
       grid.addEventListener("keydown", (e) => {
-        const tag =
-          (document.activeElement && document.activeElement.tagName) || "";
+        const tag = (document.activeElement && document.activeElement.tagName) || "";
         if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
         if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
           handleType.call(this, e.key);
@@ -420,7 +391,7 @@ app.registerExtension({
         }
       });
 
-      // relier widgets aux refresh
+      // refresh auto quand un widget change
       function rewire(w) {
         if (!w) return;
         const prev = w.callback;
@@ -451,8 +422,7 @@ app.registerExtension({
         fetchList();
       };
       exploreBtn.onclick = async () => {
-        const toOpen =
-          (selectedPath || (wDir ? wDir.value : "") || "").toString();
+        const toOpen = (selectedPath || (wDir ? wDir.value : "") || "").toString();
         if (!toOpen) return;
         try {
           await api.fetchApi("/folder_file_pro/open_explorer", {
@@ -485,4 +455,4 @@ app.registerExtension({
   },
 });
 
-console.log("[DAO_master] Folder File Pro UI v4.0 loaded");
+console.log("[DAO_master] Folder File Pro UI v4.1 loaded");
