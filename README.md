@@ -5,6 +5,8 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 
 <p align="center">
 <img width="1928" height="1033" alt="image" src="https://github.com/user-attachments/assets/0d425b29-379b-4b0d-b8b6-c168c8d4cee1" />
+<img width="1273" height="1075" alt="image" src="https://github.com/user-attachments/assets/a55e99cc-9b3f-4d79-b6cd-e5fa600c6081" />
+
 </p>
 
 ### ✨ Aperçu des fonctionnalités
