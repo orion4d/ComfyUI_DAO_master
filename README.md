@@ -6,6 +6,14 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 <p align="center">
 <img width="1928" height="1033" alt="image" src="https://github.com/user-attachments/assets/0d425b29-379b-4b0d-b8b6-c168c8d4cee1" />
 <img width="1273" height="1075" alt="image" src="https://github.com/user-attachments/assets/a55e99cc-9b3f-4d79-b6cd-e5fa600c6081" />
+<img width="1743" height="1094" alt="image" src="https://github.com/user-attachments/assets/dfe6e21a-a0a6-4359-bc90-335bdce485f5" />
+<img width="1055" height="1009" alt="image" src="https://github.com/user-attachments/assets/6b7c35ad-9396-4902-ad90-486d0ec05c39" />
+<img width="1827" height="1151" alt="image" src="https://github.com/user-attachments/assets/09c76182-d705-49de-bf19-84aa85c23fc2" />
+<img width="1380" height="996" alt="image" src="https://github.com/user-attachments/assets/67f70e2a-432d-4372-b683-31b0c6f0c1f3" />
+<img width="898" height="1097" alt="image" src="https://github.com/user-attachments/assets/4595c263-a446-4710-a276-5934f1a38fea" />
+<img width="625" height="723" alt="image" src="https://github.com/user-attachments/assets/13de492e-721c-4646-961e-84433cfa3932" />
+<img width="825" height="957" alt="image" src="https://github.com/user-attachments/assets/0de4a91c-1d96-4deb-a3b6-a267ab5f2707" />
+<img width="578" height="678" alt="image" src="https://github.com/user-attachments/assets/e0357bf7-d350-4ba9-af7e-355a28485498" />
 
 </p>
 
