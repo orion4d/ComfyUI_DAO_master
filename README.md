@@ -24,7 +24,7 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 *   **Création Vectorielle DXF :** Générez des formes primitives (cercles, rectangles, polygones...) et assemblez-les.
 *   **Manipulation SVG :** Effectuez des opérations booléennes (union, différence...), stylisez vos SVG et convertissez-les.
 *   **Conversion Robuste :** Passez facilement d'une image à un SVG (vectorisation) et d'un SVG à une image (rastérisation).
-*   **Utilitaires Puissants :** Un sélecteur de fichiers avancé, des sélecteurs de couleurs dynamiques, un générateur de texte complet et des filtres d'image pratiques.
+*   **Utilitaires Puissants :** Un sélecteur de fichiers avancé, des chargeurs d'images avec traitement intégré, des sélecteurs de couleurs dynamiques, un générateur de texte complet et des filtres d'image pratiques.
 *   **Interface Améliorée :** De nombreux nodes disposent d'une interface utilisateur interactive avec des menus déroulants dynamiques pour une utilisation plus intuitive.
 
 ---
@@ -258,34 +258,56 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 <summary><strong>🛠️ Utilitaires, Filtres et Générateurs</strong></summary>
 
 <details>
+<summary><code>Folder File Pro (dir → file_path)</code></summary>
+
+*   **Catégorie** : `DAO_master/IO`
+*   **Description** : Un explorateur de fichiers avancé pour naviguer et sélectionner des fichiers directement dans ComfyUI.
+*   **Vue** : Grille ou Liste, défilement fiable, double-clic pour ouvrir/preview, bouton **Up** & **Explorer**.
+*   **Aperçus** : vignettes images, SVG inline ; autres fichiers affichés avec un badge `[File.ext]`. Icône dossier PNG non déformée.
+*   **Filtres** : `extensions`, `name_regex` (modes `include` / `exclude`, option *ignore case*).
+*   **Tri** : `sort_by = name | mtime | size` + `descending` (asc/desc).
+*   **Sélection** :  
+    *   **Modes** : `manual` (UI), `fixed`, `increment`, `decrement`, `randomize` (piloté par `seed`).  
+    *   **Raccourcis** : *type-to-select* (taper des lettres pour sauter au prochain item).
+*   **Sorties** : `file_path`, `filename`, `dir_used`, `files_json` (liste des fichiers), `file_info` (JSON avec taille, dates, dimensions).
+
+</details>
+
+<details>
+<summary><code>Path → Image (+RGBA/Mask/Meta)</code></summary>
+
+*   **Catégorie** : `DAO_master/IO`
+*   **Description** : Charge une image depuis un chemin de fichier et extrait toutes les informations pertinentes. C'est le complément idéal de `Folder File Pro`.
+*   **Fonctionnalités** :
+    *   Fournit des sorties `IMAGE` (RGB), `IMAGE` (RGBA), `MASK` (canal alpha), et une image visible du masque.
+    *   Extrait les métadonnées de workflow (`JSON`) et les paramètres (`parameters`, EXIF) des fichiers PNG/JPG.
+    *   Gère les chemins de fichiers invalides de manière sécurisée en retournant des images et des textes vides pour éviter de planter le workflow.
+
+</details>
+
+<details>
+<summary><code>Load Image Pro (Path/Image → RGB/RGBA/Mask/Upscale)</code></summary>
+
+*   **Catégorie** : `DAO_master/IO`
+*   **Description** : Un node de chargement d'image tout-en-un qui combine chargement, traitement de masque avancé et upscale.
+*   **Fonctionnalités** :
+    *   **Source Flexible** : Charge une image depuis un `path` OU utilise une `image` déjà existante en entrée (mode pass-through).
+    *   **Outils de Masque** : Suite complète d'outils pour le masque : flou, dilatation/érosion (`offset`), lissage morphologique, comblement des trous et inversion.
+    *   **Upscale Intégré** : Augmente la résolution de l'image en utilisant les modèles `.pth` de ComfyUI (type ESRGAN) ou des méthodes OpenCV (Lanczos, etc.) si aucun modèle n'est sélectionné.
+    *   **Sorties Claires** : Fournit une image RGB, une image RGBA (utilisant le masque final), et le masque traité séparément.
+
+</details>
+
+<details>
 <summary><code>DAO RVB Color Picker</code></summary>
 
-> Un sélecteurs de couleurs interactifs pour choisir des couleurs à partir de listes personnalisables.
+> Un sélecteur de couleurs interactif pour choisir des couleurs à partir de listes personnalisables.
 
 *   **Catégorie :** `DAO_master/Color`
 *   **💡 Fonctionnement UI :** Créez vos propres listes de couleurs dans le dossier `RGB_List/`. Le node affichera des menus déroulants pour choisir le fichier et la couleur. Un bouton `↻` permet de rafraîchir les listes.
 *   **Modes :** `Manual`, `Random`, `Increment`, `Decrement`.
 
 </details>
-
-<details>
-<summary><code>folder_file_pro</code></summary>
-
-- **Catégorie** : `DAO_master/IO`
-- **Vue** : Grille ou Liste, défilement fiable, double-clic pour ouvrir/preview, bouton **Up** & **Explorer**.
-- **Aperçus** : vignettes images, SVG inline ; autres fichiers affichés avec un badge `[File.ext]`. Icône dossier PNG non déformée.
-- **Filtres** : `extensions`, `name_regex` (modes `include` / `exclude`, option *ignore case*).
-- **Tri** : `sort_by = name | mtime | size` + `descending` (asc/desc).
-- **Sélection** :  
-  - **Modes** : `manual` (UI), `fixed`, `increment`, `decrement`, `randomize` (piloté par `seed`).  
-  - **Raccourcis** : *type-to-select* (taper des lettres pour sauter au prochain item).
-- **Sorties** :  
-  - `file_path` (chemin complet), `filename`, `dir_used`, `files_json` (liste des fichiers)  
-  - `file_info` (JSON) : taille octets, dates ISO (création/modif), et si image/vidéo → `width` / `height`.
-- **Compat** : l’icône de dossier est référencée via `new URL("./ico_dossier.png", import.meta.url).href` → fonctionne quel que soit l’emplacement/nom du dossier de l’extension.
-
-</details>
-
 
 <details>
 <summary><code>DAO Text Maker</code></summary>
