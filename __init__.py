@@ -31,6 +31,8 @@ from .dao_move import DAOMove
 from .dao_blur import DAOBlur
 from .svg_load import SVGLoad
 from .folder_file_pro import FolderFilePro
+from .path_to_image import PathToImage
+from .load_image_pro import LoadImagePro
 
 # Dictionnaires de mapping
 NODE_CLASS_MAPPINGS = {
@@ -62,6 +64,8 @@ NODE_CLASS_MAPPINGS = {
     "DAO Blur": DAOBlur,
     "SVG Load": SVGLoad,
     "Folder File Pro": FolderFilePro,
+    "Path To Image": PathToImage,
+    "Load Image Pro": LoadImagePro,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -93,6 +97,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DAO Blur": "Blur (Gaussian)",
     "SVG Load": "SVG Load (fichier → SVG_TEXT)",
     "Folder File Pro": "Folder File Pro (dir → file_path)",
+    "Path To Image": "Path → Image (+RGBA/Mask/Meta)",
+    "Load Image Pro": "Load Image Pro (Path/Image → RGB/RGBA/Mask/Upscale)",
 }
 
 WEB_DIRECTORY = "./web"
