@@ -23,8 +23,9 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 
 *   **Création Vectorielle DXF :** Générez des formes primitives (cercles, rectangles, polygones...) et assemblez-les.
 *   **Manipulation SVG :** Effectuez des opérations booléennes (union, différence...), stylisez vos SVG et convertissez-les.
+*   **Clonage & Mosaïques :** Créez des grilles et des motifs circulaires complexes, découpez des images en tuiles et réassemblez-les avec des options de fusion avancées.
 *   **Conversion Robuste :** Passez facilement d'une image à un SVG (vectorisation) et d'un SVG à une image (rastérisation).
-*   **Utilitaires Puissants :** Un sélecteur de fichiers avancé, des chargeurs d'images avec traitement intégré, des sélecteurs de couleurs dynamiques, un générateur de texte complet et des filtres d'image pratiques.
+*   **Utilitaires Puissants :** Un sélecteur de fichiers avancé, des sélecteurs de couleurs dynamiques, un générateur de texte complet et des filtres d'image pratiques.
 *   **Interface Améliorée :** De nombreux nodes disposent d'une interface utilisateur interactive avec des menus déroulants dynamiques pour une utilisation plus intuitive.
 
 ---
@@ -237,7 +238,7 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 > Convertit un SVG en une image rastérisée et extrait les couleurs utilisées.
 
 *   **Catégorie :** `DAO_master/SVG/Convert`
-*   **Description :** Un node de conversion avancé avec deux moteurs de rendu (`natif` ou `cairosvg`) pour une compatibilité maximale.
+*   **Description :** Un node de conversion avancé avec deux moteurs de rendu (`natif` ou `cairosvg`) pour une compatibilité maximale. Prend uniquement une entrée `svg_text`.
 *   **Sorties :** `image`, `mask`, et `colors_json` (un rapport détaillé des couleurs et formes détectées).
 
 </details>
@@ -255,57 +256,90 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 </details>
 
 <details>
+<summary><strong>🖼️ Images : Clones et Mosaïques</strong></summary>
+
+<details>
+<summary><code>Clone Grid (X/Y)</code> / <code>Clone Grid (Path)</code></summary>
+
+> Crée une grille de clones à partir d'une image source unique ou de plusieurs images d'un dossier.
+
+*   **Catégorie :** `DAO_master/Images/Clone`
+*   **Clone Grid (X/Y) :** Répète **une seule image d'entrée** selon une grille.
+*   **Clone Grid (Path) :** Remplit la grille en utilisant des **images différentes provenant d'un dossier**. Permet un ordre aléatoire via `shuffle` et `seed`.
+*   **Fonctionnalités communes :**
+    *   Contrôle de la disposition (`count`, `spacing`, `offset`).
+    *   Décalages alternés pour les lignes/colonnes (`row_offset_x`, `col_offset_y`) pour des motifs complexes (briques, quinconce...).
+    *   Transformation de chaque clone (`scale`, `rotation`, `opacity`).
+
+</details>
+
+<details>
+<summary><code>Clone Circular</code> / <code>Clone Circular (Path)</code></summary>
+
+> Arrange des clones en un motif circulaire.
+
+*   **Catégorie :** `DAO_master/Images/Clone`
+*   **Clone Circular :** Répète **une seule image d'entrée**.
+*   **Clone Circular (Path) :** Utilise des **images différentes d'un dossier**.
+*   **Fonctionnalités communes :**
+    *   Contrôle du rayon, du nombre de clones, des angles de départ/fin.
+    *   Options pour orienter les clones vers le centre ou les aligner sur un angle fixe.
+
+</details>
+
+<details>
+<summary><code>Mosaic: Tile & Export</code></summary>
+
+> Découpe une image source en une grille de tuiles et les exporte en tant que fichiers individuels.
+
+*   **Catégorie :** `DAO_master/Images/Mosaic`
+*   **Description :** Idéal pour préparer des images pour des workflows de type "tiled diffusion".
+*   **Sorties :**
+    *   Un **batch d'images** contenant toutes les tuiles pour un traitement ultérieur dans ComfyUI.
+    *   Un **dossier de sortie** contenant chaque tuile sauvegardée en `.png` ou `.jpg`.
+
+</details>
+
+<details>
+<summary><code>Mosaic: Assemble (Batch)</code> / <code>Mosaic: Assemble (Folder)</code></summary>
+
+> Réassemble des tuiles pour former une image composite.
+
+*   **Catégorie :** `DAO_master/Images/Mosaic`
+*   **Assemble (Batch) :** Prend un **batch d'images** en entrée.
+*   **Assemble (Folder) :** Charge les tuiles directement depuis un **dossier**.
+*   **Fonctionnalités communes :**
+    *   **Superposition et Fusion :** Permet de superposer les tuiles (`overlap`) et de les fusionner avec des modes de blending avancés (`feathering`, `weighted average`...).
+    *   **Disposition :** Contrôle de l'espacement (`gutter`) et de l'ordre d'assemblage (`row_major`, `snake_row`...).
+    *   **Ordre par Regex (Folder) :** Le mode `regex_filename_order` permet de replacer les tuiles à leur position exacte en se basant sur leur nom de fichier (ex: `tile_r01_c03.png`).
+
+</details>
+
+</details>
+
+<details>
 <summary><strong>🛠️ Utilitaires, Filtres et Générateurs</strong></summary>
 
 <details>
-<summary><code>Folder File Pro (dir → file_path)</code></summary>
+<summary><code>DAO Hex/RVB Color Picker</code></summary>
 
-*   **Catégorie** : `DAO_master/IO`
-*   **Description** : Un explorateur de fichiers avancé pour naviguer et sélectionner des fichiers directement dans ComfyUI.
-*   **Vue** : Grille ou Liste, défilement fiable, double-clic pour ouvrir/preview, bouton **Up** & **Explorer**.
-*   **Aperçus** : vignettes images, SVG inline ; autres fichiers affichés avec un badge `[File.ext]`. Icône dossier PNG non déformée.
-*   **Filtres** : `extensions`, `name_regex` (modes `include` / `exclude`, option *ignore case*).
-*   **Tri** : `sort_by = name | mtime | size` + `descending` (asc/desc).
-*   **Sélection** :  
-    *   **Modes** : `manual` (UI), `fixed`, `increment`, `decrement`, `randomize` (piloté par `seed`).  
-    *   **Raccourcis** : *type-to-select* (taper des lettres pour sauter au prochain item).
-*   **Sorties** : `file_path`, `filename`, `dir_used`, `files_json` (liste des fichiers), `file_info` (JSON avec taille, dates, dimensions).
-
-</details>
-
-<details>
-<summary><code>Path → Image (+RGBA/Mask/Meta)</code></summary>
-
-*   **Catégorie** : `DAO_master/IO`
-*   **Description** : Charge une image depuis un chemin de fichier et extrait toutes les informations pertinentes. C'est le complément idéal de `Folder File Pro`.
-*   **Fonctionnalités** :
-    *   Fournit des sorties `IMAGE` (RGB), `IMAGE` (RGBA), `MASK` (canal alpha), et une image visible du masque.
-    *   Extrait les métadonnées de workflow (`JSON`) et les paramètres (`parameters`, EXIF) des fichiers PNG/JPG.
-    *   Gère les chemins de fichiers invalides de manière sécurisée en retournant des images et des textes vides pour éviter de planter le workflow.
-
-</details>
-
-<details>
-<summary><code>Load Image Pro (Path/Image → RGB/RGBA/Mask/Upscale)</code></summary>
-
-*   **Catégorie** : `DAO_master/IO`
-*   **Description** : Un node de chargement d'image tout-en-un qui combine chargement, traitement de masque avancé et upscale.
-*   **Fonctionnalités** :
-    *   **Source Flexible** : Charge une image depuis un `path` OU utilise une `image` déjà existante en entrée (mode pass-through).
-    *   **Outils de Masque** : Suite complète d'outils pour le masque : flou, dilatation/érosion (`offset`), lissage morphologique, comblement des trous et inversion.
-    *   **Upscale Intégré** : Augmente la résolution de l'image en utilisant les modèles `.pth` de ComfyUI (type ESRGAN) ou des méthodes OpenCV (Lanczos, etc.) si aucun modèle n'est sélectionné.
-    *   **Sorties Claires** : Fournit une image RGB, une image RGBA (utilisant le masque final), et le masque traité séparément.
-
-</details>
-
-<details>
-<summary><code>DAO RVB Color Picker</code></summary>
-
-> Un sélecteur de couleurs interactif pour choisir des couleurs à partir de listes personnalisables.
+> Des sélecteurs de couleurs interactifs pour choisir des couleurs à partir de listes personnalisables.
 
 *   **Catégorie :** `DAO_master/Color`
-*   **💡 Fonctionnement UI :** Créez vos propres listes de couleurs dans le dossier `RGB_List/`. Le node affichera des menus déroulants pour choisir le fichier et la couleur. Un bouton `↻` permet de rafraîchir les listes.
+*   **💡 Fonctionnement UI :** Créez vos propres listes de couleurs dans les dossiers `hexadecimal_List/` ou `RGB_List/`. Le node affichera des menus déroulants pour choisir le fichier et la couleur. Un bouton `↻` permet de rafraîchir les listes.
 *   **Modes :** `Manual`, `Random`, `Increment`, `Decrement`.
+
+</details>
+
+<details>
+<summary><code>Folder File Pro</code> / <code>Path → Image</code> / <code>Load Image Pro</code></summary>
+
+> Nodes avancés pour la gestion des fichiers et le chargement d'images.
+
+*   **Catégorie :** `DAO_master/IO`
+*   **Folder File Pro :** Un explorateur de fichiers avancé avec une UI interactive pour filtrer, trier et sélectionner des fichiers de manière procédurale.
+*   **Path → Image :** Prend un chemin de fichier en `STRING` et charge l'image correspondante.
+*   **Load Image Pro :** Un chargeur d'image amélioré avec des options supplémentaires.
 
 </details>
 
@@ -346,7 +380,6 @@ Ces nodes apportent des outils supplémentaires pour la création, la manipulati
 <summary><strong>💡 Guides d'Installation (Potrace & Polices)</strong></summary>
 
 <br>
-
 <details>
 <summary><strong>🚀 Installer Potrace sur Windows (pour la vectorisation d'images)</strong></summary>
 
