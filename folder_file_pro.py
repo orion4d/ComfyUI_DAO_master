@@ -375,7 +375,7 @@ class FolderFilePro:
     RETURN_TYPES = ("STRING", "STRING", "STRING", "STRING", "STRING")
     RETURN_NAMES = ("file_path", "filename", "dir_used", "files_json", "file_info")
     FUNCTION = "pick"
-    CATEGORY = "DAO_master/IO"
+    CATEGORY = "DAO_master"
 
     def pick(self, directory: str, extensions: str,
              name_regex: str, regex_mode: str, regex_ignore_case: bool,

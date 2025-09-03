@@ -153,7 +153,7 @@ class LoadImagePro:
     RETURN_TYPES = ("IMAGE", "IMAGE", "MASK", "IMAGE", "INT", "INT")
     RETURN_NAMES = ("image", "image_rgba", "mask", "mask_image", "width", "height")
     FUNCTION = "run"
-    CATEGORY = "DAO_master"
+    CATEGORY = "DAO_master/Images/IO"
 
     def _load_from_path(self, path: str) -> Tuple[np.ndarray, Optional[np.ndarray]]:
         if not path: raise ValueError("Path is empty.")

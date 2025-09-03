@@ -64,7 +64,7 @@ class PathToImage:
     Path → Image (RGB & RGBA / Mask / Meta)
     Aucune preview intégrée (on évite les erreurs de dtype).
     """
-    CATEGORY = "DAO_master/IO"
+    CATEGORY = "DAO_master/Images/IO"
     RETURN_TYPES = ("IMAGE", "IMAGE", "MASK", "IMAGE", "STRING", "STRING", "INT", "INT")
     RETURN_NAMES = ("image", "image_rgba", "mask", "mask_image", "json", "metadata", "width", "height")
     FUNCTION = "load"

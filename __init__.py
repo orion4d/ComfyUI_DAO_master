@@ -33,6 +33,15 @@ from .svg_load import SVGLoad
 from .folder_file_pro import FolderFilePro
 from .path_to_image import PathToImage
 from .load_image_pro import LoadImagePro
+from .dao_clone_grid import DAOCloneGrid
+from .dao_clone_circular import DAOCloneCircular
+from .dao_clone_circular_path import DAOCloneCircularPath
+from .dao_clone_grid_path import DAOCloneGridPath
+from .mosaic_nodes import (
+    MosaicTileExport,
+    MosaicTileAssemble,
+    MosaicAssembleFromFolder,
+)
 
 # Dictionnaires de mapping
 NODE_CLASS_MAPPINGS = {
@@ -66,6 +75,13 @@ NODE_CLASS_MAPPINGS = {
     "Folder File Pro": FolderFilePro,
     "Path To Image": PathToImage,
     "Load Image Pro": LoadImagePro,
+    "DAO Clone Grid": DAOCloneGrid,
+    "DAO Clone Circular": DAOCloneCircular,
+    "DAO Clone Circular Path": DAOCloneCircularPath,
+    "DAO Clone Grid Path": DAOCloneGridPath,
+    "MosaicTileExport": MosaicTileExport,
+    "MosaicTileAssemble": MosaicTileAssemble,
+    "MosaicAssembleFromFolder": MosaicAssembleFromFolder,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -99,6 +115,13 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "Folder File Pro": "Folder File Pro (dir → file_path)",
     "Path To Image": "Path → Image (+RGBA/Mask/Meta)",
     "Load Image Pro": "Load Image Pro (Path/Image → RGB/RGBA/Mask/Upscale)",
+    "DAO Clone Grid": "Clone Grid (X/Y)",
+    "DAO Clone Circular": "Clone Circular",
+    "DAO Clone Circular Path": "Clone Circular (Path)",
+    "DAO Clone Grid Path": "Clone Grid (Path)",
+    "MosaicTileExport": "Mosaic: Tile & Export",
+    "MosaicTileAssemble": "Mosaic: Assemble (Batch)",
+    "MosaicAssembleFromFolder": "Mosaic: Assemble (Folder)",
 }
 
 WEB_DIRECTORY = "./web"

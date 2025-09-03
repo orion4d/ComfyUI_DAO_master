@@ -95,7 +95,7 @@ def _parse_hex_color(s: str):
 # ---------- NODE ----------
 
 class DAOBlur:
-    CATEGORY = "DAO_master/Filter"
+    CATEGORY = "DAO_master/Images/Filter"
     FUNCTION = "apply"
     RETURN_TYPES = ("IMAGE", "MASK", "IMAGE")
     RETURN_NAMES = ("image", "mask", "drop_shadow")
